@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- 디자인2 · 강사 소개 (다크) -->
+<html class="dark scroll-smooth" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="theme-color" content="#0a0c10"/>
+<title>강사 소개 · 가경 T | 김가경 국어 · 한티 MEXX</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = { darkMode:"class", theme:{ extend:{
+    "colors":{ "background":"#0a0c10","surface-bright":"#0c0f15","surface":"#0a0c10","surface-container-lowest":"#12151c","surface-container-low":"#0e1218","surface-container":"#161d2b","surface-container-high":"#1c2333","surface-container-highest":"#2a3350","outline-variant":"#1e2536","outline":"#5a6380","on-surface":"#e8ecf4","on-surface-variant":"#8b95ad","secondary":"#4ae3c0","on-secondary":"#06251f","on-primary":"#0a0c10","secondary-fixed":"#12322c","on-tertiary-container":"#4ae3c0","tertiary-fixed":"#4ae3c0","tertiary-container":"#0e2a26","primary":"#0d1422","primary-container":"#182234","on-primary-container":"#8b95ad" },
+    "spacing":{ "margin-desktop":"40px","margin-mobile":"16px","gutter":"24px","container-max":"1280px" },
+    "fontFamily":{ "headline-md":["Inter","Noto Sans KR"],"label-sm":["Inter","Noto Sans KR"],"display-lg":["Inter","Noto Sans KR"],"body-md":["Inter","Noto Sans KR"],"label-md":["Inter","Noto Sans KR"],"display-lg-mobile":["Inter","Noto Sans KR"],"headline-lg":["Inter","Noto Sans KR"],"body-lg":["Inter","Noto Sans KR"] },
+    "fontSize":{ "headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"500"}],"display-lg-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-lg":["30px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}] }
+  }}}
+</script>
+<style>
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+  .fi{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(0.22,1,0.36,1);}
+  .fi.v{opacity:1;transform:translateY(0);}
+  .crd-hover{transition:all .3s cubic-bezier(0.4,0,0.2,1);}
+  .crd-hover:hover{transform:translateY(-4px);border-color:rgba(74,227,192,.38);box-shadow:0 16px 38px rgba(0,0,0,.5),0 0 0 1px rgba(74,227,192,.1);}
+  ::-webkit-scrollbar{width:8px;height:8px;}::-webkit-scrollbar-track{background:#0c0f15;}::-webkit-scrollbar-thumb{background:#2a3350;border-radius:4px;}
+</style>
+</head>
+<body class="bg-background text-on-surface font-body-md" style="word-break:keep-all">
+<!-- Nav -->
+<nav class="w-full top-0 sticky z-50 bg-background/85 backdrop-blur border-b border-outline-variant">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-2.5" href="index.html"><img class="w-7 h-7 rounded-md" src="mexx-symbol.png" alt="한티 MEXX"/><span class="font-headline-md text-headline-md font-extrabold text-on-surface tracking-tight">김가경 <span class="text-secondary">국어</span></span></a>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="index.html">홈</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="courses.html">강좌</a>
+<a class="font-body-md text-body-md text-secondary border-b-2 border-secondary font-bold pb-1" href="teacher.html">강사</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="index.html#contact">문의</a>
+</div>
+</div>
+<a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="bg-secondary text-on-secondary px-5 py-2.5 rounded-lg font-label-md text-label-md font-bold hover:opacity-90 transition-all flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">chat_bubble</span>카카오톡 문의</a>
+</div>
+</nav>
+
+<!-- Hero -->
+<section class="relative overflow-hidden bg-surface-bright border-b border-outline-variant py-14 md:py-20">
+<div class="absolute -top-32 -right-20 w-[600px] h-[600px] rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(74,227,192,.1),transparent 70%)"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10 flex flex-col md:flex-row items-center gap-10">
+<div class="relative shrink-0">
+<div class="w-44 h-44 md:w-52 md:h-52 rounded-full border-[3px] border-secondary p-1.5 overflow-hidden bg-surface-container-lowest">
+<img alt="가경T" class="w-full h-full object-cover object-top rounded-full" src="profile.png"/>
+</div>
+<div class="absolute bottom-2 right-2 bg-secondary text-on-secondary w-9 h-9 rounded-full flex items-center justify-center shadow-lg"><span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">verified</span></div>
+</div>
+<div class="text-center md:text-left">
+<div class="inline-flex items-center gap-2 bg-secondary-fixed/60 text-secondary border border-secondary/25 px-3 py-1 rounded-full mb-4"><span class="material-symbols-outlined text-[16px]">workspace_premium</span><span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">한티 MEXX 종합반 국어</span></div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface tracking-tight">가경 T</h1>
+<p class="font-headline-md text-headline-md text-secondary mt-2">출제 경향을, 국어를, 메가스터디를 잘 아는 강사</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-x-7 gap-y-3 mt-6">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">military_tech</span><span class="font-label-md text-on-surface-variant"><b class="text-on-surface">평가원 국어 6회 만점</b></span></div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">history</span><span class="font-label-md text-on-surface-variant">10년+ 현장 강의</span></div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">edit_document</span><span class="font-label-md text-on-surface-variant">메가·D사 출제 계약</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<main class="max-w-container-max mx-auto px-margin-desktop py-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- About -->
+<div class="lg:col-span-8 space-y-14">
+<section class="fi">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6 flex items-center gap-3"><span class="material-symbols-outlined text-secondary">person</span>강사 소개</h2>
+<div class="space-y-4 text-on-surface-variant leading-relaxed">
+<p class="font-body-lg text-body-lg">가경 T는 <b class="text-on-surface">출제 경험과 현장 강의를 겸비한</b> 국어 강사입니다. 국어국문학을 전공하고, 평가원 주관 시험에서 <b class="text-on-surface">국어 6회 만점</b>을 받았으며, 10년 이상 현장에서 학생들을 가르쳐 왔습니다.</p>
+<p class="font-body-md text-body-md">2026년 현재 <b class="text-on-surface">메가스터디·D사 수능 국어 모의고사 출제 계약 강사</b>로, 실제 문항을 설계하는 출제자의 시선에서 ‘문제를 읽는 법’을 가르칩니다.</p>
+<p class="font-body-md text-body-md italic border-l-2 border-secondary pl-6 py-3 my-8 bg-surface-container-lowest rounded-r-lg text-on-surface">“개념은 외우는 것이 아니라 이해하는 것입니다. 지금 개념을 탄탄히 다져두어야, 시험 기간에 외부 지문과 적용에 집중할 수 있습니다.”</p>
+</div>
+</section>
+<section class="fi">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8 flex items-center gap-3"><span class="material-symbols-outlined text-secondary">workspace_premium</span>강점</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="crd-hover bg-surface-container-lowest p-6 rounded-xl border border-outline-variant"><div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">edit_document</span></div><h4 class="font-headline-md text-[17px] text-on-surface mb-1 whitespace-nowrap">출제 경향을 잘 아는 강사</h4><p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed">메가스터디 수능 국어 모의고사 출제<br>강남대성 수능 국어 모의고사 문항공모전 선발</p></div>
+<div class="crd-hover bg-surface-container-lowest p-6 rounded-xl border border-outline-variant"><div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">school</span></div><h4 class="font-headline-md text-[17px] text-on-surface mb-1">국어를 잘 아는 강사</h4><p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed">국어국문학 전공<br>평가원 6회 만점<br>10년+ 현장 강의</p></div>
+<div class="crd-hover bg-surface-container-lowest p-6 rounded-xl border border-outline-variant"><div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">trending_up</span></div><h4 class="font-headline-md text-[17px] text-on-surface mb-1">메가를 잘 아는 강사</h4><p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed">메가스터디 국어과 강사<br>러셀 국어과 전임 강사<br>한티 MEXX 종합반 강사</p></div>
+</div>
+</section>
+<section class="fi">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2 flex items-center gap-3"><span class="material-symbols-outlined text-secondary">menu_book</span>담당 강좌</h2>
+<p class="text-body-md text-on-surface-variant mb-8">2026 여름방학 특강 · 단과 2 + 썸머스쿨 2</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5" id="teacher-courses"></div>
+</section>
+</div>
+<!-- Sidebar -->
+<aside class="lg:col-span-4">
+<div class="sticky top-24 space-y-6">
+<div class="bg-surface-container-lowest p-7 rounded-2xl border border-outline-variant">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-5">한눈에 보기</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center"><span class="font-body-md text-on-surface-variant">담당 영역</span><span class="font-label-md text-on-surface">문법 · 고전 · 화법</span></div>
+<div class="flex justify-between items-center"><span class="font-body-md text-on-surface-variant">대상 학년</span><span class="font-label-md text-on-surface">중3 · 고1 · 고2</span></div>
+<div class="flex justify-between items-center"><span class="font-body-md text-on-surface-variant">관리</span><span class="font-label-md text-secondary bg-secondary-fixed px-3 py-1 rounded-full">주 1회 클리닉</span></div>
+<div class="flex justify-between items-center"><span class="font-body-md text-on-surface-variant">문의</span><span class="font-label-md text-on-surface">카카오톡 채널</span></div>
+</div>
+<a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="block text-center w-full mt-7 py-3.5 bg-secondary text-on-secondary rounded-xl font-headline-md text-[16px] font-bold hover:opacity-90 transition-all">수업 상담하기</a>
+<div class="flex gap-3 mt-3">
+<a href="https://blog.naver.com/gpkoreanmaster" target="_blank" rel="noopener" class="flex-1 text-center py-3 bg-surface-container border border-outline-variant rounded-xl font-label-md text-on-surface hover:border-secondary/40 transition-all">블로그</a>
+<a href="https://youtube.com/channel/UCrEYhXaFqlcnxn1wpsiUKEg" target="_blank" rel="noopener" class="flex-1 text-center py-3 bg-surface-container border border-outline-variant rounded-xl font-label-md text-on-surface hover:border-secondary/40 transition-all">유튜브</a>
+</div>
+</div>
+</div>
+</aside>
+</main>
+
+<footer class="w-full bg-background border-t border-outline-variant">
+<div class="py-10 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-2.5"><img class="w-6 h-6 rounded" src="mexx-symbol.png" alt="한티 MEXX"/><span class="font-headline-md font-bold text-on-surface">김가경 국어</span></div>
+<p class="font-label-md text-on-surface-variant text-center">가경T · 한티 MEXX 2026 여름방학 특강</p>
+</div>
+</footer>
+
+<script src="courses-data.js"></script>
+<script>
+  // 담당 강좌 카드 렌더 (공통 데이터)
+  const wrap=document.getElementById('teacher-courses');
+  if(window.COURSES){window.COURSES.forEach(c=>{
+    const a=document.createElement('a'); a.href='course.html?c='+c.id;
+    a.className='crd-hover bg-surface-container-lowest border border-outline-variant rounded-2xl p-5 flex items-center gap-4 no-underline';
+    a.innerHTML=`<div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style="background:${c.headerbg}"><span class="material-symbols-outlined text-secondary">${c.icon}</span></div>
+      <div class="min-w-0"><div class="flex items-center gap-2"><span class="text-secondary font-bold text-[11px] bg-secondary-fixed px-2 py-0.5 rounded-full">${c.grade}</span><span class="text-on-surface-variant text-[12px]">${c.kind} · ${c.time}</span></div>
+      <h4 class="font-headline-md text-[16px] text-on-surface mt-1.5 truncate">${c.subject}</h4></div>
+      <span class="material-symbols-outlined text-on-surface-variant ml-auto shrink-0">arrow_forward</span>`;
+    wrap.appendChild(a);
+  });}
+  const o=new IntersectionObserver(es=>{es.forEach((e,i)=>{e.isIntersecting&&(setTimeout(()=>e.target.classList.add('v'),i*60),o.unobserve(e.target))})},{threshold:.1});
+  document.querySelectorAll('.fi').forEach(e=>o.observe(e));
+</script>
+</body></html>
