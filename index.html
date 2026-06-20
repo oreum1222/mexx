@@ -143,15 +143,97 @@
 </div>
 </section>
 
-<!-- Trust Bar -->
-<div class="bg-surface-container-low border-b border-outline-variant py-12">
-<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-<div><h3 class="text-display-lg-mobile md:text-headline-lg font-extrabold mb-1 text-secondary">6회</h3><p class="text-on-surface-variant font-label-md uppercase tracking-widest text-sm">평가원 국어 만점</p></div>
-<div><h3 class="text-display-lg-mobile md:text-headline-lg font-extrabold mb-1 text-secondary">10년+</h3><p class="text-on-surface-variant font-label-md uppercase tracking-widest text-sm">현장 강의 경력</p></div>
-<div><h3 class="text-display-lg-mobile md:text-headline-lg font-extrabold mb-1 text-secondary">4개</h3><p class="text-on-surface-variant font-label-md uppercase tracking-widest text-sm">여름 특강 강좌</p></div>
-<div><h3 class="text-display-lg-mobile md:text-headline-lg font-extrabold mb-1 text-secondary">메가·D사</h3><p class="text-on-surface-variant font-label-md uppercase tracking-widest text-sm">수능 모의고사 출제</p></div>
+<!-- 후기 마퀴 (유튜브 실제 댓글) -->
+<style>
+#reviews .rv-mq{overflow:hidden;width:100%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);}
+#reviews .rv-tk{display:flex;width:max-content;animation:rvScroll 92s linear infinite;}
+#reviews .rv-mq+.rv-mq{margin-top:18px;}
+#reviews .rv-rev{animation-direction:reverse;animation-duration:108s;}
+#reviews .rv-mq:hover .rv-tk{animation-play-state:paused;}
+#reviews .rv-card{flex:0 0 auto;width:332px;margin-right:18px;background:#12151c;border:1px solid #1e2536;border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;transition:border-color .3s,transform .3s;}
+#reviews .rv-card:hover{border-color:rgba(74,227,192,.42);transform:translateY(-3px);}
+#reviews .rv-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+#reviews .rv-ava{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#06251f;font-size:15px;flex:0 0 auto;}
+#reviews .rv-id{display:flex;flex-direction:column;min-width:0;}
+#reviews .rv-nm{font-weight:600;font-size:14px;color:#e8ecf4;white-space:nowrap;}
+#reviews .rv-sc{font-size:11.5px;color:#8b95ad;}
+#reviews .rv-yt{margin-left:auto;color:#ff4e45;font-size:21px;}
+#reviews .rv-tx{font-size:14px;line-height:1.55;color:#cfd6e6;margin:0;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
+#reviews .rv-ft{margin-top:auto;padding-top:13px;display:flex;align-items:center;gap:6px;min-height:16px;}
+#reviews .rv-lk{display:inline-flex;align-items:center;gap:4px;font-size:12.5px;color:#8b95ad;font-weight:600;}
+#reviews .rv-lk .material-symbols-outlined{font-size:15px;color:#4ae3c0;}
+@keyframes rvScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width:640px){#reviews .rv-card{width:272px;}}
+@media (prefers-reduced-motion:reduce){#reviews .rv-tk{animation:none;}}
+</style>
+<section id="reviews" class="bg-surface-container-low border-y border-outline-variant py-16 overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop text-center mb-10">
+<span class="inline-flex items-center gap-1.5 text-secondary font-label-sm text-label-sm font-bold tracking-wider mb-3 bg-secondary-fixed/60 border border-secondary/25 px-3 py-1 rounded-full"><span class="material-symbols-outlined text-[15px]" style="font-variation-settings:'FILL' 1;">favorite</span>실제 후기</span>
+<h2 class="font-headline-lg text-headline-lg md:text-display-lg-mobile text-on-surface tracking-tight">유튜브에 남겨주신 진짜 후기</h2>
+<p class="mt-3 text-on-surface-variant font-body-md">구독자 2.9만 채널에 실제로 달린 수강·시청 후기입니다.</p>
 </div>
-</div>
+<div class="rv-mq"><div class="rv-tk" id="rvTrackA"></div></div>
+<div class="rv-mq"><div class="rv-tk rv-rev" id="rvTrackB"></div></div>
+</section>
+<script>
+(function(){
+  var A=[
+    {n:'고2 학생',t:'국어 학원 안 다니고 유튜브로 공부하는데, 필기·설명이 완전 이해되게 해주셔서 시험 범위는 거의 쌤 걸로 들어요!',l:null},
+    {n:'유튜브 시청자',t:'유튜브 시 해설 중에 선생님이 제일 잘하시는 것 같아요…. 감사합니다',l:null},
+    {n:'수강생',t:'고등 내신의 구세주….',l:null},
+    {n:'수험생',t:"시험 전날 보고 갔는데 '밭이/밭이랑' 문제 나와서 맞췄어요! 진짜 감사합니다",l:null},
+    {n:'고3 학생',t:'선생님 덕분에 언매 문법 다 맞았어요!! 감사합니다',l:null},
+    {n:'수험생',t:'문법 하나 틀리고 88점 맞았어요!! 감사합니다 진심',l:null},
+    {n:'고3 학생',t:'방금 시험 본 고3입니다. 밭이랑 문제 서술형 나왔어요! 너무 감사합니다',l:null},
+    {n:'구독자',t:"23분 안에 중요한 걸 다 설명해주시다니! '밭이랑' 진짜 몰랐는데 이 영상 보고 알게 됐어요!!",l:null},
+    {n:'수험생',t:'중간고사 하루 전 최고의 선택',l:null},
+    {n:'수험생',t:'이거 꼭 보세요, 시험문제에 나왔습니다. 선생님 사랑하고 감사합니다 진짜',l:null},
+    {n:'수험생',t:'시험 하루 전, 머리에 쏙쏙 박히는 설명이 너무 좋네요!!! 흰 바람벽 너무 잘 봤습니다!!',l:null},
+    {n:'구독자',t:'공부하면서 헷갈렸던 부분인데 진짜 감사합니다!!!',l:null},
+    {n:'시청자',t:'목소리가 되게 좋아요! 설명도 잘하시고!',l:null},
+    {n:'독학생',t:'목소리가 너무 좋으셔서 다른 공부할 때도 선생님 강의만 들어요',l:null},
+    {n:'신규 구독자',t:'인스타 보고 너무 재밌어서 유튜브까지 놀러왔습니다! 목소리 너무 좋아요',l:null},
+    {n:'시청자',t:'선생님께 국어 수업 들으면 정말 좋을 것 같아요',l:null},
+    {n:'시청자',t:'난 학생도 아닌데 왜 이걸 보고 있는 것인가 (흡입력 甲)',l:null},
+    {n:'구독자',t:'우왕 선생님 감사해요 최고예요',l:null},
+    {n:'반수생',t:'고퀄리티 영상 감사합니다. 반수 준비하면서 너무 큰 도움이 됩니다',l:null},
+    {n:'시청자',t:'감사합니다, 더 자세히 봐야겠네요',l:null},
+    {n:'구독자',t:'목소리가 너무 좋으시고 내용이 딱딱 각인돼서 몇 시간째 쇼츠 보고 있어요',l:null}
+  ];
+  var B=[
+    {n:'고1 학생',t:'내일 시험 보는 고1입니다. 문법이 큰 고민이었는데 시험 전 총정리로 보기 너무 좋아요! 더 유명해지시길..',l:44},
+    {n:'시청자',t:'발음 하나하나 정확한 거 진짜 개호감이네',l:4},
+    {n:'수험생',t:'저 국어 백 맞을 듯요 ㄱㅅ요',l:1},
+    {n:'독학생',t:'혼자 공부하는데 늘 도움 많이 받고 있습니다!!',l:2},
+    {n:'시청자',t:'이해가 한 번에 됐어요 선생님',l:1},
+    {n:'구독자',t:'선생님 강의 너무 좋아요!!!!! 이해가 진짜 잘돼요 ❤️',l:2},
+    {n:'시청자',t:'와 이 강의는 거의 로스쿨 강의 수준이네요. 전혀 흔들림이 없고… 대단한 선생님입니다',l:null},
+    {n:'구독자',t:'말씀도 잘하시고 논리도 명쾌하고 전달력도 훌륭해요. 곧 제대로 인정받으실 것 같네요',l:2},
+    {n:'임용 준비생',t:'임용고시 준비생인데… 이거 보고 이해했어요 감사합니다',l:2},
+    {n:'학부모',t:'깔끔한 내용 정리…고맙습니다',l:null},
+    {n:'시청자',t:'너무 잘 가르쳐주시네요 감사합니당 ㅎㅎ',l:1},
+    {n:'수험생',t:'시험 얼마 안 남아서 보는데 필기랑 딕션 이해 잘 되게 정말 잘하시네요!! 덕분에 시험 잘 볼 것 같아요',l:2},
+    {n:'시청자',t:'이 분 아나운서 출신인가요?? 발음이 너무 좋으신데',l:null},
+    {n:'학생',t:'와 우리 국어쌤이 이렇게 설명해주시면 좋겠다…',l:2},
+    {n:'시청자',t:'목소리·발음·성격·외모까지 다 너무 취저라, 학생도 아닌데 인스타·유튜브까지 구독을…',l:4},
+    {n:'현직 강사',t:'저도 학원에서 애들 가르치는데, 선생님 영상 학생들에게 많이 공유해주곤 합니다. 건승하시길요!',l:null},
+    {n:'구독자',t:'학원을 다녀도 이해가 안 됐는데 항상 이거 보고 공부하고 있어요 정말 감사합니다',l:1},
+    {n:'졸업생',t:'수능과 상관없는 사람인데 발음·목소리가 좋아서 매일 한 번씩은 보고 있어요. 모두 원하는 결과 냈으면!',l:3},
+    {n:'수험생',t:'선생님 채널에 강의가 있어서 너무 행복해요… 작년에도 저의 빛이셨는데 올해도 열심히!',l:2},
+    {n:'학부모',t:'자식 낳으면 꼭 꼭 보내고 싶은 학원입니다',l:null},
+    {n:'구독자',t:'선생님 인강하실 생각 없으신가요.. 수업 듣고 싶은데 학원이 머네요 😂',l:16}
+  ];
+  var pal=['#4ae3c0','#7c9cff','#ffb86b','#ff7eb6','#a988ff','#5ad1ff','#8ee6a0','#ffd24a','#ff9d8a','#9be36b'];
+  function card(r,i){
+    var c=pal[i%pal.length];
+    var ini=r.n.charAt(0);
+    var likes=(r.l!=null)?'<span class="rv-lk"><span class="material-symbols-outlined">thumb_up</span>'+r.l+'</span>':'';
+    return '<div class="rv-card"><div class="rv-top"><div class="rv-ava" style="background:linear-gradient(135deg,'+c+','+c+'66)">'+ini+'</div><div class="rv-id"><span class="rv-nm">'+r.n+'</span><span class="rv-sc">유튜브 후기</span></div><span class="rv-yt material-symbols-outlined" style="font-variation-settings:\'FILL\' 1;">smart_display</span></div><p class="rv-tx">'+r.t+'</p><div class="rv-ft">'+likes+'</div></div>';
+  }
+  function fill(id,arr){var e=document.getElementById(id);if(!e)return;var h=arr.map(card).join('');e.innerHTML=h+h;}
+  fill('rvTrackA',A);fill('rvTrackB',B);
+})();
+</script>
 
 <!-- 이런 학생에게 -->
 <section id="who" class="py-20 md:py-24 bg-background">
