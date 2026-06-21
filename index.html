@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta name="theme-color" content="#0a0c10"/>
+<script>(function(){try{var t=localStorage.getItem('mexx-theme'),d=document.documentElement;if(t==='light'){d.classList.remove('dark');d.classList.add('light');var m=document.querySelector('meta[name=theme-color]');if(m)m.content='#f6f8fc';}else{d.classList.add('dark');}}catch(e){}})();</script>
 <title>김가경 국어 · 한티 MEXX 2026 여름방학 특강</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -15,28 +16,28 @@
     theme: {
       extend: {
         "colors": {
-          "background": "#0a0c10",
-          "surface-bright": "#0c0f15",
-          "surface": "#0a0c10",
-          "surface-container-lowest": "#12151c",
-          "surface-container-low": "#0e1218",
-          "surface-container": "#161d2b",
-          "surface-container-high": "#1c2333",
-          "surface-container-highest": "#2a3350",
-          "outline-variant": "#1e2536",
-          "outline": "#5a6380",
-          "on-surface": "#e8ecf4",
-          "on-surface-variant": "#8b95ad",
-          "secondary": "#4ae3c0",
-          "on-secondary": "#06251f",
-          "on-primary": "#0a0c10",
-          "secondary-fixed": "#12322c",
-          "on-tertiary-container": "#4ae3c0",
-          "tertiary-fixed": "#4ae3c0",
-          "tertiary-container": "#0e2a26",
-          "primary": "#0d1422",
-          "primary-container": "#182234",
-          "on-primary-container": "#8b95ad"
+          "background": "rgb(var(--c-background) / <alpha-value>)",
+          "surface-bright": "rgb(var(--c-surface-bright) / <alpha-value>)",
+          "surface": "rgb(var(--c-surface) / <alpha-value>)",
+          "surface-container-lowest": "rgb(var(--c-surface-container-lowest) / <alpha-value>)",
+          "surface-container-low": "rgb(var(--c-surface-container-low) / <alpha-value>)",
+          "surface-container": "rgb(var(--c-surface-container) / <alpha-value>)",
+          "surface-container-high": "rgb(var(--c-surface-container-high) / <alpha-value>)",
+          "surface-container-highest": "rgb(var(--c-surface-container-highest) / <alpha-value>)",
+          "outline-variant": "rgb(var(--c-outline-variant) / <alpha-value>)",
+          "outline": "rgb(var(--c-outline) / <alpha-value>)",
+          "on-surface": "rgb(var(--c-on-surface) / <alpha-value>)",
+          "on-surface-variant": "rgb(var(--c-on-surface-variant) / <alpha-value>)",
+          "secondary": "rgb(var(--c-secondary) / <alpha-value>)",
+          "on-secondary": "rgb(var(--c-on-secondary) / <alpha-value>)",
+          "on-primary": "rgb(var(--c-on-primary) / <alpha-value>)",
+          "secondary-fixed": "rgb(var(--c-secondary-fixed) / <alpha-value>)",
+          "on-tertiary-container": "rgb(var(--c-on-tertiary-container) / <alpha-value>)",
+          "tertiary-fixed": "rgb(var(--c-tertiary-fixed) / <alpha-value>)",
+          "tertiary-container": "rgb(var(--c-tertiary-container) / <alpha-value>)",
+          "primary": "rgb(var(--c-primary) / <alpha-value>)",
+          "primary-container": "rgb(var(--c-primary-container) / <alpha-value>)",
+          "on-primary-container": "rgb(var(--c-on-primary-container) / <alpha-value>)"
         },
         "borderRadius": { "DEFAULT": "0.5rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
         "spacing": { "margin-desktop": "40px", "base": "8px", "margin-mobile": "16px", "gutter": "24px", "container-max": "1280px" },
@@ -60,15 +61,35 @@
   }
 </script>
 <style>
+  :root, html.dark {
+    --c-background:10 12 16; --c-surface-bright:12 15 21; --c-surface:10 12 16;
+    --c-surface-container-lowest:18 21 28; --c-surface-container-low:14 18 24;
+    --c-surface-container:22 29 43; --c-surface-container-high:28 35 51; --c-surface-container-highest:42 51 80;
+    --c-outline-variant:30 37 54; --c-outline:90 99 128;
+    --c-on-surface:232 236 244; --c-on-surface-variant:139 149 173;
+    --c-secondary:74 227 192; --c-on-secondary:6 37 31; --c-on-primary:10 12 16;
+    --c-secondary-fixed:18 50 44; --c-on-tertiary-container:74 227 192; --c-tertiary-fixed:74 227 192;
+    --c-tertiary-container:14 42 38; --c-primary:13 20 34; --c-primary-container:24 34 52; --c-on-primary-container:139 149 173;
+  }
+  html.light {
+    --c-background:246 248 252; --c-surface-bright:255 255 255; --c-surface:246 248 252;
+    --c-surface-container-lowest:255 255 255; --c-surface-container-low:240 243 249;
+    --c-surface-container:255 255 255; --c-surface-container-high:238 242 248; --c-surface-container-highest:226 233 243;
+    --c-outline-variant:225 231 240; --c-outline:148 157 176;
+    --c-on-surface:18 26 40; --c-on-surface-variant:84 95 117;
+    --c-secondary:9 150 128; --c-on-secondary:255 255 255; --c-on-primary:18 26 40;
+    --c-secondary-fixed:208 240 233; --c-on-tertiary-container:9 150 128; --c-tertiary-fixed:9 150 128;
+    --c-tertiary-container:223 244 238; --c-primary:237 242 248; --c-primary-container:228 235 243; --c-on-primary-container:84 95 117;
+  }
   .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
   .course-card-hover{transition:all 0.3s cubic-bezier(0.4,0,0.2,1);}
   .course-card-hover:hover{transform:translateY(-4px);border-color:rgba(74,227,192,.38);box-shadow:0 16px 38px rgba(0,0,0,.5),0 0 0 1px rgba(74,227,192,.1);}
   .fi{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(0.22,1,0.36,1);}
   .fi.v{opacity:1;transform:translateY(0);}
   ::-webkit-scrollbar{width:8px;height:8px;}
-  ::-webkit-scrollbar-track{background:#0c0f15;}
-  ::-webkit-scrollbar-thumb{background:#2a3350;border-radius:4px;}
-  ::-webkit-scrollbar-thumb:hover{background:#3a4564;}
+  ::-webkit-scrollbar-track{background:rgb(var(--c-surface-bright));}
+  ::-webkit-scrollbar-thumb{background:rgb(var(--c-surface-container-highest));border-radius:4px;}
+  ::-webkit-scrollbar-thumb:hover{background:rgb(var(--c-outline));}
 </style>
 </head>
 <body class="bg-background text-on-surface font-body-md selection:bg-secondary-fixed" style="word-break:keep-all">
@@ -88,6 +109,8 @@
 </div>
 </div>
 <div class="flex items-center gap-3">
+<button id="theme-toggle" onclick="toggleTheme()" aria-label="다크/라이트 모드 전환" title="다크/라이트 전환" class="w-10 h-10 rounded-lg border border-outline-variant text-on-surface-variant hover:text-secondary hover:border-secondary transition-colors flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" id="theme-icon">light_mode</span></button>
 <a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="bg-secondary text-on-secondary px-5 py-2.5 rounded-lg font-label-md text-label-md font-bold hover:opacity-90 transition-all active:scale-[0.98] flex items-center gap-1.5">
 <span class="material-symbols-outlined text-[18px]">chat_bubble</span>카카오톡 문의</a>
 </div>
@@ -615,5 +638,15 @@
 <script>
   const o=new IntersectionObserver(es=>{es.forEach((e,i)=>{e.isIntersecting&&(setTimeout(()=>e.target.classList.add('v'),i*50),o.unobserve(e.target))})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
   document.querySelectorAll('.course-card-hover, #curriculum .grid > div, #teacher .grid > div').forEach(e=>{e.classList.add('fi');o.observe(e)});
+</script>
+<script>
+  function toggleTheme(){
+    var d=document.documentElement, light=d.classList.toggle('light');
+    d.classList.toggle('dark', !light);
+    try{ localStorage.setItem('mexx-theme', light?'light':'dark'); }catch(e){}
+    var ic=document.getElementById('theme-icon'); if(ic) ic.textContent = light?'dark_mode':'light_mode';
+    var m=document.querySelector('meta[name=theme-color]'); if(m) m.content = light?'#f6f8fc':'#0a0c10';
+  }
+  (function(){ var l=document.documentElement.classList.contains('light'); var ic=document.getElementById('theme-icon'); if(ic) ic.textContent = l?'dark_mode':'light_mode'; })();
 </script>
 </body></html>
