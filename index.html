@@ -109,8 +109,8 @@
 </div>
 </div>
 <div class="flex items-center gap-3">
-<button id="theme-toggle" onclick="toggleTheme()" aria-label="다크/라이트 모드 전환" title="다크/라이트 전환" class="w-10 h-10 rounded-lg border border-outline-variant text-on-surface-variant hover:text-secondary hover:border-secondary transition-colors flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[20px]" id="theme-icon">light_mode</span></button>
+<button id="theme-toggle" onclick="toggleTheme()" aria-label="화면 밝기 전환" title="화면 밝기 전환" class="h-10 px-3 rounded-lg border border-outline-variant text-on-surface-variant hover:text-secondary hover:border-secondary transition-colors flex items-center gap-1.5 shrink-0">
+<span class="material-symbols-outlined text-[20px]" id="theme-icon">light_mode</span><span id="theme-label" class="hidden sm:inline font-label-md text-label-md font-bold whitespace-nowrap">밝은 화면 버전</span></button>
 <a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="bg-secondary text-on-secondary px-5 py-2.5 rounded-lg font-label-md text-label-md font-bold hover:opacity-90 transition-all active:scale-[0.98] flex items-center gap-1.5">
 <span class="material-symbols-outlined text-[18px]">chat_bubble</span>카카오톡 문의</a>
 </div>
@@ -645,8 +645,9 @@
     d.classList.toggle('dark', !light);
     try{ localStorage.setItem('mexx-theme', light?'light':'dark'); }catch(e){}
     var ic=document.getElementById('theme-icon'); if(ic) ic.textContent = light?'dark_mode':'light_mode';
+    var lb=document.getElementById('theme-label'); if(lb) lb.textContent = light?'어두운 화면 버전':'밝은 화면 버전';
     var m=document.querySelector('meta[name=theme-color]'); if(m) m.content = light?'#f6f8fc':'#0a0c10';
   }
-  (function(){ var l=document.documentElement.classList.contains('light'); var ic=document.getElementById('theme-icon'); if(ic) ic.textContent = l?'dark_mode':'light_mode'; })();
+  (function(){ var l=document.documentElement.classList.contains('light'); var ic=document.getElementById('theme-icon'); if(ic) ic.textContent = l?'dark_mode':'light_mode'; var lb=document.getElementById('theme-label'); if(lb) lb.textContent = l?'어두운 화면 버전':'밝은 화면 버전'; })();
 </script>
 </body></html>
