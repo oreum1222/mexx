@@ -130,9 +130,9 @@
   const grid=document.getElementById('course-grid'), empty=document.getElementById('empty');
   function card(c){
     return `<a href="course.html?c=${c.id}" class="crd-hover bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden flex flex-col no-underline" data-kind="${c.kind}" data-grade="${c.grade}">
-      <div class="chd h-32 relative flex items-center justify-between px-6" style="background:${c.headerbg}">
-        <span class="material-symbols-outlined text-secondary text-[44px]">${c.icon}</span>
-        <span class="bg-secondary text-on-secondary text-label-sm font-bold px-3 py-1 rounded-full">${c.grade}</span>
+      <div class="chd h-32 relative flex flex-col justify-between px-6 py-5" style="background:${c.headerbg}">
+        <span class="material-symbols-outlined text-secondary text-[40px]">${c.icon}</span>
+        <span class="text-secondary font-extrabold text-[23px] tracking-tight">${c.grade} ${c.kind==='단과'?'단과':'종합'}</span>
       </div>
       <div class="p-6 flex flex-col flex-grow">
         <span class="text-secondary font-bold font-label-sm uppercase mb-2">${c.kind} · ${c.day} ${c.time}</span>
