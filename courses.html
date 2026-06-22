@@ -43,6 +43,7 @@
   .crd-hover{transition:all .3s cubic-bezier(0.4,0,0.2,1);}
   .crd-hover:hover{transform:translateY(-4px);border-color:rgba(74,227,192,.38);box-shadow:0 16px 38px rgba(0,0,0,.5),0 0 0 1px rgba(74,227,192,.1);}
   .chip.on{background:rgb(var(--c-secondary-fixed));color:rgb(var(--c-on-tertiary-container));border-color:rgba(74,227,192,.4);}
+  html.light .chd{background:linear-gradient(135deg,#d9f1e9,#c6e9dc)!important;}
   ::-webkit-scrollbar{width:8px;height:8px;}::-webkit-scrollbar-track{background:rgb(var(--c-surface-bright));}::-webkit-scrollbar-thumb{background:rgb(var(--c-surface-container-highest));border-radius:4px;}
 </style>
 </head>
@@ -129,9 +130,9 @@
   const grid=document.getElementById('course-grid'), empty=document.getElementById('empty');
   function card(c){
     return `<a href="course.html?c=${c.id}" class="crd-hover bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden flex flex-col no-underline" data-kind="${c.kind}" data-grade="${c.grade}">
-      <div class="h-32 relative flex items-center justify-between px-6" style="background:${c.headerbg}">
-        <span class="material-symbols-outlined text-[#4ae3c0] text-[44px]">${c.icon}</span>
-        <span class="bg-[#4ae3c0] text-[#06251f] text-label-sm font-bold px-3 py-1 rounded-full">${c.grade}</span>
+      <div class="chd h-32 relative flex items-center justify-between px-6" style="background:${c.headerbg}">
+        <span class="material-symbols-outlined text-secondary text-[44px]">${c.icon}</span>
+        <span class="bg-secondary text-on-secondary text-label-sm font-bold px-3 py-1 rounded-full">${c.grade}</span>
       </div>
       <div class="p-6 flex flex-col flex-grow">
         <span class="text-secondary font-bold font-label-sm uppercase mb-2">${c.kind} · ${c.day} ${c.time}</span>
