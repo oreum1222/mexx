@@ -93,8 +93,31 @@
 </style>
 </head>
 <body class="bg-background text-on-surface font-body-md selection:bg-secondary-fixed" style="word-break:keep-all;overflow-wrap:break-word">
+<!-- 설명회 공지 배너 (상단 흐르는 마퀴) -->
+<style>
+#notice-bar .nb-track{display:flex;width:max-content;animation:nbScroll 24s linear infinite;}
+#notice-bar:hover .nb-track{animation-play-state:paused;}
+@keyframes nbScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+#notice-bar .nb-item{display:flex;align-items:center;gap:8px;padding:0 28px;font-size:13.5px;font-weight:700;white-space:nowrap}
+@media (prefers-reduced-motion:reduce){#notice-bar .nb-track{animation:none}}
+</style>
+<div id="notice-bar" class="sticky top-0 z-[60] h-10 bg-secondary text-on-secondary flex items-center overflow-hidden">
+<div class="nb-track">
+<span class="nb-grp flex">
+<span class="nb-item"><span class="material-symbols-outlined text-[16px]">campaign</span><b class="bg-on-secondary text-secondary rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1">오늘</b>6월 22일 (월) 19시 한티 MEXX 고1 단과 설명회 : 국어 영역 연사로 만날 예정입니다.</span>
+<span class="nb-item"><span class="material-symbols-outlined text-[16px]">campaign</span><b class="bg-on-secondary text-secondary rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1">오늘</b>6월 22일 (월) 19시 한티 MEXX 고1 단과 설명회 : 국어 영역 연사로 만날 예정입니다.</span>
+<span class="nb-item"><span class="material-symbols-outlined text-[16px]">campaign</span><b class="bg-on-secondary text-secondary rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1">오늘</b>6월 22일 (월) 19시 한티 MEXX 고1 단과 설명회 : 국어 영역 연사로 만날 예정입니다.</span>
+</span>
+<span class="nb-grp flex" aria-hidden="true">
+<span class="nb-item"><span class="material-symbols-outlined text-[16px]">campaign</span><b class="bg-on-secondary text-secondary rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1">오늘</b>6월 22일 (월) 19시 한티 MEXX 고1 단과 설명회 : 국어 영역 연사로 만날 예정입니다.</span>
+<span class="nb-item"><span class="material-symbols-outlined text-[16px]">campaign</span><b class="bg-on-secondary text-secondary rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1">오늘</b>6월 22일 (월) 19시 한티 MEXX 고1 단과 설명회 : 국어 영역 연사로 만날 예정입니다.</span>
+<span class="nb-item"><span class="material-symbols-outlined text-[16px]">campaign</span><b class="bg-on-secondary text-secondary rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1">오늘</b>6월 22일 (월) 19시 한티 MEXX 고1 단과 설명회 : 국어 영역 연사로 만날 예정입니다.</span>
+</span>
+</div>
+<button onclick="closeNotice()" aria-label="공지 닫기" class="absolute right-2.5 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center rounded-full bg-on-secondary/10 hover:bg-on-secondary/20 transition-colors"><span class="material-symbols-outlined text-[18px]">close</span></button>
+</div>
 <!-- TopNavBar -->
-<nav class="w-full top-0 sticky z-50 bg-background/85 backdrop-blur border-b border-outline-variant">
+<nav class="w-full top-10 sticky z-50 bg-background/85 backdrop-blur border-b border-outline-variant">
 <div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto">
 <div class="flex items-center gap-8">
 <a class="flex items-center gap-2.5" href="#top">
@@ -639,6 +662,18 @@
   const o=new IntersectionObserver(es=>{es.forEach((e,i)=>{e.isIntersecting&&(setTimeout(()=>e.target.classList.add('v'),i*50),o.unobserve(e.target))})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
   document.querySelectorAll('.course-card-hover, #curriculum .grid > div, #teacher .grid > div').forEach(e=>{e.classList.add('fi');o.observe(e)});
 </script>
+<!-- QR 진입 학습 성향 진단 팝업 -->
+<div id="survey-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/75 backdrop-blur-sm px-5">
+<div class="relative w-full max-w-md rounded-2xl border border-secondary/30 bg-surface-container-lowest p-8 text-center">
+<button onclick="closeSurvey()" aria-label="닫기" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined">close</span></button>
+<div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-secondary-fixed text-secondary flex items-center justify-center"><span class="material-symbols-outlined text-[34px]">psychology</span></div>
+<span class="inline-block text-secondary font-label-sm text-label-sm font-bold tracking-wider mb-2">설명회 방문자 전용</span>
+<h3 class="font-headline-lg text-[24px] text-on-surface mb-3 tracking-tight">나의 학습 성향 진단</h3>
+<p class="text-body-md text-on-surface-variant leading-relaxed mb-7">설명회에 와주셔서 감사합니다!<br/>1~2분 진단으로 <b class="text-on-surface">나에게 맞는 학습 방향</b>과<br/><b class="text-on-surface">추천 강좌</b>를 바로 확인해 보세요.</p>
+<a href="https://oreum1222.github.io/oreum-fassessment/" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 w-full py-3.5 bg-secondary text-on-secondary rounded-xl font-bold text-[16px] hover:opacity-90 transition-all">학습 성향 진단 시작하기 <span class="material-symbols-outlined text-[20px]">arrow_forward</span></a>
+<button onclick="closeSurvey()" class="mt-3 text-on-surface-variant text-[14px] hover:text-on-surface transition-colors">나중에 할게요</button>
+</div>
+</div>
 <script>
   function toggleTheme(){
     var d=document.documentElement, light=d.classList.toggle('light');
@@ -649,5 +684,18 @@
     var m=document.querySelector('meta[name=theme-color]'); if(m) m.content = light?'#f6f8fc':'#0a0c10';
   }
   (function(){ var l=document.documentElement.classList.contains('light'); var ic=document.getElementById('theme-icon'); if(ic) ic.textContent = l?'dark_mode':'light_mode'; var lb=document.getElementById('theme-label'); if(lb) lb.textContent = l?'어두운 화면 버전':'밝은 화면 버전'; })();
+  function closeNotice(){var b=document.getElementById('notice-bar');if(b)b.style.display='none';var n=document.querySelector('nav');if(n)n.style.top='0';}
+  function openSurvey(){var m=document.getElementById('survey-modal');if(m){m.classList.remove('hidden');m.classList.add('flex');document.body.style.overflow='hidden';}}
+  function closeSurvey(){var m=document.getElementById('survey-modal');if(m){m.classList.add('hidden');m.classList.remove('flex');document.body.style.overflow='';}try{sessionStorage.setItem('survey_seen','1');}catch(e){}}
+  (function(){
+    var p=new URLSearchParams(location.search);
+    if(p.get('survey')==='1'||location.hash==='#survey'){
+      try{ if(sessionStorage.getItem('survey_seen')==='1') return; }catch(e){}
+      setTimeout(openSurvey, 650);
+    }
+    var modal=document.getElementById('survey-modal');
+    if(modal) modal.addEventListener('click', function(e){ if(e.target===modal) closeSurvey(); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeSurvey(); });
+  })();
 </script>
 </body></html>
