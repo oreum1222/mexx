@@ -100,6 +100,10 @@
 @keyframes nbScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 #notice-bar .nb-item{display:flex;align-items:center;gap:8px;padding:0 28px;font-size:13.5px;font-weight:700;white-space:nowrap}
 @media (prefers-reduced-motion:reduce){#notice-bar .nb-track{animation:none}}
+@keyframes stuGlow{0%,100%{box-shadow:0 0 0 0 rgba(74,227,192,0)}50%{box-shadow:0 0 22px 0 rgba(74,227,192,.30)}}
+.stu-cta{animation:stuGlow 2.4s ease-in-out infinite}
+.stu-cta:hover{animation:none}
+@media (prefers-reduced-motion:reduce){.stu-cta{animation:none}}
 </style>
 <div id="notice-bar" class="sticky top-0 z-[60] h-10 bg-secondary text-on-secondary flex items-center overflow-hidden">
 <div class="nb-track">
@@ -174,6 +178,16 @@
 <div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">history_edu</span><span class="font-label-md text-on-surface-variant"><b class="text-on-surface">7월 24일(금) 개강</b> · 고1 썸머스쿨 <span class="text-secondary">[고전문법]</span> 09:00–12:30</span></div>
 <div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">spellcheck</span><span class="font-label-md text-on-surface-variant"><b class="text-on-surface">7월 27일(월) 개강</b> · 중3 썸머스쿨 <span class="text-secondary">[현대문법]</span> 09:00–12:30</span></div>
 </div>
+<a href="students.html" class="stu-cta group mt-6 flex items-center justify-between gap-3 w-full px-5 py-4 rounded-xl border border-secondary/45 bg-secondary-fixed/30 hover:bg-secondary-fixed/60 hover:border-secondary/70 transition-all active:scale-[0.99] no-underline">
+<span class="flex items-center gap-3 min-w-0">
+<span class="w-9 h-9 rounded-lg bg-secondary text-on-secondary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[20px]">school</span></span>
+<span class="flex flex-col min-w-0 text-left">
+<span class="font-bold text-on-surface text-[15px] leading-tight">한티 MEXX 수강생이신가요?</span>
+<span class="text-on-surface-variant text-[12.5px] leading-tight mt-0.5">진단 · 보강 · 클리닉 · 시간표를 한 곳에서</span>
+</span>
+</span>
+<span class="flex items-center gap-1 text-secondary font-bold text-[14px] whitespace-nowrap shrink-0">수강생 전용 <span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span></span>
+</a>
 </div>
 <!-- Portrait credibility card (국민대 적중 카드 포맷 → 한티 콘텐츠) -->
 <div class="flex justify-center">
