@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!-- 디자인2 · 수강생 전용 (다크/라이트 테마) -->
+<html class="dark scroll-smooth" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="theme-color" content="#0a0c10"/>
+<script>(function(){try{var t=localStorage.getItem('mexx-theme'),d=document.documentElement;if(t==='light'){d.classList.remove('dark');d.classList.add('light');var m=document.querySelector('meta[name=theme-color]');if(m)m.content='#f6f8fc';}else{d.classList.add('dark');}}catch(e){}})();</script>
+<title>수강생 전용 | 김가경 국어 · 한티 MEXX</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = { darkMode:"class", theme:{ extend:{
+    "colors":{ "background":"rgb(var(--c-background) / <alpha-value>)","surface-bright":"rgb(var(--c-surface-bright) / <alpha-value>)","surface":"rgb(var(--c-surface) / <alpha-value>)","surface-container-lowest":"rgb(var(--c-surface-container-lowest) / <alpha-value>)","surface-container-low":"rgb(var(--c-surface-container-low) / <alpha-value>)","surface-container":"rgb(var(--c-surface-container) / <alpha-value>)","surface-container-high":"rgb(var(--c-surface-container-high) / <alpha-value>)","surface-container-highest":"rgb(var(--c-surface-container-highest) / <alpha-value>)","outline-variant":"rgb(var(--c-outline-variant) / <alpha-value>)","outline":"rgb(var(--c-outline) / <alpha-value>)","on-surface":"rgb(var(--c-on-surface) / <alpha-value>)","on-surface-variant":"rgb(var(--c-on-surface-variant) / <alpha-value>)","secondary":"rgb(var(--c-secondary) / <alpha-value>)","on-secondary":"rgb(var(--c-on-secondary) / <alpha-value>)","on-primary":"rgb(var(--c-on-primary) / <alpha-value>)","secondary-fixed":"rgb(var(--c-secondary-fixed) / <alpha-value>)","on-tertiary-container":"rgb(var(--c-on-tertiary-container) / <alpha-value>)","tertiary-fixed":"rgb(var(--c-tertiary-fixed) / <alpha-value>)","tertiary-container":"rgb(var(--c-tertiary-container) / <alpha-value>)","primary":"rgb(var(--c-primary) / <alpha-value>)","primary-container":"rgb(var(--c-primary-container) / <alpha-value>)","on-primary-container":"rgb(var(--c-on-primary-container) / <alpha-value>)" },
+    "spacing":{ "margin-desktop":"40px","margin-mobile":"16px","gutter":"24px","container-max":"1280px" },
+    "fontFamily":{ "headline-md":["Inter","Noto Sans KR"],"label-sm":["Inter","Noto Sans KR"],"display-lg":["Inter","Noto Sans KR"],"body-md":["Inter","Noto Sans KR"],"label-md":["Inter","Noto Sans KR"],"display-lg-mobile":["Inter","Noto Sans KR"],"headline-lg":["Inter","Noto Sans KR"],"body-lg":["Inter","Noto Sans KR"] },
+    "fontSize":{ "headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"500"}],"display-lg-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-lg":["30px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}] }
+  }}}
+</script>
+<style>
+  :root, html.dark {
+    --c-background:10 12 16; --c-surface-bright:12 15 21; --c-surface:10 12 16;
+    --c-surface-container-lowest:18 21 28; --c-surface-container-low:14 18 24;
+    --c-surface-container:22 29 43; --c-surface-container-high:28 35 51; --c-surface-container-highest:42 51 80;
+    --c-outline-variant:30 37 54; --c-outline:90 99 128;
+    --c-on-surface:232 236 244; --c-on-surface-variant:139 149 173;
+    --c-secondary:74 227 192; --c-on-secondary:6 37 31; --c-on-primary:10 12 16;
+    --c-secondary-fixed:18 50 44; --c-on-tertiary-container:74 227 192; --c-tertiary-fixed:74 227 192;
+    --c-tertiary-container:14 42 38; --c-primary:13 20 34; --c-primary-container:24 34 52; --c-on-primary-container:139 149 173;
+  }
+  html.light {
+    --c-background:246 248 252; --c-surface-bright:255 255 255; --c-surface:246 248 252;
+    --c-surface-container-lowest:255 255 255; --c-surface-container-low:240 243 249;
+    --c-surface-container:255 255 255; --c-surface-container-high:238 242 248; --c-surface-container-highest:226 233 243;
+    --c-outline-variant:225 231 240; --c-outline:148 157 176;
+    --c-on-surface:18 26 40; --c-on-surface-variant:84 95 117;
+    --c-secondary:9 150 128; --c-on-secondary:255 255 255; --c-on-primary:18 26 40;
+    --c-secondary-fixed:208 240 233; --c-on-tertiary-container:9 150 128; --c-tertiary-fixed:9 150 128;
+    --c-tertiary-container:223 244 238; --c-primary:237 242 248; --c-primary-container:228 235 243; --c-on-primary-container:84 95 117;
+  }
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+  .fi{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(0.22,1,0.36,1);}
+  .fi.v{opacity:1;transform:translateY(0);}
+  .crd-hover{transition:all .3s cubic-bezier(0.4,0,0.2,1);}
+  .crd-hover:hover{transform:translateY(-4px);border-color:rgba(74,227,192,.38);box-shadow:0 16px 38px rgba(0,0,0,.5),0 0 0 1px rgba(74,227,192,.1);}
+  ::-webkit-scrollbar{width:8px;height:8px;}::-webkit-scrollbar-track{background:rgb(var(--c-surface-bright));}::-webkit-scrollbar-thumb{background:rgb(var(--c-surface-container-highest));border-radius:4px;}
+</style>
+</head>
+<body class="bg-background text-on-surface font-body-md" style="word-break:keep-all;overflow-wrap:break-word">
+<!-- Nav -->
+<nav class="w-full top-0 sticky z-50 bg-background/85 backdrop-blur border-b border-outline-variant">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-2.5" href="index.html"><img class="w-7 h-7 rounded-md" src="mexx-symbol.png" alt="한티 MEXX"/><span class="font-headline-md text-headline-md font-extrabold text-on-surface tracking-tight whitespace-nowrap">김가경 <span class="text-secondary">국어</span></span></a>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="index.html">홈</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="courses.html">강좌</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="teacher.html">강사</a>
+<a class="font-body-md text-body-md text-secondary border-b-2 border-secondary font-bold pb-1" href="students.html">수강생 전용</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="index.html#contact">문의</a>
+</div>
+</div>
+<a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="bg-secondary text-on-secondary px-5 py-2.5 rounded-lg font-label-md text-label-md font-bold hover:opacity-90 transition-all hidden sm:flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">chat_bubble</span>카카오톡 문의</a>
+</div>
+</nav>
+
+<!-- Hero -->
+<section class="relative overflow-hidden bg-surface-bright border-b border-outline-variant py-14 md:py-18">
+<div class="absolute -top-32 -right-20 w-[600px] h-[600px] rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(74,227,192,.1),transparent 70%)"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10 text-center">
+<span class="inline-flex items-center gap-2 bg-secondary-fixed/60 text-secondary border border-secondary/25 px-3 py-1 rounded-full mb-4"><span class="material-symbols-outlined text-[16px]">workspace_premium</span><span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">한티 MEXX 수강생</span></span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface tracking-tight">수강생 전용</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-3 max-w-xl mx-auto">한티 MEXX 수강생을 위한 학습 지원 공간입니다.<br/>진단 · 보강 · 클리닉 · 자료를 한 곳에서 이용하세요.</p>
+</div>
+</section>
+
+<!-- Resource grid -->
+<main class="max-w-container-max mx-auto px-margin-desktop py-16">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+
+<a href="https://oreum1222.github.io/oreum-fassessment/" target="_blank" rel="noopener" class="fi crd-hover bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 flex flex-col no-underline">
+<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">psychology</span></div>
+<h3 class="font-headline-md text-[18px] text-on-surface mb-1.5">학습 성향 진단</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed flex-grow">1~2분 만에 나에게 맞는 학습 방향과 추천 강좌를 확인합니다.</p>
+<span class="mt-4 inline-flex items-center gap-1 text-secondary font-label-md font-bold text-[14px]">진단 시작 <span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+</a>
+
+<a href="https://oreum1222.github.io/oreum-mocksys/" target="_blank" rel="noopener" class="fi crd-hover bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 flex flex-col no-underline">
+<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">fact_check</span></div>
+<h3 class="font-headline-md text-[18px] text-on-surface mb-1.5">모의고사 오답 진단</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed flex-grow">회차별 오답·시간 운영을 분석해 진단 보고서를 받아봅니다.</p>
+<span class="mt-4 inline-flex items-center gap-1 text-secondary font-label-md font-bold text-[14px]">진단 시작 <span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+</a>
+
+<a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="fi crd-hover bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 flex flex-col no-underline">
+<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">smart_display</span></div>
+<h3 class="font-headline-md text-[18px] text-on-surface mb-1.5">결석 · 보강 신청</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed flex-grow">결석한 회차는 강의 영상으로 보강할 수 있습니다. 카카오톡으로 신청해 주세요.</p>
+<span class="mt-4 inline-flex items-center gap-1 text-secondary font-label-md font-bold text-[14px]">카카오톡 신청 <span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+</a>
+
+<a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="fi crd-hover bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 flex flex-col no-underline">
+<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">support_agent</span></div>
+<h3 class="font-headline-md text-[18px] text-on-surface mb-1.5">질의응답 · 클리닉</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed flex-grow">주 1회 클리닉과 카카오톡 채널로 가경T·조교팀에게 상시 질문할 수 있습니다.</p>
+<span class="mt-4 inline-flex items-center gap-1 text-secondary font-label-md font-bold text-[14px]">질문하기 <span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+</a>
+
+<a href="courses.html" class="fi crd-hover bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 flex flex-col no-underline">
+<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">calendar_month</span></div>
+<h3 class="font-headline-md text-[18px] text-on-surface mb-1.5">강의 시간표 · 개강일</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed flex-grow">수강 중인 강좌의 시간·회차·커리큘럼을 확인합니다.</p>
+<span class="mt-4 inline-flex items-center gap-1 text-secondary font-label-md font-bold text-[14px]">강좌 보기 <span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+</a>
+
+<div class="fi bg-surface-container-lowest border border-dashed border-outline-variant rounded-2xl p-6 flex flex-col opacity-90">
+<div class="w-12 h-12 bg-surface-container text-on-surface-variant rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">folder_open</span></div>
+<h3 class="font-headline-md text-[18px] text-on-surface mb-1.5">학습 자료실</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed flex-grow">교재·프린트·보충 자료를 이곳에 모을 예정입니다.</p>
+<span class="mt-4 inline-flex items-center gap-1 text-on-surface-variant font-label-md font-bold text-[14px]">준비 중</span>
+</div>
+
+</div>
+<p class="text-center text-on-surface-variant text-[13px] mt-10">※ 일부 항목은 준비 중입니다. 문의는 카카오톡 채널로 편하게 남겨주세요.</p>
+</main>
+
+<footer class="w-full bg-background border-t border-outline-variant">
+<div class="py-10 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-2.5"><img class="w-6 h-6 rounded" src="mexx-symbol.png" alt="한티 MEXX"/><span class="font-headline-md font-bold text-on-surface">김가경 국어</span></div>
+<p class="font-label-md text-on-surface-variant text-center">가경T · 한티 MEXX 2026 여름방학 특강</p>
+</div>
+</footer>
+
+<script>
+  function toggleTheme(){var d=document.documentElement,light=d.classList.toggle('light');d.classList.toggle('dark',!light);try{localStorage.setItem('mexx-theme',light?'light':'dark');}catch(e){}var ic=document.getElementById('theme-icon');if(ic)ic.textContent=light?'dark_mode':'light_mode';var lb=document.getElementById('theme-label');if(lb)lb.textContent=light?'어두운 화면 버전':'밝은 화면 버전';var m=document.querySelector('meta[name=theme-color]');if(m)m.content=light?'#f6f8fc':'#0a0c10';}
+  (function(){var nav=document.querySelector('nav');if(!nav)return;var kakao=nav.querySelector('a[href*="pf.kakao.com"]');var light=document.documentElement.classList.contains('light');var btn=document.createElement('button');btn.id='theme-toggle';btn.setAttribute('aria-label','다크/라이트 모드 전환');btn.title='다크/라이트 전환';btn.className='h-10 px-3 rounded-lg border border-outline-variant text-on-surface-variant hover:text-secondary hover:border-secondary transition-colors flex items-center gap-1.5 shrink-0';btn.innerHTML='<span class="material-symbols-outlined text-[20px]" id="theme-icon">'+(light?'dark_mode':'light_mode')+'</span><span id="theme-label" class="hidden sm:inline font-label-md text-label-md font-bold whitespace-nowrap">'+(light?'어두운 화면 버전':'밝은 화면 버전')+'</span>';btn.onclick=toggleTheme;if(kakao&&kakao.parentElement){kakao.parentElement.insertBefore(btn,kakao);}else{nav.appendChild(btn);}})();
+  const o=new IntersectionObserver(es=>{es.forEach((e,i)=>{e.isIntersecting&&(setTimeout(()=>e.target.classList.add('v'),i*60),o.unobserve(e.target))})},{threshold:.1});
+  document.querySelectorAll('.fi').forEach(e=>o.observe(e));
+</script>
+</body></html>
