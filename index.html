@@ -673,6 +673,8 @@
 <div id="survey-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/75 backdrop-blur-sm px-5">
 <div class="relative w-full max-w-md rounded-2xl border border-secondary/30 bg-surface-container-lowest p-8 text-center">
 <button onclick="closeSurvey()" aria-label="닫기" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined">close</span></button>
+<!-- 변형 A: 개강 안내 (~7/10) -->
+<div id="pop-opening">
 <img src="mexx-symbol.png" alt="한티 MEXX" class="w-16 h-16 mx-auto mb-5 rounded-2xl shadow-lg"/>
 <span class="inline-block text-secondary font-label-sm text-label-sm font-bold tracking-wider mb-2">한티 MEXX · 2026 여름 특강</span>
 <h3 class="font-headline-lg text-[26px] text-on-surface mb-2 tracking-tight">썸머스쿨 &amp; 단과 개강!</h3>
@@ -685,6 +687,22 @@
 </div>
 <a href="courses.html" class="flex items-center justify-center gap-2 w-full py-3.5 bg-secondary text-on-secondary rounded-xl font-bold text-[16px] hover:opacity-90 transition-all">강좌 자세히 보기 <span class="material-symbols-outlined text-[20px]">arrow_forward</span></a>
 <button onclick="closeSurvey()" class="mt-3 text-on-surface-variant text-[14px] hover:text-on-surface transition-colors">나중에 볼게요</button>
+</div>
+<!-- 변형 B: 수강생 전용 안내 (7/11~) -->
+<div id="pop-students" class="hidden">
+<img src="mexx-symbol.png" alt="한티 MEXX" class="w-16 h-16 mx-auto mb-5 rounded-2xl shadow-lg"/>
+<span class="inline-block text-secondary font-label-sm text-label-sm font-bold tracking-wider mb-2">한티 MEXX 수강생</span>
+<h3 class="font-headline-lg text-[26px] text-on-surface mb-2 tracking-tight">수강생 전용 페이지 안내</h3>
+<p class="font-label-md text-[14px] font-bold text-secondary mb-6 leading-relaxed">진단 · 보강 · 클리닉 · 시간표를 한 곳에서</p>
+<div class="text-left bg-surface-container rounded-xl p-4 mb-6 space-y-3">
+<div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">psychology</span><span class="text-[14px] text-on-surface font-bold">학습 성향 · 모의고사 오답 진단</span></div>
+<div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">smart_display</span><span class="text-[14px] text-on-surface font-bold">결석 · 보강 신청</span></div>
+<div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">support_agent</span><span class="text-[14px] text-on-surface font-bold">질의응답 · 클리닉</span></div>
+<div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">calendar_month</span><span class="text-[14px] text-on-surface font-bold">강의 시간표 · 개강일</span></div>
+</div>
+<a href="students.html" class="flex items-center justify-center gap-2 w-full py-3.5 bg-secondary text-on-secondary rounded-xl font-bold text-[16px] hover:opacity-90 transition-all">수강생 전용 페이지 바로가기 <span class="material-symbols-outlined text-[20px]">arrow_forward</span></a>
+<button onclick="closeSurvey()" class="mt-3 text-on-surface-variant text-[14px] hover:text-on-surface transition-colors">나중에 볼게요</button>
+</div>
 </div>
 </div>
 <script>
@@ -701,6 +719,12 @@
   function openSurvey(){var m=document.getElementById('survey-modal');if(m){m.classList.remove('hidden');m.classList.add('flex');document.body.style.overflow='hidden';}}
   function closeSurvey(){var m=document.getElementById('survey-modal');if(m){m.classList.add('hidden');m.classList.remove('flex');document.body.style.overflow='';}try{sessionStorage.setItem('survey_seen','1');}catch(e){}}
   (function(){
+    // 7/11(2026)부터 개강 팝업 대신 수강생 전용 안내 팝업으로 전환
+    try{
+      var toStudents = new Date() >= new Date(2026,6,11);
+      var po=document.getElementById('pop-opening'), ps=document.getElementById('pop-students');
+      if(po&&ps&&toStudents){ po.classList.add('hidden'); ps.classList.remove('hidden'); }
+    }catch(e){}
     var seen=false; try{ seen=sessionStorage.getItem('survey_seen')==='1'; }catch(e){}
     if(!seen) setTimeout(openSurvey, 800);
     var modal=document.getElementById('survey-modal');
