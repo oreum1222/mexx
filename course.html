@@ -6,6 +6,20 @@
 <meta name="theme-color" content="#0a0c10"/>
 <script>(function(){try{var t=localStorage.getItem('mexx-theme'),d=document.documentElement;if(t==='light'){d.classList.remove('dark');d.classList.add('light');var m=document.querySelector('meta[name=theme-color]');if(m)m.content='#f6f8fc';}else{d.classList.add('dark');}}catch(e){}})();</script>
 <title>강좌 상세 | 김가경 국어 · 한티 MEXX 여름방학 특강</title>
+<meta name="description" content="한티 MEXX 2026 여름방학 국어 특강 강좌 상세. 시간표·회차별 커리큘럼·교재를 확인하세요."/>
+<link rel="canonical" href="https://hanti.oreumyak.com/course.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="김가경 국어 · 한티 MEXX"/>
+<meta property="og:title" content="강좌 상세 | 한티 MEXX 2026 여름방학 국어 특강"/>
+<meta property="og:description" content="시간표·회차별 커리큘럼·교재를 확인하세요."/>
+<meta property="og:url" content="https://hanti.oreumyak.com/course.html"/>
+<meta property="og:image" content="https://hanti.oreumyak.com/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="ko_KR"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="강좌 상세 | 한티 MEXX 2026 여름방학 국어 특강"/>
+<meta name="twitter:image" content="https://hanti.oreumyak.com/og-image.png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -140,6 +154,19 @@
   const id=qs.get('c')||'h1';
   const c=(window.COURSES||[]).find(x=>x.id===id)||window.COURSES[0];
   document.title=`${c.subject} · ${c.grade} ${c.kind} | 김가경 국어`;
+  (function(){
+    var base='https://hanti.oreumyak.com/course.html?c='+c.id;
+    var desc=(c.desc||'').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
+    function setMeta(sel,attr,val){var m=document.querySelector(sel);if(m)m.setAttribute(attr,val);}
+    setMeta('link[rel=canonical]','href',base);
+    setMeta('meta[name=description]','content',desc);
+    setMeta('meta[property="og:url"]','content',base);
+    setMeta('meta[property="og:title"]','content',c.subject+' · '+c.grade+' '+c.kind+' | 한티 MEXX');
+    setMeta('meta[property="og:description"]','content',desc);
+    var ld=document.createElement('script');ld.type='application/ld+json';
+    ld.textContent=JSON.stringify({"@context":"https://schema.org","@type":"Course","name":c.subject+' ('+c.grade+' '+c.kind+')',"description":desc,"url":base,"provider":{"@type":"EducationalOrganization","name":"김가경 국어 · 한티 MEXX","url":"https://hanti.oreumyak.com/"}});
+    document.head.appendChild(ld);
+  })();
   document.getElementById('bc').textContent=`${c.grade} ${c.kind} · ${c.subject}`;
   // hero
   document.getElementById('hero').innerHTML=`
