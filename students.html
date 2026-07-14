@@ -192,10 +192,11 @@
   .hwc-week{border:1px solid rgb(var(--c-outline-variant));border-radius:14px;overflow:hidden;background:rgb(var(--c-surface-container-lowest));}
   .hwc-week.now{border-color:rgba(74,227,192,.55);box-shadow:0 0 0 1px rgba(74,227,192,.25);}
   .hwc-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 16px;background:rgb(var(--c-surface-container));border-bottom:1px solid rgb(var(--c-outline-variant));}
-  .hwc-row{display:flex;gap:12px;align-items:flex-start;padding:13px 16px;border-left:3px solid transparent;}
-  .hwc-row + .hwc-row{border-top:1px solid rgb(var(--c-outline-variant));}
-  .hwc-row.g-go1{border-left-color:#e6b955;}
-  .hwc-row.g-go2{border-left-color:rgb(var(--c-secondary));}
+  .hwc-body{display:grid;}
+  .hwc-cell{padding:14px 16px;border-top:3px solid transparent;}
+  .hwc-cell + .hwc-cell{border-left:1px solid rgb(var(--c-outline-variant));}
+  .hwc-cell.g-go1{border-top-color:#e6b955;}
+  .hwc-cell.g-go2{border-top-color:rgb(var(--c-secondary));}
   .hwc-badge{flex-shrink:0;min-width:40px;text-align:center;font-weight:800;font-size:12px;border-radius:8px;padding:5px 8px;line-height:1;}
   .b-go1{background:linear-gradient(135deg,#f4d788,#e6b955);color:#3a2c07;}
   .b-go2{background:rgb(var(--c-secondary));color:rgb(var(--c-on-secondary));}
@@ -230,16 +231,17 @@
     var nowIdx=-1; for(var i=0;i<WEEKS.length;i++){ if(dueDate(WEEKS[i].due)>=today){nowIdx=i;break;} }
     var html=WEEKS.map(function(w,i){
       var d=dueDate(w.due), dow=days[d.getDay()];
-      var rows=ORDER.filter(function(k){return w.items[k];}).map(function(k){var g=GRADES[k];
-        return '<div class="hwc-row '+g.cls+'"><span class="hwc-badge '+g.b+'">'+g.badge+'</span>'
-          +'<div class="min-w-0"><span class="font-bold text-on-surface text-[14px]">'+g.course+'</span>'
-          +'<span class="block text-on-surface-variant text-[14px] mt-0.5 leading-relaxed">'+w.items[k]+'</span></div></div>';
+      var keys=ORDER.filter(function(k){return w.items[k];});
+      var cells=keys.map(function(k){var g=GRADES[k];
+        return '<div class="hwc-cell '+g.cls+'">'
+          +'<div class="flex items-center gap-2 mb-1.5"><span class="hwc-badge '+g.b+'">'+g.badge+'</span><span class="font-bold text-on-surface text-[14px]">'+g.course+'</span></div>'
+          +'<span class="block text-on-surface-variant text-[14px] leading-relaxed">'+w.items[k]+'</span></div>';
       }).join('');
       var nowPill=i===nowIdx?'<span class="ml-2 inline-flex items-center rounded-full bg-secondary text-on-secondary text-[11px] font-bold px-2 py-0.5">이번 주</span>':'';
       return '<div class="hwc-week'+(i===nowIdx?' now':'')+'">'
         +'<div class="hwc-head"><span class="font-bold text-on-surface text-[15px]">'+w.wk+nowPill+'</span>'
         +'<span class="inline-flex items-center gap-1 text-on-surface-variant text-[13px] font-semibold whitespace-nowrap"><span class="material-symbols-outlined text-[16px]">event</span>'+w.due+' ('+dow+') 자정 마감</span></div>'
-        +rows+'</div>';
+        +'<div class="hwc-body" style="grid-template-columns:repeat('+keys.length+',minmax(0,1fr))">'+cells+'</div></div>';
     }).join('');
     document.getElementById('hwc-list').innerHTML=html;
   })();
