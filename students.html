@@ -200,6 +200,7 @@
   .hwc-badge{flex-shrink:0;min-width:40px;text-align:center;font-weight:800;font-size:12px;border-radius:8px;padding:5px 8px;line-height:1;}
   .b-go1{background:linear-gradient(135deg,#f4d788,#e6b955);color:#3a2c07;}
   .b-go2{background:rgb(var(--c-secondary));color:rgb(var(--c-on-secondary));}
+  .hwc-pg{display:inline-flex;align-items:center;gap:3px;width:fit-content;margin-top:7px;font-size:12px;font-weight:700;padding:3px 8px;border-radius:6px;background:rgba(230,185,85,.14);color:#e6b955;}
 </style>
 <section class="mt-20">
   <div class="text-center mb-8">
@@ -219,11 +220,11 @@
     var GRADES={go2:{badge:'고2',course:'화법과 언어',cls:'g-go2',b:'b-go2'},go1:{badge:'고1',course:'고전 영역',cls:'g-go1',b:'b-go1'}};
     var ORDER=['go2','go1'];
     var WEEKS=[
-      {wk:'1주차',due:'7/17',items:{go2:'품사편 워크북 풀기',go1:'고대가요 워크북 + 교재 「정읍사」 풀기'}},
-      {wk:'2주차',due:'7/24',items:{go2:'문장 성분 워크북 풀기',go1:'향가 워크북 + 교재 향가 풀기'}},
-      {wk:'3주차',due:'7/31',items:{go2:'형태소와 단어 워크북 풀기',go1:'고려가요 워크북 + 교재 고려가요 풀기'}},
-      {wk:'4주차',due:'8/7',items:{go2:'음운의 정의와 체계 워크북 풀기',go1:'시조와 가사 워크북 + 교재 시조·가사 풀기'}},
-      {wk:'5주차',due:'8/14',items:{go2:'음운 변동 워크북 풀기',go1:'가사 워크북 + 교재 가사 풀기'}}
+      {wk:'1주차',due:'7/17',items:{go2:'품사편 워크북 풀기',go1:'고대가요 워크북 + 교재 「정읍사」 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[13px]">menu_book</span>교재 58–59쪽</span>'}},
+      {wk:'2주차',due:'7/24',items:{go2:'문장 성분 워크북 풀기',go1:'향가 워크북 + 교재 향가 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[13px]">menu_book</span>교재 60–65쪽</span>'}},
+      {wk:'3주차',due:'7/31',items:{go2:'형태소와 단어 워크북 풀기',go1:'고려가요 워크북 + 교재 고려가요 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[13px]">menu_book</span>교재 66–77쪽</span>'}},
+      {wk:'4주차',due:'8/7',items:{go2:'음운의 정의와 체계 워크북 풀기',go1:'시조와 가사 워크북 + 교재 시조·가사 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[13px]">menu_book</span>교재 78–137쪽</span>'}},
+      {wk:'5주차',due:'8/14',items:{go2:'음운 변동 워크북 풀기',go1:'가사 워크북 + 교재 가사 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[13px]">menu_book</span>교재 138–207쪽</span>'}}
     ];
     var YEAR=2026, days=['일','월','화','수','목','금','토'];
     function dueDate(s){var p=s.split('/');return new Date(YEAR,+p[0]-1,+p[1],23,59,59);}
