@@ -1,29 +1,15 @@
 <!DOCTYPE html>
-<!-- 디자인2 · 수강생 전용 (다크/라이트 테마) -->
+<!-- 디자인2 · 학습 자료실 글 보기 (비밀번호 암호화 · 복사 차단) -->
 <html class="dark scroll-smooth" lang="ko"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta name="theme-color" content="#0a0c10"/>
+<meta name="robots" content="noindex,nofollow"/>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
 <link rel="icon" href="favicon.ico" sizes="any"/>
 <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
 <script>(function(){try{var t=localStorage.getItem('mexx-theme'),d=document.documentElement;if(t==='light'){d.classList.remove('dark');d.classList.add('light');var m=document.querySelector('meta[name=theme-color]');if(m)m.content='#f6f8fc';}else{d.classList.add('dark');}}catch(e){}})();</script>
-<title>수강생 전용 | 김가경 국어 · 한티 MEXX</title>
-<meta name="description" content="한티 MEXX 수강생 전용 페이지. 학습 성향 진단, 모의고사 오답 진단, 결석 보강 신청, 질의응답 클리닉, 강의 시간표를 한 곳에서 이용하세요."/>
-<link rel="canonical" href="https://hanti.oreumyak.com/students.html"/>
-<meta property="og:type" content="website"/>
-<meta property="og:site_name" content="김가경 국어 · 한티 MEXX"/>
-<meta property="og:title" content="수강생 전용 | 김가경 국어 · 한티 MEXX"/>
-<meta property="og:description" content="진단·보강·클리닉·시간표를 한 곳에서. 한티 MEXX 수강생을 위한 학습 지원 공간."/>
-<meta property="og:url" content="https://hanti.oreumyak.com/students.html"/>
-<meta property="og:image" content="https://hanti.oreumyak.com/og-image.png"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
-<meta property="og:locale" content="ko_KR"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="수강생 전용 | 김가경 국어 · 한티 MEXX"/>
-<meta name="twitter:description" content="진단·보강·클리닉·시간표를 한 곳에서."/>
-<meta name="twitter:image" content="https://hanti.oreumyak.com/og-image.png"/>
+<title>학습 자료실 | 김가경 국어 · 한티 MEXX</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -58,11 +44,13 @@
     --c-tertiary-container:223 244 238; --c-primary:237 242 248; --c-primary-container:228 235 243; --c-on-primary-container:84 95 117;
   }
   .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
-  .fi{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(0.22,1,0.36,1);}
-  .fi.v{opacity:1;transform:translateY(0);}
-  .crd-hover{transition:all .3s cubic-bezier(0.4,0,0.2,1);}
-  .crd-hover:hover{transform:translateY(-4px);border-color:rgba(74,227,192,.38);box-shadow:0 16px 38px rgba(0,0,0,.5),0 0 0 1px rgba(74,227,192,.1);}
   ::-webkit-scrollbar{width:8px;height:8px;}::-webkit-scrollbar-track{background:rgb(var(--c-surface-bright));}::-webkit-scrollbar-thumb{background:rgb(var(--c-surface-container-highest));border-radius:4px;}
+  /* 해설 카드 */
+  .qcard{scroll-margin-top:88px;}
+  .ans{background:rgb(var(--c-secondary-fixed));color:rgb(var(--c-on-tertiary-container));font-weight:700;padding:0 .28em;border-radius:.28em;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+  /* 복사 차단: 해설 본문 선택 방지 */
+  #content, #content *{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-touch-callout:none;}
+  .qbody{line-height:1.85;}
 </style>
 </head>
 <body class="bg-background text-on-surface font-body-md" style="word-break:keep-all;overflow-wrap:break-word">
@@ -83,65 +71,50 @@
 </div>
 </nav>
 
-<!-- Hero -->
-<section class="relative overflow-hidden bg-surface-bright border-b border-outline-variant py-14 md:py-18">
-<div class="absolute -top-32 -right-20 w-[600px] h-[600px] rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(74,227,192,.1),transparent 70%)"></div>
-<div class="max-w-container-max mx-auto px-margin-desktop relative z-10 text-center">
-<span class="inline-flex items-center gap-2 bg-secondary-fixed/60 text-secondary border border-secondary/25 px-3 py-1 rounded-full mb-4"><span class="material-symbols-outlined text-[16px]">workspace_premium</span><span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">한티 MEXX 수강생</span></span>
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface tracking-tight">수강생 전용</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mt-3 max-w-xl mx-auto">한티 MEXX 수강생을 위한 학습 지원 공간입니다.<br/>진단 · 보강 · 클리닉 · 자료를 한 곳에서 이용하세요.</p>
+<!-- 잠금 오버레이 -->
+<div id="lock" class="fixed inset-0 z-[60] bg-background/95 backdrop-blur flex items-center justify-center px-6">
+  <div class="w-full max-w-sm bg-surface-container-lowest border border-outline-variant rounded-2xl p-8 text-center">
+    <div class="w-14 h-14 mx-auto bg-secondary-fixed text-secondary rounded-2xl flex items-center justify-center mb-5"><span class="material-symbols-outlined text-[28px]">lock</span></div>
+    <h1 class="font-headline-md text-[20px] font-bold text-on-surface mb-1.5" id="lock-title">수강생 전용 자료</h1>
+    <p class="font-body-md text-[14px] text-on-surface-variant mb-6">수강생용 비밀번호를 입력하면 열립니다.</p>
+    <form id="lock-form" autocomplete="off">
+      <input id="pw" type="password" inputmode="text" autocomplete="off" placeholder="비밀번호" class="w-full h-12 px-4 rounded-xl bg-surface-container border border-outline-variant text-on-surface text-center tracking-widest focus:border-secondary focus:ring-2 focus:ring-secondary/30 outline-none"/>
+      <p id="pw-err" class="text-[13px] text-red-400 mt-2 h-5"></p>
+      <button type="submit" id="pw-btn" class="w-full h-12 mt-2 bg-secondary text-on-secondary rounded-xl font-label-md font-bold hover:opacity-90 transition-all flex items-center justify-center gap-1.5"><span class="material-symbols-outlined text-[18px]">lock_open</span>열기</button>
+    </form>
+    <a href="library.html" class="inline-block mt-5 text-on-surface-variant text-[13px] hover:text-secondary">← 자료실 목록으로</a>
+  </div>
 </div>
-</section>
 
-<!-- Resource grid -->
-<main class="max-w-container-max mx-auto px-margin-desktop py-16">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-
-<a href="https://oreum1222.github.io/oreum-fassessment/" target="_blank" rel="noopener" class="fi crd-hover bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 flex flex-col no-underline">
-<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">psychology</span></div>
-<h3 class="font-headline-md text-[18px] text-on-surface mb-1.5">학습 성향 진단</h3>
-<p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed flex-grow">1~2분 만에 나에게 맞는 학습 방향과 추천 강좌를 확인합니다.</p>
-<span class="mt-4 inline-flex items-center gap-1 text-secondary font-label-md font-bold text-[14px]">진단 시작 <span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
-</a>
-
-<a href="https://oreum1222.github.io/oreum-mocksys/" target="_blank" rel="noopener" class="fi crd-hover bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 flex flex-col no-underline">
-<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">fact_check</span></div>
-<h3 class="font-headline-md text-[18px] text-on-surface mb-1.5">모의고사 오답 진단</h3>
-<p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed flex-grow">회차별 오답·시간 운영을 분석해 진단 보고서를 받아봅니다.</p>
-<span class="mt-4 inline-flex items-center gap-1 text-secondary font-label-md font-bold text-[14px]">진단 시작 <span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
-</a>
-
-<a href="https://laser-toothbrush-8d6.notion.site/mexx" target="_blank" rel="noopener" class="fi crd-hover bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 flex flex-col no-underline">
-<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">smart_display</span></div>
-<h3 class="font-headline-md text-[18px] text-on-surface mb-1.5">보강 영상 및 보강 자료</h3>
-<p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed flex-grow">결석한 회차의 강의 영상과 보강 자료를 이곳(노션)에서 확인할 수 있습니다.</p>
-<span class="mt-4 inline-flex items-center gap-1 text-secondary font-label-md font-bold text-[14px]">보강 자료 보기 <span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
-</a>
-
-<a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="fi crd-hover bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 flex flex-col no-underline">
-<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">support_agent</span></div>
-<h3 class="font-headline-md text-[18px] text-on-surface mb-1.5">보강 신청 · 질의응답 · 클리닉</h3>
-<p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed flex-grow">보강 신청과 질의응답은 카카오톡 채널로, 주 1회 클리닉으로 가경T·조교팀에게 상시 문의할 수 있습니다.</p>
-<span class="mt-4 inline-flex items-center gap-1 text-secondary font-label-md font-bold text-[14px]">카카오톡 문의 <span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
-</a>
-
-<a href="courses.html" class="fi crd-hover bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 flex flex-col no-underline">
-<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">calendar_month</span></div>
-<h3 class="font-headline-md text-[18px] text-on-surface mb-1.5">강의 시간표 · 개강일</h3>
-<p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed flex-grow">수강 중인 강좌의 시간·회차·커리큘럼을 확인합니다.</p>
-<span class="mt-4 inline-flex items-center gap-1 text-secondary font-label-md font-bold text-[14px]">강좌 보기 <span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
-</a>
-
-<a href="library.html" class="fi crd-hover bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 flex flex-col no-underline">
-<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">folder_open</span></div>
-<h3 class="font-headline-md text-[18px] text-on-surface mb-1.5">학습 자료실</h3>
-<p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed flex-grow">워크북 해설·프린트·보충 자료를 정리한 수강생 전용 게시판입니다. 🔒 비밀번호가 필요합니다.</p>
-<span class="mt-4 inline-flex items-center gap-1 text-secondary font-label-md font-bold text-[14px]">자료실 열기 <span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
-</a>
-
+<!-- 본문 (복호화 후 표시) -->
+<div id="page" class="hidden">
+<header class="bg-surface-bright border-b border-outline-variant">
+<div class="max-w-3xl mx-auto px-margin-desktop py-10">
+<a href="library.html" class="inline-flex items-center gap-1 text-on-surface-variant text-[13px] hover:text-secondary mb-4"><span class="material-symbols-outlined text-[16px]">arrow_back</span>학습 자료실</a>
+<span class="inline-flex items-center gap-1.5 bg-secondary-fixed/60 text-secondary border border-secondary/25 px-3 py-1 rounded-full mb-3"><span class="material-symbols-outlined text-[14px]" id="meta-lock">lock</span><span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold" id="meta-cat">워크북 해설</span></span>
+<h1 class="font-display-lg text-[28px] md:text-[34px] font-bold text-on-surface tracking-tight" id="post-title">워크북 해설</h1>
+<p class="text-on-surface-variant text-[14px] mt-2" id="post-sub"></p>
 </div>
-<p class="text-center text-on-surface-variant text-[13px] mt-10">※ 일부 항목은 준비 중입니다. 문의는 카카오톡 채널로 편하게 남겨주세요.</p>
+</header>
+
+<main class="max-w-3xl mx-auto px-margin-desktop py-8">
+  <!-- 검색/도구 -->
+  <div class="sticky top-16 z-40 bg-background/90 backdrop-blur py-3 -mx-2 px-2 mb-4 border-b border-outline-variant">
+    <div class="relative">
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+      <input id="search" type="text" placeholder="문항 번호(예: 42) 또는 키워드 검색" class="w-full h-11 pl-11 pr-4 rounded-xl bg-surface-container border border-outline-variant text-on-surface text-[14px] focus:border-secondary focus:ring-2 focus:ring-secondary/30 outline-none"/>
+    </div>
+    <p class="text-on-surface-variant text-[12px] mt-2" id="count"></p>
+  </div>
+  <!-- 유포 금지 안내 -->
+  <div class="flex items-start gap-2.5 bg-secondary-fixed/40 border border-secondary/20 rounded-xl px-4 py-3 mb-6">
+    <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">shield</span>
+    <p class="text-[12.5px] text-on-surface-variant leading-relaxed">본 해설은 <b class="text-on-surface">한티 MEXX 수강생 전용</b>입니다. 캡처·복제·외부 공유를 금합니다.</p>
+  </div>
+  <div id="content"></div>
+  <p class="text-center text-on-surface-variant text-[13px] py-10">— 이상 <span id="foot-count"></span>개 해설 —</p>
 </main>
+</div>
 
 <footer class="w-full bg-background border-t border-outline-variant">
 <div class="py-10 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
@@ -150,10 +123,79 @@
 </div>
 </footer>
 
+<script src="library-data.js"></script>
 <script>
   function toggleTheme(){var d=document.documentElement,light=d.classList.toggle('light');d.classList.toggle('dark',!light);try{localStorage.setItem('mexx-theme',light?'light':'dark');}catch(e){}var ic=document.getElementById('theme-icon');if(ic)ic.textContent=light?'dark_mode':'light_mode';var lb=document.getElementById('theme-label');if(lb)lb.textContent=light?'어두운 화면 버전':'밝은 화면 버전';var m=document.querySelector('meta[name=theme-color]');if(m)m.content=light?'#f6f8fc':'#0a0c10';}
   (function(){var nav=document.querySelector('nav');if(!nav)return;var kakao=nav.querySelector('a[href*="pf.kakao.com"]');var light=document.documentElement.classList.contains('light');var btn=document.createElement('button');btn.id='theme-toggle';btn.setAttribute('aria-label','다크/라이트 모드 전환');btn.title='다크/라이트 전환';btn.className='h-10 px-3 rounded-lg border border-outline-variant text-on-surface-variant hover:text-secondary hover:border-secondary transition-colors flex items-center gap-1.5 shrink-0';btn.innerHTML='<span class="material-symbols-outlined text-[20px]" id="theme-icon">'+(light?'dark_mode':'light_mode')+'</span><span id="theme-label" class="hidden sm:inline font-label-md text-label-md font-bold whitespace-nowrap">'+(light?'어두운 화면 버전':'밝은 화면 버전')+'</span>';btn.onclick=toggleTheme;if(kakao&&kakao.parentElement){kakao.parentElement.insertBefore(btn,kakao);}else{nav.appendChild(btn);}})();
-  const o=new IntersectionObserver(es=>{es.forEach((e,i)=>{e.isIntersecting&&(setTimeout(()=>e.target.classList.add('v'),i*60),o.unobserve(e.target))})},{threshold:.1});
-  document.querySelectorAll('.fi').forEach(e=>o.observe(e));
+
+  // ---- 유틸 ----
+  var qs=new URLSearchParams(location.search); var POSTID=qs.get('p')||'';
+  var POST=(window.MEXX_LIBRARY||[]).find(function(p){return p.id===POSTID;});
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function highlightAns(h){return h.replace(/((?:따라서\s*|즉\s*)?정답은[^.。]*이다\.)/g,'<mark class="ans">$1</mark>');}
+  function b64(s){var b=atob(s),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u;}
+  async function deriveKey(pw,salt){var enc=new TextEncoder();var km=await crypto.subtle.importKey('raw',enc.encode(pw),'PBKDF2',false,['deriveKey']);return crypto.subtle.deriveKey({name:'PBKDF2',salt:salt,iterations:150000,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,['decrypt']);}
+  async function decryptBlob(pw,blob){var salt=b64(blob.salt),iv=b64(blob.iv),ct=b64(blob.ct);var key=await deriveKey(pw,salt);var pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:iv},key,ct);return JSON.parse(new TextDecoder().decode(pt));}
+
+  // ---- 메타 표시 ----
+  if(POST){
+    document.getElementById('lock-title').textContent=POST.title;
+    document.getElementById('post-title').textContent=POST.title;
+    document.getElementById('meta-cat').textContent=POST.category||'자료';
+    document.title=POST.title+' | 김가경 국어 · 한티 MEXX';
+  } else {
+    document.getElementById('lock-title').textContent='자료를 찾을 수 없습니다';
+    document.getElementById('pw').disabled=true;document.getElementById('pw-btn').disabled=true;
+  }
+
+  var DATA=null;
+  function render(items){
+    var host=document.getElementById('content');
+    var html=items.map(function(it){
+      return '<article id="q'+it.seq+'" class="qcard bg-surface-container-lowest border border-outline-variant rounded-2xl p-5 md:p-6 mb-4" data-seq="'+it.seq+'" data-text="'+esc(it.text).replace(/"/g,'&quot;').toLowerCase()+'">'
+        +'<div class="flex items-center gap-2 mb-3"><span class="inline-flex items-center justify-center min-w-[34px] h-[26px] px-2 rounded-lg bg-secondary text-on-secondary font-bold text-[13px]">'+it.seq+'</span><span class="text-on-surface-variant text-[12px]">문항 '+it.seq+'</span></div>'
+        +'<div class="qbody font-body-md text-[15px] text-on-surface">'+highlightAns(esc(it.text))+'</div>'
+      +'</article>';
+    }).join('');
+    host.innerHTML=html;
+    document.getElementById('foot-count').textContent=items.length;
+  }
+  function applySearch(){
+    if(!DATA)return; var q=document.getElementById('search').value.trim().toLowerCase();
+    var cards=document.querySelectorAll('#content .qcard'); var shown=0;
+    cards.forEach(function(c){
+      var seq=c.getAttribute('data-seq'); var txt=c.getAttribute('data-text');
+      var hit=!q || seq===q || (/^\d+$/.test(q)? seq===q : txt.indexOf(q)>-1);
+      c.style.display=hit?'':'none'; if(hit)shown++;
+    });
+    document.getElementById('count').textContent='총 '+DATA.length+'개 중 '+shown+'개 표시';
+  }
+
+  async function unlock(pw){
+    var err=document.getElementById('pw-err'); err.textContent='';
+    var btn=document.getElementById('pw-btn'); btn.disabled=true; btn.style.opacity=.6;
+    try{
+      // 암호문 로드 (post-<id>.js → window.MEXX_POSTDATA[id])
+      if(!(window.MEXX_POSTDATA&&window.MEXX_POSTDATA[POSTID])){
+        await new Promise(function(res,rej){var s=document.createElement('script');s.src=POST.data;s.onload=res;s.onerror=function(){rej(new Error('자료 파일을 불러오지 못했습니다.'));};document.head.appendChild(s);});
+      }
+      var blob=window.MEXX_POSTDATA[POSTID];
+      DATA=await decryptBlob(pw,blob);
+      DATA.sort(function(a,b){return a.seq-b.seq;});
+      render(DATA); applySearch();
+      document.getElementById('post-sub').textContent='총 '+DATA.length+'개 문항 해설';
+      document.getElementById('lock').classList.add('hidden');
+      document.getElementById('page').classList.remove('hidden');
+    }catch(e){
+      err.textContent=(e&&e.message&&/불러오/.test(e.message))?e.message:'비밀번호가 올바르지 않습니다.';
+      btn.disabled=false; btn.style.opacity=1;
+      document.getElementById('pw').select();
+    }
+  }
+  document.getElementById('lock-form').addEventListener('submit',function(e){e.preventDefault();var pw=document.getElementById('pw').value;if(pw)unlock(pw);});
+  document.getElementById('search').addEventListener('input',applySearch);
+
+  // 복사/우클릭 차단 (본문)
+  (function(){var c=document.getElementById('content');['contextmenu','copy','cut','dragstart','selectstart'].forEach(function(ev){c.addEventListener(ev,function(e){e.preventDefault();});});})();
 </script>
 </body></html>
