@@ -212,6 +212,10 @@
   .hwc-pg{display:flex;align-items:center;gap:2px;width:fit-content;margin-top:7px;font-size:11px;font-weight:700;padding:2px 6px;border-radius:6px;white-space:nowrap;}
   .hwc-cell.g-go1 .hwc-pg{background:rgba(230,185,85,.14);color:#e6b955;}
   .hwc-cell.g-go2 .hwc-pg{background:rgba(74,227,192,.13);color:rgb(var(--c-secondary));}
+  .hwc-sub{display:block;font-size:11px;font-weight:800;letter-spacing:.02em;margin-bottom:2px;}
+  .hwc-cell.g-go1 .hwc-sub{color:#e6b955;}
+  .hwc-cell.g-go2 .hwc-sub{color:rgb(var(--c-secondary));}
+  .hwc-part + .hwc-part{margin-top:11px;padding-top:11px;border-top:1px dashed rgb(var(--c-outline-variant));}
 </style>
 <section class="mt-20">
   <div class="text-center mb-8">
@@ -231,11 +235,11 @@
     var GRADES={go2:{badge:'고2',course:'화법과 언어',cls:'g-go2',b:'b-go2'},go1:{badge:'고1',course:'고전 영역',cls:'g-go1',b:'b-go1'}};
     var ORDER=['go2','go1'];
     var WEEKS=[
-      {wk:'1주차',due:'7/17',items:{go2:'품사편 워크북 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 4–77쪽</span>',go1:'고대가요 워크북 + 교재 「정읍사」 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 58–59쪽</span>'}},
-      {wk:'2주차',due:'7/24',items:{go2:'문장 성분 워크북 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 82–103쪽</span>',go1:'향가 워크북 + 교재 향가 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 60–65쪽</span>'}},
-      {wk:'3주차',due:'7/31',items:{go2:'형태소와 단어 워크북 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 108–183쪽</span>',go1:'고려가요 워크북 + 교재 고려가요 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 66–77쪽</span>'}},
-      {wk:'4주차',due:'8/7',items:{go2:'음운의 정의와 체계 워크북 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 188–193쪽</span>',go1:'시조와 가사 워크북 + 교재 시조·가사 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 78–137쪽</span>'}},
-      {wk:'5주차',due:'8/14',items:{go2:'음운 변동 워크북 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 198–292쪽</span>',go1:'가사 워크북 + 교재 가사 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 138–207쪽</span>'}}
+      {wk:'1주차',due:'7/17',items:{go2:'품사편 워크북 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 4–77쪽</span>',go1:'<div class="hwc-part"><span class="hwc-sub">고전시가</span>고대가요 워크북 + 교재 「정읍사」 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 58–59쪽</span></div>'}},
+      {wk:'2주차',due:'7/24',items:{go2:'문장 성분 워크북 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 82–103쪽</span>',go1:'<div class="hwc-part"><span class="hwc-sub">고전시가</span>향가 워크북 + 교재 향가 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 60–65쪽</span></div><div class="hwc-part"><span class="hwc-sub">고전문법</span>교재 문항 1–25번</div>'}},
+      {wk:'3주차',due:'7/31',items:{go2:'형태소와 단어 워크북 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 108–183쪽</span>',go1:'<div class="hwc-part"><span class="hwc-sub">고전시가</span>고려가요 워크북 + 교재 고려가요 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 66–77쪽</span></div><div class="hwc-part"><span class="hwc-sub">고전문법</span>교재 문항 26–50번</div>'}},
+      {wk:'4주차',due:'8/7',items:{go2:'음운의 정의와 체계 워크북 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 188–193쪽</span>',go1:'<div class="hwc-part"><span class="hwc-sub">고전시가</span>시조와 가사 워크북 + 교재 시조·가사 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 78–137쪽</span></div><div class="hwc-part"><span class="hwc-sub">고전문법</span>교재 문항 51–75번</div>'}},
+      {wk:'5주차',due:'8/14',items:{go2:'음운 변동 워크북 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 198–292쪽</span>',go1:'<div class="hwc-part"><span class="hwc-sub">고전시가</span>가사 워크북 + 교재 가사 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">menu_book</span>교재 138–207쪽</span></div><div class="hwc-part"><span class="hwc-sub">고전문법</span>교재 문항 75–92번 + 수능 기출 전문항</div>'}}
     ];
     var YEAR=2026, days=['일','월','화','수','목','금','토'];
     function dueDate(s){var p=s.split('/');return new Date(YEAR,+p[0]-1,+p[1],23,59,59);}
@@ -247,7 +251,7 @@
       var cells=keys.map(function(k){var g=GRADES[k];
         return '<div class="hwc-cell '+g.cls+'">'
           +'<div class="flex items-center gap-2 mb-1.5"><span class="hwc-badge '+g.b+'">'+g.badge+'</span><span class="font-bold text-on-surface text-[14px]">'+g.course+'</span></div>'
-          +'<span class="block text-on-surface-variant text-[14px] leading-relaxed">'+w.items[k]+'</span></div>';
+          +'<div class="text-on-surface-variant text-[14px] leading-relaxed">'+w.items[k]+'</div></div>';
       }).join('');
       var nowPill=i===nowIdx?'<span class="ml-2 inline-flex items-center rounded-full bg-secondary text-on-secondary text-[11px] font-bold px-2 py-0.5">이번 주</span>':'';
       return '<div class="hwc-week'+(i===nowIdx?' now':'')+'">'
