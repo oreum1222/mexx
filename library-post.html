@@ -154,7 +154,7 @@
     var html=items.map(function(it){
       return '<article id="q'+it.seq+'" class="qcard bg-surface-container-lowest border border-outline-variant rounded-2xl p-5 md:p-6 mb-4" data-seq="'+it.seq+'" data-text="'+esc(it.text).replace(/"/g,'&quot;').toLowerCase()+'">'
         +'<div class="flex items-center gap-2 mb-3"><span class="inline-flex items-center justify-center min-w-[34px] h-[26px] px-2 rounded-lg bg-secondary text-on-secondary font-bold text-[13px]">'+it.seq+'</span><span class="text-on-surface-variant text-[12px]">문항 '+it.seq+'</span></div>'
-        +'<div class="qbody font-body-md text-[15px] text-on-surface">'+highlightAns(esc(it.text))+'</div>'
+        +'<div class="qbody font-body-md text-[15px] text-on-surface">'+highlightAns(esc(it.text)).replace(/\n/g,'<br>')+'</div>'
       +'</article>';
     }).join('');
     host.innerHTML=html;
