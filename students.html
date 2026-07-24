@@ -216,19 +216,75 @@
   .hwc-cell.g-go1 .hwc-sub{color:#e6b955;}
   .hwc-cell.g-go2 .hwc-sub{color:rgb(var(--c-secondary));}
   .hwc-part + .hwc-part{margin-top:11px;padding-top:11px;border-top:1px dashed rgb(var(--c-outline-variant));}
+  .hwc-group{display:flex;align-items:center;gap:9px;margin-bottom:13px;}
+  .hwc-group .tag{font-size:12px;font-weight:800;letter-spacing:.04em;padding:4px 12px;border-radius:20px;flex-shrink:0;}
+  .hwc-group .tag.dan{background:rgb(var(--c-secondary-fixed));color:rgb(var(--c-secondary));}
+  .hwc-group .tag.jong{background:rgba(91,141,239,.16);color:#7aa2f0;}
+  .hwc-group .meta{font-size:12px;color:rgb(var(--c-on-surface-variant));}
+  .hwc-group .line{flex-grow:1;height:1px;background:rgb(var(--c-outline-variant));}
+  .jt-wrap{border:1px solid rgb(var(--c-outline-variant));border-radius:12px;overflow:hidden;margin-bottom:12px;background:rgb(var(--c-surface-container-lowest));}
+  .jt-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 14px;background:rgb(var(--c-surface-container));border-bottom:1px solid rgb(var(--c-outline-variant));}
+  .jt-badge{font-size:11px;font-weight:800;border-radius:7px;padding:3px 8px;flex-shrink:0;}
+  .jb-h1{background:linear-gradient(135deg,#f4d788,#e6b955);color:#3a2c07;}
+  .jb-m3{background:#5b8def;color:#fff;}
+  .jt table{width:100%;border-collapse:collapse;}
+  .jt th{background:rgb(var(--c-surface-container-low));color:rgb(var(--c-on-surface-variant));font-size:11.5px;font-weight:700;text-align:left;padding:7px 13px;}
+  .jt td{padding:10px 13px;border-top:1px solid rgb(var(--c-outline-variant));font-size:13px;color:rgb(var(--c-on-surface));vertical-align:top;line-height:1.5;}
+  .jt td.wk{font-weight:800;white-space:nowrap;}
+  .jt td.due{white-space:nowrap;color:rgb(var(--c-on-surface-variant));font-weight:600;font-size:12.5px;}
+  .jt .kx{color:rgb(var(--c-secondary));font-weight:700;}
+  .jt .gi{display:inline-block;font-size:10.5px;font-weight:700;color:#7aa2f0;background:rgba(91,141,239,.14);border-radius:5px;padding:1px 6px;margin-left:3px;white-space:nowrap;}
+  .jt-note{font-size:11.5px;color:rgb(var(--c-on-surface-variant));padding:9px 13px 11px;border-top:1px dashed rgb(var(--c-outline-variant));line-height:1.5;}
 </style>
 <section class="mt-20">
-  <div class="text-center mb-8">
+  <div class="text-center mb-9">
     <span class="inline-flex items-center gap-2 bg-secondary-fixed/60 text-secondary border border-secondary/25 px-3 py-1 rounded-full mb-3"><span class="material-symbols-outlined text-[16px]">calendar_month</span><span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">숙제 달력</span></span>
-    <h2 class="font-headline-lg text-[26px] md:text-[30px] font-bold text-on-surface tracking-tight">단과 숙제 달력</h2>
-    <p class="text-on-surface-variant text-[14px] mt-2">매주 워크북(교재) 풀기 · <b class="text-on-surface">마감은 매주 금요일 밤 자정</b></p>
-    <div class="flex items-center justify-center gap-4 mt-4 text-[13px]">
+    <h2 class="font-headline-lg text-[26px] md:text-[30px] font-bold text-on-surface tracking-tight">숙제 달력</h2>
+    <p class="text-on-surface-variant text-[14px] mt-2">단과반과 종합반 과제를 주차별로 정리했습니다.</p>
+  </div>
+
+  <!-- 단과 -->
+  <div class="max-w-2xl mx-auto">
+    <div class="hwc-group"><span class="tag dan">단과</span><span class="meta">일요일반, 5주, 마감 매주 금요일 밤 자정</span><span class="line"></span></div>
+    <div class="flex items-center gap-4 mb-4 text-[13px] pl-0.5">
       <span class="inline-flex items-center gap-1.5"><span class="hwc-badge b-go2">고2</span><span class="text-on-surface-variant">화법과 언어</span></span>
       <span class="inline-flex items-center gap-1.5"><span class="hwc-badge b-go1">고1</span><span class="text-on-surface-variant">고전 영역</span></span>
     </div>
+    <div id="hwc-list" class="flex flex-col gap-3"></div>
+    <p class="text-on-surface-variant text-[12px] mt-4 pl-0.5">※ 과제 완료 후 <b class="text-on-surface">매주 금요일 밤 자정</b>까지 과제 검사 시스템에 응답해 주세요.</p>
   </div>
-  <div id="hwc-list" class="max-w-2xl mx-auto flex flex-col gap-3"></div>
-  <p class="text-center text-on-surface-variant text-[12.5px] mt-6">※ 과제 완료 후 <b class="text-on-surface">매주 금요일 밤 자정</b>까지 [수강생 전용]의 과제 검사 시스템에 응답해 주세요.</p>
+
+  <!-- 종합 -->
+  <div class="max-w-2xl mx-auto mt-14">
+    <div class="hwc-group"><span class="tag jong">종합</span><span class="meta">썸머스쿨, 3주 과정</span><span class="line"></span></div>
+
+    <div class="jt-wrap">
+      <div class="jt-head"><span class="jt-badge jb-h1">고1</span><span class="font-bold text-on-surface text-[14px]">고전문법</span><span class="text-on-surface-variant text-[12px]">금 09:00, 마감 매주 수요일 밤 자정</span></div>
+      <div class="jt"><table>
+        <thead><tr><th style="width:50px">주차</th><th style="width:96px">마감</th><th>과제 (교재 문항)</th></tr></thead>
+        <tbody>
+          <tr><td class="wk">1주</td><td class="due">7/29 (수)</td><td>교재 <span class="kx">1~35</span>번</td></tr>
+          <tr><td class="wk">2주</td><td class="due">8/5 (수)</td><td>교재 <span class="kx">36~70</span>번</td></tr>
+          <tr><td class="wk">3주</td><td class="due">8/12 (수)</td><td>교재 <span class="kx">71~92</span>번 <span class="gi">수능기출 12문항</span></td></tr>
+        </tbody>
+      </table></div>
+      <div class="jt-note">공통 영역: 훈민정음 제자와 운용, 표기법(연철과 분철 등), 문법 요소(조사와 어미, 높임), 음운 변화 (3주차는 어휘와 단어 추가)</div>
+    </div>
+
+    <div class="jt-wrap">
+      <div class="jt-head"><span class="jt-badge jb-m3">중3</span><span class="font-bold text-on-surface text-[14px]">현대문법</span><span class="text-on-surface-variant text-[12px]">월 09:00, 마감 별도 안내</span></div>
+      <div class="jt"><table>
+        <thead><tr><th style="width:50px">주차</th><th style="width:82px">수업</th><th>주제와 과제 (교재 문항)</th></tr></thead>
+        <tbody>
+          <tr><td class="wk">1주</td><td class="due">7/27 (월)</td><td><b>품사</b> · 교재 <span class="kx">1~117</span>번 <span class="gi">수능기출 118~123 (6)</span></td></tr>
+          <tr><td class="wk">2주</td><td class="due">8/3 (월)</td><td><b>문장성분</b> · 교재 <span class="kx">1~38</span>번 <span class="gi">수능기출 39~41 (3)</span></td></tr>
+          <tr><td class="wk">3주</td><td class="due">8/10 (월)</td><td><b>형태소와 단어</b> · 교재 <span class="kx">1~138</span>번 <span class="gi">수능기출 139~152 (14)</span></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <p class="text-center text-on-surface-variant text-[12px] mt-4">※ 통과 기준 <b class="text-on-surface">정답률 80%</b>. 틀린 문항을 <b class="text-on-surface">교재 번호 그대로</b> 과제 검사 시스템에 마킹하세요.</p>
+  </div>
 </section>
 <script>
   (function(){
