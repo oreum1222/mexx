@@ -17,5 +17,14 @@ window.MEXX_LIBRARY = [
     count: 41,
     locked: true,
     data: "post-hwabeop-2.js"
+  },
+  {
+    id: "hwabeop-3",
+    title: "화법과 언어 3주차 워크북 해설",
+    category: "형태소와 단어편 · 워크북 해설",
+    date: "2026-08-02",
+    count: 152,
+    locked: true,
+    data: "post-hwabeop-3.js"
   }
 ];
