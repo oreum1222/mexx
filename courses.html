@@ -9,12 +9,12 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
 <script>(function(){try{var t=localStorage.getItem('mexx-theme'),d=document.documentElement;if(t==='light'){d.classList.remove('dark');d.classList.add('light');var m=document.querySelector('meta[name=theme-color]');if(m)m.content='#f6f8fc';}else{d.classList.add('dark');}}catch(e){}})();</script>
 <title>강좌 안내 | 김가경 국어 · MEXX</title>
-<meta name="description" content="김가경 국어 · MEXX 강좌 안내. 현재 새로운 강의를 준비 중입니다."/>
+<meta name="description" content="김가경 국어 · MEXX 강좌 안내. 고2 화법과 언어 연합반(2학기 내신 대비) 8/30(일) 개강 · 일 10:00–13:00 · 5회차."/>
 <link rel="canonical" href="https://hanti.oreumyak.com/courses.html"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="김가경 국어 · MEXX"/>
 <meta property="og:title" content="강좌 안내 | 김가경 국어 · MEXX"/>
-<meta property="og:description" content="김가경 국어 · MEXX 강좌 안내. 현재 새로운 강의를 준비 중입니다."/>
+<meta property="og:description" content="고2 화법과 언어 연합반(2학기 내신 대비) 8/30 개강. 언어(문법) 중심으로 학교별 출제까지 대비."/>
 <meta property="og:url" content="https://hanti.oreumyak.com/courses.html"/>
 <meta property="og:image" content="https://hanti.oreumyak.com/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
@@ -22,7 +22,7 @@
 <meta property="og:locale" content="ko_KR"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="강좌 안내 | 김가경 국어 · MEXX"/>
-<meta name="twitter:description" content="현재 새로운 강의를 준비 중입니다."/>
+<meta name="twitter:description" content="고2 화법과 언어 연합반(2학기 내신 대비) 8/30 개강."/>
 <meta name="twitter:image" content="https://hanti.oreumyak.com/og-image.png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -86,20 +86,15 @@
 <!-- Header -->
 <section class="bg-surface-bright border-b border-outline-variant py-12 md:py-16">
 <div class="max-w-container-max mx-auto px-margin-desktop">
-<div class="inline-flex items-center gap-2 bg-secondary-fixed/60 text-secondary border border-secondary/25 px-3 py-1 rounded-full mb-4"><span class="material-symbols-outlined text-[16px]">schedule</span><span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">강의 준비 중</span></div>
+<div class="inline-flex items-center gap-2 bg-secondary-fixed/60 text-secondary border border-secondary/25 px-3 py-1 rounded-full mb-4"><span class="material-symbols-outlined text-[16px]">menu_book</span><span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">2026 2학기 내신 대비</span></div>
 <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface tracking-tight mb-3">강좌 안내</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">현재 진행 중인 강좌가 없습니다. 새로운 강의를 준비하고 있습니다.</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">2학기 중간고사 대비 강좌입니다. 개강 일정과 회차별 커리큘럼을 확인하세요.</p>
 </div>
 </section>
 
 <main class="flex-grow max-w-container-max mx-auto w-full px-margin-desktop py-12">
-<!-- 강의 준비 중 안내 -->
-<div class="rounded-2xl border border-outline-variant bg-surface-container-lowest px-6 py-16 text-center">
-<div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-secondary-fixed text-secondary mb-6"><span class="material-symbols-outlined text-[34px]">engineering</span></div>
-<h2 class="font-headline-md text-[22px] text-on-surface mb-3">새로운 강의를 준비 중입니다</h2>
-<p class="text-body-md text-on-surface-variant leading-relaxed mb-8 max-w-lg mx-auto">여름방학 특강이 마무리되었습니다.<br>다음 강의 일정은 준비되는 대로 안내드리겠습니다.<br class="hidden sm:block">가장 빠른 소식은 카카오톡 채널에서 받아보실 수 있습니다.</p>
-<a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-secondary text-on-secondary px-7 py-3.5 rounded-xl font-headline-md text-[16px] font-bold hover:opacity-90 transition-all"><span class="material-symbols-outlined text-[20px]">chat_bubble</span>카카오톡으로 강의 소식 받기</a>
-</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="course-grid"></div>
+<p class="hidden text-center text-on-surface-variant py-16" id="empty">현재 개설된 강좌가 없습니다.</p>
 
 <!-- 강좌 선택 가이드 (강의 준비 중 — 숨김) -->
 <section class="hidden mt-16 pt-12 border-t border-outline-variant">
@@ -140,9 +135,28 @@
 </div>
 </footer>
 
-<script src="courses-data.js"></script>
+<script src="courses-data.js?v=20260806"></script>
 <script>
-  /* 강의 준비 중 — 강좌 목록 렌더링 비활성화 */
+  const grid=document.getElementById('course-grid'), empty=document.getElementById('empty');
+  function card(c){
+    return `<a href="course.html?c=${c.id}" class="crd-hover bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden flex flex-col no-underline">
+      <div class="chd h-32 relative flex flex-col justify-between px-6 py-5" style="background:${c.headerbg}">
+        <span class="material-symbols-outlined text-secondary text-[40px]">${c.icon}</span>
+        <span class="text-secondary font-extrabold text-[23px] tracking-tight">${c.grade} ${c.kind==='단과'?'단과':'종합'}</span>
+      </div>
+      <div class="p-6 flex flex-col flex-grow">
+        <span class="text-secondary font-bold font-label-sm uppercase mb-2">${c.kind} · ${c.day} ${c.time}</span>
+        <h3 class="font-headline-md text-[19px] text-on-surface mb-2">${c.subject}</h3>
+        <p class="text-body-md text-on-surface-variant mb-5">${c.desc}</p>
+        <div class="mt-auto pt-4 border-t border-outline-variant flex justify-between items-center">
+          <span class="font-label-md text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">event_repeat</span>${c.sessions}</span>
+          <span class="font-label-md text-secondary font-bold flex items-center gap-1">상세 보기 <span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+        </div>
+      </div></a>`;
+  }
+  const list=(window.COURSES||[]);
+  grid.innerHTML=list.map(card).join('');
+  empty.classList.toggle('hidden', list.length>0);
 </script>
 <script>
   function toggleTheme(){var d=document.documentElement,light=d.classList.toggle('light');d.classList.toggle('dark',!light);try{localStorage.setItem('mexx-theme',light?'light':'dark');}catch(e){}var ic=document.getElementById('theme-icon');if(ic)ic.textContent=light?'dark_mode':'light_mode';var lb=document.getElementById('theme-label');if(lb)lb.textContent=light?'\uc5b4\ub450\uc6b4 \ud654\uba74 \ubc84\uc804':'\ubc1d\uc740 \ud654\uba74 \ubc84\uc804';var m=document.querySelector('meta[name=theme-color]');if(m)m.content=light?'#f6f8fc':'#0a0c10';}
