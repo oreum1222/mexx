@@ -29,8 +29,8 @@ window.MEXX_LIBRARY = [
   },
   {
     id: "eumun-1",
-    title: "현대문법 음운편 워크북 해설",
-    category: "음운변동 · 워크북 해설",
+    title: "화법과 언어 5주차 워크북 해설",
+    category: "음운편 · 워크북 해설",
     date: "2026-08-17",
     count: 100,
     locked: true,
