@@ -26,5 +26,14 @@ window.MEXX_LIBRARY = [
     count: 152,
     locked: true,
     data: "post-hwabeop-3.js"
+  },
+  {
+    id: "eumun-1",
+    title: "현대문법 음운편 워크북 해설",
+    category: "음운변동 · 워크북 해설",
+    date: "2026-08-17",
+    count: 100,
+    locked: true,
+    data: "post-eumun-1.js"
   }
 ];
