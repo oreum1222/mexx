@@ -2,7 +2,7 @@
 // 개설 강좌: 추석 특강(문법) / 화법과 언어 연합반 / 수능 대비반.
 window.COURSES = [
   {
-    id: 'cs2', grade: '고2', kind: '단과', day: '목·금', time: '10:00–13:30',
+    id: 'cs2', grade: '고2', kind: '단과', day: '목·금', time: '09:30–12:30',
     subject: '화법과 언어 추석 특강', tagline: '2회로 끝내는 중간고사 문법',
     icon: 'bolt', headerbg: 'linear-gradient(135deg,#123a33,#0c1a17)',
     sessions: '2회 완성', period: '9/24 ~ 9/25', open: '9월 24일 (목)',
