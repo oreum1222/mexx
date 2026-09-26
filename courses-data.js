@@ -4,7 +4,7 @@ window.COURSES = [
   {
     id: 'cs2', grade: '고2', kind: '단과', day: '목·금', time: '09:30–12:30',
     subject: '화법과 언어 추석 특강', tagline: '2회로 끝내는 중간고사 문법',
-    icon: 'bolt', headerbg: 'linear-gradient(135deg,#123a33,#0c1a17)',
+    icon: '\uea0b', headerbg: 'linear-gradient(135deg,#123a33,#0c1a17)',
     sessions: '2회 완성', period: '9/24 ~ 9/25', open: '9월 24일 (목)',
     material: '현대문법 개념+유형서 (자체 제작) · 내신형 문항 워크북',
     desc: '중간고사 문법을 딱 2회로 압축 정리.<br>출제자가 시험에 나올 것만 짚어 줍니다.',
@@ -23,7 +23,7 @@ window.COURSES = [
   {
     id: 'h2', grade: '고2', kind: '단과', day: '일', time: '10:00–13:00',
     subject: '화법과 언어 (연합반)', tagline: '화법과 언어, 가뿐하게 · 경쾌하게!',
-    icon: 'record_voice_over', headerbg: 'linear-gradient(135deg,#1c2333,#12151c)',
+    icon: '\ue91f', headerbg: 'linear-gradient(135deg,#1c2333,#12151c)',
     sessions: '5회차', period: '8/30 ~ 9/27', open: '8월 30일 (일)',
     material: '현대문법 개념서 (자체 제작) · 내신형 문항 워크북',
     desc: '2학기 중간고사 화법과 언어를 언어(문법) 중심으로,<br>학교별 출제 방식까지 따로 대비합니다.',
@@ -45,7 +45,7 @@ window.COURSES = [
   {
     id: 'sn2', grade: '고2', kind: '단과', day: '일', time: '14:00–17:00',
     subject: '수능 국어 (수능 대비반)', tagline: '우리들의 첫 수능 국어',
-    icon: 'auto_stories', headerbg: 'linear-gradient(135deg,#0e2a26,#12151c)',
+    icon: '\ue666', headerbg: 'linear-gradient(135deg,#0e2a26,#12151c)',
     sessions: '4회차', period: '8/23 ~ 9/13', open: '8월 23일 (일)',
     material: '수능 기초 교재 (자체 제작) · 복습 주간지',
     desc: '문학과 독서를 평가원 기출의 출제 원리로,<br>첫 수능 독해의 기준을 탄탄하게 세웁니다.',

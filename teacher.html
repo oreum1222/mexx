@@ -26,7 +26,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
   tailwind.config = { darkMode:"class", theme:{ extend:{
     "colors":{ "background":"rgb(var(--c-background) / <alpha-value>)","surface-bright":"rgb(var(--c-surface-bright) / <alpha-value>)","surface":"rgb(var(--c-surface) / <alpha-value>)","surface-container-lowest":"rgb(var(--c-surface-container-lowest) / <alpha-value>)","surface-container-low":"rgb(var(--c-surface-container-low) / <alpha-value>)","surface-container":"rgb(var(--c-surface-container) / <alpha-value>)","surface-container-high":"rgb(var(--c-surface-container-high) / <alpha-value>)","surface-container-highest":"rgb(var(--c-surface-container-highest) / <alpha-value>)","outline-variant":"rgb(var(--c-outline-variant) / <alpha-value>)","outline":"rgb(var(--c-outline) / <alpha-value>)","on-surface":"rgb(var(--c-on-surface) / <alpha-value>)","on-surface-variant":"rgb(var(--c-on-surface-variant) / <alpha-value>)","secondary":"rgb(var(--c-secondary) / <alpha-value>)","on-secondary":"rgb(var(--c-on-secondary) / <alpha-value>)","on-primary":"rgb(var(--c-on-primary) / <alpha-value>)","secondary-fixed":"rgb(var(--c-secondary-fixed) / <alpha-value>)","on-tertiary-container":"rgb(var(--c-on-tertiary-container) / <alpha-value>)","tertiary-fixed":"rgb(var(--c-tertiary-fixed) / <alpha-value>)","tertiary-container":"rgb(var(--c-tertiary-container) / <alpha-value>)","primary":"rgb(var(--c-primary) / <alpha-value>)","primary-container":"rgb(var(--c-primary-container) / <alpha-value>)","on-primary-container":"rgb(var(--c-on-primary-container) / <alpha-value>)" },
@@ -56,7 +55,7 @@
     --c-secondary-fixed:208 240 233; --c-on-tertiary-container:9 150 128; --c-tertiary-fixed:9 150 128;
     --c-tertiary-container:223 244 238; --c-primary:237 242 248; --c-primary-container:228 235 243; --c-on-primary-container:84 95 117;
   }
-  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+  @font-face{font-family:'Material Symbols Outlined';font-style:normal;font-weight:100 700;font-display:block;src:url(material-symbols-mexx-v1.woff2) format('woff2');}.material-symbols-outlined{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
   .fi{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(0.22,1,0.36,1);}
   .fi.v{opacity:1;transform:translateY(0);}
   .crd-hover{transition:all .3s cubic-bezier(0.4,0,0.2,1);}
@@ -78,7 +77,7 @@
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="index.html#contact">문의</a>
 </div>
 </div>
-<a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="bg-secondary text-on-secondary px-5 py-2.5 rounded-lg font-label-md text-label-md font-bold hover:opacity-90 transition-all hidden sm:flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">chat_bubble</span>카카오톡 문의</a>
+<a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="bg-secondary text-on-secondary px-5 py-2.5 rounded-lg font-label-md text-label-md font-bold hover:opacity-90 transition-all hidden sm:flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">&#xe0cb;</span>카카오톡 문의</a>
 </div>
 </nav>
 
@@ -90,16 +89,16 @@
 <div class="w-44 h-44 md:w-52 md:h-52 rounded-full border-[3px] border-secondary p-1.5 overflow-hidden bg-surface-container-lowest">
 <img alt="가경T" class="w-full h-full object-cover object-top rounded-full" src="profile.png"/>
 </div>
-<div class="absolute bottom-2 right-2 bg-secondary text-on-secondary w-9 h-9 rounded-full flex items-center justify-center shadow-lg"><span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">verified</span></div>
+<div class="absolute bottom-2 right-2 bg-secondary text-on-secondary w-9 h-9 rounded-full flex items-center justify-center shadow-lg"><span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">&#xef76;</span></div>
 </div>
 <div class="text-center md:text-left">
-<div class="inline-flex items-center gap-2 bg-secondary-fixed/60 text-secondary border border-secondary/25 px-3 py-1 rounded-full mb-4"><span class="material-symbols-outlined text-[16px]">workspace_premium</span><span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">MEXX 종합반 국어</span></div>
+<div class="inline-flex items-center gap-2 bg-secondary-fixed/60 text-secondary border border-secondary/25 px-3 py-1 rounded-full mb-4"><span class="material-symbols-outlined text-[16px]">&#xe7af;</span><span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">MEXX 종합반 국어</span></div>
 <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface tracking-tight">가경 T</h1>
 <p class="font-headline-md text-headline-md text-secondary mt-2">출제 경향을, 국어를, 필요를 잘 아는 강사</p>
 <div class="flex flex-wrap justify-center md:justify-start gap-x-7 gap-y-3 mt-6">
-<div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">edit_document</span><span class="font-label-md text-on-surface-variant"><b class="text-on-surface">메가스터디 수능 모의고사 출제</b></span></div>
-<div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">history</span><span class="font-label-md text-on-surface-variant">10년+ 현장 강의</span></div>
-<div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">military_tech</span><span class="font-label-md text-on-surface-variant">평가원 국어 6회 만점(현역+재수)</span></div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">&#xf88c;</span><span class="font-label-md text-on-surface-variant"><b class="text-on-surface">메가스터디 수능 모의고사 출제</b></span></div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">&#xe8b3;</span><span class="font-label-md text-on-surface-variant">10년+ 현장 강의</span></div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">&#xea3f;</span><span class="font-label-md text-on-surface-variant">평가원 국어 6회 만점(현역+재수)</span></div>
 </div>
 </div>
 </div>
@@ -109,7 +108,7 @@
 <!-- About -->
 <div class="lg:col-span-8 space-y-14">
 <section class="fi">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6 flex items-center gap-3"><span class="material-symbols-outlined text-secondary">person</span>강사 소개</h2>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6 flex items-center gap-3"><span class="material-symbols-outlined text-secondary">&#xf0d3;</span>강사 소개</h2>
 <div class="space-y-4 text-on-surface-variant leading-relaxed">
 <p class="font-body-lg text-body-lg">가경T는 현재 <b class="text-on-surface">수능 국어 모의고사를 출제</b>하며, 현장 강의를 진행 중인 <b class="text-on-surface">출제자 겸 강사</b>입니다.<br/>국어국문학을 전공하고, 10년 이상 현장에서 학생들을 가르쳐 왔습니다.</p>
 <p class="font-body-md text-body-md">강남대성 수능 국어 문항공모전에서 선발되어 문항 출제를 시작하였으며,<br/>2026년 현재 <b class="text-on-surface">메가스터디 수능 국어 모의고사를 출제</b> 중입니다.<br/>실제 문항을 설계하는 출제자의 시선에서, 평가원의 출제 경향을 잘 아는 강사로서<br/>단순히 국어 지식 및 풀이법을 가르치는 것을 넘어서 학생들에게도 ‘문제를 읽는 법’을 가르칩니다.<br/>가경T가 가진 <b class="text-on-surface">출제 경향을 읽는 눈</b>을 이식합니다.</p>
@@ -117,15 +116,15 @@
 </div>
 </section>
 <section class="fi">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8 flex items-center gap-3"><span class="material-symbols-outlined text-secondary">workspace_premium</span>강점</h2>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8 flex items-center gap-3"><span class="material-symbols-outlined text-secondary">&#xe7af;</span>강점</h2>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="crd-hover bg-surface-container-lowest p-6 rounded-xl border border-outline-variant"><div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">edit_document</span></div><h4 class="font-headline-md text-[17px] text-on-surface mb-1 whitespace-nowrap">출제 경향을 잘 아는 강사</h4><p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed">메가스터디 수능 모의고사 출제<br/>강남대성 수능 문항공모전 선발</p></div>
-<div class="crd-hover bg-surface-container-lowest p-6 rounded-xl border border-outline-variant"><div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">school</span></div><h4 class="font-headline-md text-[17px] text-on-surface mb-1">국어를 잘 아는 강사</h4><p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed">국어국문학 전공<br>평가원 6회 만점<br>10년+ 현장 강의</p></div>
-<div class="crd-hover bg-surface-container-lowest p-6 rounded-xl border border-outline-variant"><div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">trending_up</span></div><h4 class="font-headline-md text-[17px] text-on-surface mb-1">필요를 잘 아는 강사</h4><p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed">유튜브 개인 채널 구독자 3만<br/>전국 국어 강사 채널 7위 내<br/>많은 이들이 필요로 하는 강의</p></div>
+<div class="crd-hover bg-surface-container-lowest p-6 rounded-xl border border-outline-variant"><div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">&#xf88c;</span></div><h4 class="font-headline-md text-[17px] text-on-surface mb-1 whitespace-nowrap">출제 경향을 잘 아는 강사</h4><p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed">메가스터디 수능 모의고사 출제<br/>강남대성 수능 문항공모전 선발</p></div>
+<div class="crd-hover bg-surface-container-lowest p-6 rounded-xl border border-outline-variant"><div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">&#xe80c;</span></div><h4 class="font-headline-md text-[17px] text-on-surface mb-1">국어를 잘 아는 강사</h4><p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed">국어국문학 전공<br>평가원 6회 만점<br>10년+ 현장 강의</p></div>
+<div class="crd-hover bg-surface-container-lowest p-6 rounded-xl border border-outline-variant"><div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">&#xe8e5;</span></div><h4 class="font-headline-md text-[17px] text-on-surface mb-1">필요를 잘 아는 강사</h4><p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed">유튜브 개인 채널 구독자 3만<br/>전국 국어 강사 채널 7위 내<br/>많은 이들이 필요로 하는 강의</p></div>
 </div>
 </section>
 <section class="fi">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2 flex items-center gap-3"><span class="material-symbols-outlined text-secondary">menu_book</span>담당 강좌</h2>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2 flex items-center gap-3"><span class="material-symbols-outlined text-secondary">&#xea19;</span>담당 강좌</h2>
 <p class="text-body-md text-on-surface-variant mb-8">2026 2학기 · 고2 추석 특강 · 화법과 언어 연합반 · 수능 대비반</p>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5" id="teacher-courses"></div>
 </section>
@@ -158,7 +157,7 @@
 </div>
 </footer>
 
-<script src="courses-data.js?v=20260925"></script>
+<script src="courses-data.js?v=20260926"></script>
 <script>
   // 담당 강좌 카드 렌더 (공통 데이터)
   const wrap=document.getElementById('teacher-courses');
@@ -168,14 +167,14 @@
     a.innerHTML=`<div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style="background:${c.headerbg}"><span class="material-symbols-outlined text-secondary">${c.icon}</span></div>
       <div class="min-w-0"><div class="flex items-center gap-2"><span class="text-secondary font-bold text-[11px] bg-secondary-fixed px-2 py-0.5 rounded-full">${c.grade}</span><span class="text-on-surface-variant text-[12px]">${c.kind} · ${c.time}</span></div>
       <h4 class="font-headline-md text-[16px] text-on-surface mt-1.5 truncate">${c.subject}</h4></div>
-      <span class="material-symbols-outlined text-on-surface-variant ml-auto shrink-0">arrow_forward</span>`;
+      <span class="material-symbols-outlined text-on-surface-variant ml-auto shrink-0">&#xe5c8;</span>`;
     wrap.appendChild(a);
   });}
   const o=new IntersectionObserver(es=>{es.forEach((e,i)=>{e.isIntersecting&&(setTimeout(()=>e.target.classList.add('v'),i*60),o.unobserve(e.target))})},{threshold:.1});
   document.querySelectorAll('.fi').forEach(e=>o.observe(e));
 </script>
 <script>
-  function toggleTheme(){var d=document.documentElement,light=d.classList.toggle('light');d.classList.toggle('dark',!light);try{localStorage.setItem('mexx-theme',light?'light':'dark');}catch(e){}var ic=document.getElementById('theme-icon');if(ic)ic.textContent=light?'dark_mode':'light_mode';var lb=document.getElementById('theme-label');if(lb)lb.textContent=light?'\uc5b4\ub450\uc6b4 \ud654\uba74 \ubc84\uc804':'\ubc1d\uc740 \ud654\uba74 \ubc84\uc804';var m=document.querySelector('meta[name=theme-color]');if(m)m.content=light?'#f6f8fc':'#0a0c10';}
-  (function(){var nav=document.querySelector('nav');if(!nav)return;var kakao=nav.querySelector('a[href*="pf.kakao.com"]');var light=document.documentElement.classList.contains('light');var btn=document.createElement('button');btn.id='theme-toggle';btn.setAttribute('aria-label','\ub2e4\ud06c/\ub77c\uc774\ud2b8 \ubaa8\ub4dc \uc804\ud658');btn.title='\ub2e4\ud06c/\ub77c\uc774\ud2b8 \uc804\ud658';btn.className='h-10 px-3 rounded-lg border border-outline-variant text-on-surface-variant hover:text-secondary hover:border-secondary transition-colors flex items-center gap-1.5 shrink-0';btn.innerHTML='<span class="material-symbols-outlined text-[20px]" id="theme-icon">'+(light?'dark_mode':'light_mode')+'</span><span id="theme-label" class="hidden sm:inline font-label-md text-label-md font-bold whitespace-nowrap">'+(light?'\uc5b4\ub450\uc6b4 \ud654\uba74 \ubc84\uc804':'\ubc1d\uc740 \ud654\uba74 \ubc84\uc804')+'</span>';btn.onclick=toggleTheme;if(kakao&&kakao.parentElement){kakao.parentElement.insertBefore(btn,kakao);}else{nav.appendChild(btn);}})();
+  function toggleTheme(){var d=document.documentElement,light=d.classList.toggle('light');d.classList.toggle('dark',!light);try{localStorage.setItem('mexx-theme',light?'light':'dark');}catch(e){}var ic=document.getElementById('theme-icon');if(ic)ic.textContent=light?'\ue51c':'\ue518';var lb=document.getElementById('theme-label');if(lb)lb.textContent=light?'\uc5b4\ub450\uc6b4 \ud654\uba74 \ubc84\uc804':'\ubc1d\uc740 \ud654\uba74 \ubc84\uc804';var m=document.querySelector('meta[name=theme-color]');if(m)m.content=light?'#f6f8fc':'#0a0c10';}
+  (function(){var nav=document.querySelector('nav');if(!nav)return;var kakao=nav.querySelector('a[href*="pf.kakao.com"]');var light=document.documentElement.classList.contains('light');var btn=document.createElement('button');btn.id='theme-toggle';btn.setAttribute('aria-label','\ub2e4\ud06c/\ub77c\uc774\ud2b8 \ubaa8\ub4dc \uc804\ud658');btn.title='\ub2e4\ud06c/\ub77c\uc774\ud2b8 \uc804\ud658';btn.className='h-10 px-3 rounded-lg border border-outline-variant text-on-surface-variant hover:text-secondary hover:border-secondary transition-colors flex items-center gap-1.5 shrink-0';btn.innerHTML='<span class="material-symbols-outlined text-[20px]" id="theme-icon">'+(light?'\ue51c':'\ue518')+'</span><span id="theme-label" class="hidden sm:inline font-label-md text-label-md font-bold whitespace-nowrap">'+(light?'\uc5b4\ub450\uc6b4 \ud654\uba74 \ubc84\uc804':'\ubc1d\uc740 \ud654\uba74 \ubc84\uc804')+'</span>';btn.onclick=toggleTheme;if(kakao&&kakao.parentElement){kakao.parentElement.insertBefore(btn,kakao);}else{nav.appendChild(btn);}})();
 </script>
 </body></html>

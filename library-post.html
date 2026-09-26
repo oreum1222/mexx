@@ -13,7 +13,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
   tailwind.config = { darkMode:"class", theme:{ extend:{
     "colors":{ "background":"rgb(var(--c-background) / <alpha-value>)","surface-bright":"rgb(var(--c-surface-bright) / <alpha-value>)","surface":"rgb(var(--c-surface) / <alpha-value>)","surface-container-lowest":"rgb(var(--c-surface-container-lowest) / <alpha-value>)","surface-container-low":"rgb(var(--c-surface-container-low) / <alpha-value>)","surface-container":"rgb(var(--c-surface-container) / <alpha-value>)","surface-container-high":"rgb(var(--c-surface-container-high) / <alpha-value>)","surface-container-highest":"rgb(var(--c-surface-container-highest) / <alpha-value>)","outline-variant":"rgb(var(--c-outline-variant) / <alpha-value>)","outline":"rgb(var(--c-outline) / <alpha-value>)","on-surface":"rgb(var(--c-on-surface) / <alpha-value>)","on-surface-variant":"rgb(var(--c-on-surface-variant) / <alpha-value>)","secondary":"rgb(var(--c-secondary) / <alpha-value>)","on-secondary":"rgb(var(--c-on-secondary) / <alpha-value>)","on-primary":"rgb(var(--c-on-primary) / <alpha-value>)","secondary-fixed":"rgb(var(--c-secondary-fixed) / <alpha-value>)","on-tertiary-container":"rgb(var(--c-on-tertiary-container) / <alpha-value>)","tertiary-fixed":"rgb(var(--c-tertiary-fixed) / <alpha-value>)","tertiary-container":"rgb(var(--c-tertiary-container) / <alpha-value>)","primary":"rgb(var(--c-primary) / <alpha-value>)","primary-container":"rgb(var(--c-primary-container) / <alpha-value>)","on-primary-container":"rgb(var(--c-on-primary-container) / <alpha-value>)" },
@@ -43,7 +42,7 @@
     --c-secondary-fixed:208 240 233; --c-on-tertiary-container:9 150 128; --c-tertiary-fixed:9 150 128;
     --c-tertiary-container:223 244 238; --c-primary:237 242 248; --c-primary-container:228 235 243; --c-on-primary-container:84 95 117;
   }
-  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+  @font-face{font-family:'Material Symbols Outlined';font-style:normal;font-weight:100 700;font-display:block;src:url(material-symbols-mexx-v1.woff2) format('woff2');}.material-symbols-outlined{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
   ::-webkit-scrollbar{width:8px;height:8px;}::-webkit-scrollbar-track{background:rgb(var(--c-surface-bright));}::-webkit-scrollbar-thumb{background:rgb(var(--c-surface-container-highest));border-radius:4px;}
   /* 해설 카드 */
   .qcard{scroll-margin-top:88px;}
@@ -67,20 +66,20 @@
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="index.html#contact">문의</a>
 </div>
 </div>
-<a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="bg-secondary text-on-secondary px-5 py-2.5 rounded-lg font-label-md text-label-md font-bold hover:opacity-90 transition-all hidden sm:flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">chat_bubble</span>카카오톡 문의</a>
+<a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="bg-secondary text-on-secondary px-5 py-2.5 rounded-lg font-label-md text-label-md font-bold hover:opacity-90 transition-all hidden sm:flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">&#xe0cb;</span>카카오톡 문의</a>
 </div>
 </nav>
 
 <!-- 잠금 오버레이 -->
 <div id="lock" class="fixed inset-0 z-[60] bg-background/95 backdrop-blur flex items-center justify-center px-6">
   <div class="w-full max-w-sm bg-surface-container-lowest border border-outline-variant rounded-2xl p-8 text-center">
-    <div class="w-14 h-14 mx-auto bg-secondary-fixed text-secondary rounded-2xl flex items-center justify-center mb-5"><span class="material-symbols-outlined text-[28px]">lock</span></div>
+    <div class="w-14 h-14 mx-auto bg-secondary-fixed text-secondary rounded-2xl flex items-center justify-center mb-5"><span class="material-symbols-outlined text-[28px]">&#xe899;</span></div>
     <h1 class="font-headline-md text-[20px] font-bold text-on-surface mb-1.5" id="lock-title">수강생 전용 자료</h1>
     <p class="font-body-md text-[14px] text-on-surface-variant mb-6">수강생용 비밀번호를 입력하면 열립니다.</p>
     <form id="lock-form" autocomplete="off">
       <input id="pw" type="password" inputmode="text" autocomplete="off" placeholder="비밀번호" class="w-full h-12 px-4 rounded-xl bg-surface-container border border-outline-variant text-on-surface text-center tracking-widest focus:border-secondary focus:ring-2 focus:ring-secondary/30 outline-none"/>
       <p id="pw-err" class="text-[13px] text-red-400 mt-2 h-5"></p>
-      <button type="submit" id="pw-btn" class="w-full h-12 mt-2 bg-secondary text-on-secondary rounded-xl font-label-md font-bold hover:opacity-90 transition-all flex items-center justify-center gap-1.5"><span class="material-symbols-outlined text-[18px]">lock_open</span>열기</button>
+      <button type="submit" id="pw-btn" class="w-full h-12 mt-2 bg-secondary text-on-secondary rounded-xl font-label-md font-bold hover:opacity-90 transition-all flex items-center justify-center gap-1.5"><span class="material-symbols-outlined text-[18px]">&#xe898;</span>열기</button>
     </form>
     <a href="library.html" class="inline-block mt-5 text-on-surface-variant text-[13px] hover:text-secondary">← 자료실 목록으로</a>
   </div>
@@ -90,8 +89,8 @@
 <div id="page" class="hidden">
 <header class="bg-surface-bright border-b border-outline-variant">
 <div class="max-w-3xl mx-auto px-margin-desktop py-10">
-<a href="library.html" class="inline-flex items-center gap-1 text-on-surface-variant text-[13px] hover:text-secondary mb-4"><span class="material-symbols-outlined text-[16px]">arrow_back</span>학습 자료실</a>
-<span class="inline-flex items-center gap-1.5 bg-secondary-fixed/60 text-secondary border border-secondary/25 px-3 py-1 rounded-full mb-3"><span class="material-symbols-outlined text-[14px]" id="meta-lock">lock</span><span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold" id="meta-cat">워크북 해설</span></span>
+<a href="library.html" class="inline-flex items-center gap-1 text-on-surface-variant text-[13px] hover:text-secondary mb-4"><span class="material-symbols-outlined text-[16px]">&#xe5c4;</span>학습 자료실</a>
+<span class="inline-flex items-center gap-1.5 bg-secondary-fixed/60 text-secondary border border-secondary/25 px-3 py-1 rounded-full mb-3"><span class="material-symbols-outlined text-[14px]" id="meta-lock">&#xe899;</span><span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold" id="meta-cat">워크북 해설</span></span>
 <h1 class="font-display-lg text-[28px] md:text-[34px] font-bold text-on-surface tracking-tight" id="post-title">워크북 해설</h1>
 <p class="text-on-surface-variant text-[14px] mt-2" id="post-sub"></p>
 </div>
@@ -101,14 +100,14 @@
   <!-- 검색/도구 -->
   <div class="sticky top-16 z-40 bg-background/90 backdrop-blur py-3 -mx-2 px-2 mb-4 border-b border-outline-variant">
     <div class="relative">
-      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">&#xef7a;</span>
       <input id="search" type="text" placeholder="문항 번호(예: 42) 또는 키워드 검색" class="w-full h-11 pl-11 pr-4 rounded-xl bg-surface-container border border-outline-variant text-on-surface text-[14px] focus:border-secondary focus:ring-2 focus:ring-secondary/30 outline-none"/>
     </div>
     <p class="text-on-surface-variant text-[12px] mt-2" id="count"></p>
   </div>
   <!-- 유포 금지 안내 -->
   <div class="flex items-start gap-2.5 bg-secondary-fixed/40 border border-secondary/20 rounded-xl px-4 py-3 mb-6">
-    <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">shield</span>
+    <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">&#xe9e0;</span>
     <p class="text-[12.5px] text-on-surface-variant leading-relaxed">본 해설은 <b class="text-on-surface">MEXX 수강생 전용</b>입니다. 캡처·복제·외부 공유를 금합니다.</p>
   </div>
   <div id="content"></div>
@@ -125,8 +124,8 @@
 
 <script src="library-data.js?v=20260819"></script>
 <script>
-  function toggleTheme(){var d=document.documentElement,light=d.classList.toggle('light');d.classList.toggle('dark',!light);try{localStorage.setItem('mexx-theme',light?'light':'dark');}catch(e){}var ic=document.getElementById('theme-icon');if(ic)ic.textContent=light?'dark_mode':'light_mode';var lb=document.getElementById('theme-label');if(lb)lb.textContent=light?'어두운 화면 버전':'밝은 화면 버전';var m=document.querySelector('meta[name=theme-color]');if(m)m.content=light?'#f6f8fc':'#0a0c10';}
-  (function(){var nav=document.querySelector('nav');if(!nav)return;var kakao=nav.querySelector('a[href*="pf.kakao.com"]');var light=document.documentElement.classList.contains('light');var btn=document.createElement('button');btn.id='theme-toggle';btn.setAttribute('aria-label','다크/라이트 모드 전환');btn.title='다크/라이트 전환';btn.className='h-10 px-3 rounded-lg border border-outline-variant text-on-surface-variant hover:text-secondary hover:border-secondary transition-colors flex items-center gap-1.5 shrink-0';btn.innerHTML='<span class="material-symbols-outlined text-[20px]" id="theme-icon">'+(light?'dark_mode':'light_mode')+'</span><span id="theme-label" class="hidden sm:inline font-label-md text-label-md font-bold whitespace-nowrap">'+(light?'어두운 화면 버전':'밝은 화면 버전')+'</span>';btn.onclick=toggleTheme;if(kakao&&kakao.parentElement){kakao.parentElement.insertBefore(btn,kakao);}else{nav.appendChild(btn);}})();
+  function toggleTheme(){var d=document.documentElement,light=d.classList.toggle('light');d.classList.toggle('dark',!light);try{localStorage.setItem('mexx-theme',light?'light':'dark');}catch(e){}var ic=document.getElementById('theme-icon');if(ic)ic.textContent=light?'\ue51c':'\ue518';var lb=document.getElementById('theme-label');if(lb)lb.textContent=light?'어두운 화면 버전':'밝은 화면 버전';var m=document.querySelector('meta[name=theme-color]');if(m)m.content=light?'#f6f8fc':'#0a0c10';}
+  (function(){var nav=document.querySelector('nav');if(!nav)return;var kakao=nav.querySelector('a[href*="pf.kakao.com"]');var light=document.documentElement.classList.contains('light');var btn=document.createElement('button');btn.id='theme-toggle';btn.setAttribute('aria-label','다크/라이트 모드 전환');btn.title='다크/라이트 전환';btn.className='h-10 px-3 rounded-lg border border-outline-variant text-on-surface-variant hover:text-secondary hover:border-secondary transition-colors flex items-center gap-1.5 shrink-0';btn.innerHTML='<span class="material-symbols-outlined text-[20px]" id="theme-icon">'+(light?'\ue51c':'\ue518')+'</span><span id="theme-label" class="hidden sm:inline font-label-md text-label-md font-bold whitespace-nowrap">'+(light?'어두운 화면 버전':'밝은 화면 버전')+'</span>';btn.onclick=toggleTheme;if(kakao&&kakao.parentElement){kakao.parentElement.insertBefore(btn,kakao);}else{nav.appendChild(btn);}})();
 
   // ---- 유틸 ----
   var qs=new URLSearchParams(location.search); var POSTID=qs.get('p')||'';

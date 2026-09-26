@@ -46,7 +46,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
   tailwind.config = {
     darkMode: "class",
@@ -118,7 +117,7 @@
     --c-secondary-fixed:208 240 233; --c-on-tertiary-container:9 150 128; --c-tertiary-fixed:9 150 128;
     --c-tertiary-container:223 244 238; --c-primary:237 242 248; --c-primary-container:228 235 243; --c-on-primary-container:84 95 117;
   }
-  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+  @font-face{font-family:'Material Symbols Outlined';font-style:normal;font-weight:100 700;font-display:block;src:url(material-symbols-mexx-v1.woff2) format('woff2');}.material-symbols-outlined{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
   .course-card-hover{transition:all 0.3s cubic-bezier(0.4,0,0.2,1);}
   .course-card-hover:hover{transform:translateY(-4px);border-color:rgba(74,227,192,.38);box-shadow:0 16px 38px rgba(0,0,0,.5),0 0 0 1px rgba(74,227,192,.1);}
   .fi{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(0.22,1,0.36,1);}
@@ -145,17 +144,17 @@
 <div id="notice-bar" class="sticky top-0 z-[60] h-10 flex items-center overflow-hidden" style="background:#0e5e50;color:#f4fffb;font-weight:600">
 <div class="nb-track">
 <span class="nb-grp flex">
-<span class="nb-item"><span class="material-symbols-outlined text-[16px]">bolt</span><b class="rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1" style="background:#4ae3c0;color:#06251f">추석 특강</b>출제자가 나올 것만 짚는 중간고사 문법, 단 2회로 끝! · 고2 화법과 언어 추석 특강 9/24(목)·9/25(금) 09:30–12:30 · 지금 카카오톡으로 신청하세요</span>
-<span class="nb-item"><span class="material-symbols-outlined text-[16px]">bolt</span><b class="rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1" style="background:#4ae3c0;color:#06251f">추석 특강</b>출제자가 나올 것만 짚는 중간고사 문법, 단 2회로 끝! · 고2 화법과 언어 추석 특강 9/24(목)·9/25(금) 09:30–12:30 · 지금 카카오톡으로 신청하세요</span>
-<span class="nb-item"><span class="material-symbols-outlined text-[16px]">bolt</span><b class="rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1" style="background:#4ae3c0;color:#06251f">추석 특강</b>출제자가 나올 것만 짚는 중간고사 문법, 단 2회로 끝! · 고2 화법과 언어 추석 특강 9/24(목)·9/25(금) 09:30–12:30 · 지금 카카오톡으로 신청하세요</span>
+<span class="nb-item"><span class="material-symbols-outlined text-[16px]">&#xea0b;</span><b class="rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1" style="background:#4ae3c0;color:#06251f">추석 특강</b>출제자가 나올 것만 짚는 중간고사 문법, 단 2회로 끝! · 고2 화법과 언어 추석 특강 9/24(목)·9/25(금) 09:30–12:30 · 지금 카카오톡으로 신청하세요</span>
+<span class="nb-item"><span class="material-symbols-outlined text-[16px]">&#xea0b;</span><b class="rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1" style="background:#4ae3c0;color:#06251f">추석 특강</b>출제자가 나올 것만 짚는 중간고사 문법, 단 2회로 끝! · 고2 화법과 언어 추석 특강 9/24(목)·9/25(금) 09:30–12:30 · 지금 카카오톡으로 신청하세요</span>
+<span class="nb-item"><span class="material-symbols-outlined text-[16px]">&#xea0b;</span><b class="rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1" style="background:#4ae3c0;color:#06251f">추석 특강</b>출제자가 나올 것만 짚는 중간고사 문법, 단 2회로 끝! · 고2 화법과 언어 추석 특강 9/24(목)·9/25(금) 09:30–12:30 · 지금 카카오톡으로 신청하세요</span>
 </span>
 <span class="nb-grp flex" aria-hidden="true">
-<span class="nb-item"><span class="material-symbols-outlined text-[16px]">bolt</span><b class="rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1" style="background:#4ae3c0;color:#06251f">추석 특강</b>출제자가 나올 것만 짚는 중간고사 문법, 단 2회로 끝! · 고2 화법과 언어 추석 특강 9/24(목)·9/25(금) 09:30–12:30 · 지금 카카오톡으로 신청하세요</span>
-<span class="nb-item"><span class="material-symbols-outlined text-[16px]">bolt</span><b class="rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1" style="background:#4ae3c0;color:#06251f">추석 특강</b>출제자가 나올 것만 짚는 중간고사 문법, 단 2회로 끝! · 고2 화법과 언어 추석 특강 9/24(목)·9/25(금) 09:30–12:30 · 지금 카카오톡으로 신청하세요</span>
-<span class="nb-item"><span class="material-symbols-outlined text-[16px]">bolt</span><b class="rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1" style="background:#4ae3c0;color:#06251f">추석 특강</b>출제자가 나올 것만 짚는 중간고사 문법, 단 2회로 끝! · 고2 화법과 언어 추석 특강 9/24(목)·9/25(금) 09:30–12:30 · 지금 카카오톡으로 신청하세요</span>
+<span class="nb-item"><span class="material-symbols-outlined text-[16px]">&#xea0b;</span><b class="rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1" style="background:#4ae3c0;color:#06251f">추석 특강</b>출제자가 나올 것만 짚는 중간고사 문법, 단 2회로 끝! · 고2 화법과 언어 추석 특강 9/24(목)·9/25(금) 09:30–12:30 · 지금 카카오톡으로 신청하세요</span>
+<span class="nb-item"><span class="material-symbols-outlined text-[16px]">&#xea0b;</span><b class="rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1" style="background:#4ae3c0;color:#06251f">추석 특강</b>출제자가 나올 것만 짚는 중간고사 문법, 단 2회로 끝! · 고2 화법과 언어 추석 특강 9/24(목)·9/25(금) 09:30–12:30 · 지금 카카오톡으로 신청하세요</span>
+<span class="nb-item"><span class="material-symbols-outlined text-[16px]">&#xea0b;</span><b class="rounded px-1.5 py-[1px] text-[11px] font-extrabold mr-1" style="background:#4ae3c0;color:#06251f">추석 특강</b>출제자가 나올 것만 짚는 중간고사 문법, 단 2회로 끝! · 고2 화법과 언어 추석 특강 9/24(목)·9/25(금) 09:30–12:30 · 지금 카카오톡으로 신청하세요</span>
 </span>
 </div>
-<button onclick="closeNotice()" aria-label="공지 닫기" class="absolute right-2.5 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center rounded-full bg-on-secondary/10 hover:bg-on-secondary/20 transition-colors"><span class="material-symbols-outlined text-[18px]">close</span></button>
+<button onclick="closeNotice()" aria-label="공지 닫기" class="absolute right-2.5 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center rounded-full bg-on-secondary/10 hover:bg-on-secondary/20 transition-colors"><span class="material-symbols-outlined text-[18px]">&#xe5cd;</span></button>
 </div>
 <!-- TopNavBar -->
 <nav class="w-full top-10 sticky z-50 bg-background/85 backdrop-blur border-b border-outline-variant">
@@ -175,9 +174,9 @@
 </div>
 <div class="flex items-center gap-3">
 <button id="theme-toggle" onclick="toggleTheme()" aria-label="화면 밝기 전환" title="화면 밝기 전환" class="h-10 px-3 rounded-lg border border-outline-variant text-on-surface-variant hover:text-secondary hover:border-secondary transition-colors flex items-center gap-1.5 shrink-0">
-<span class="material-symbols-outlined text-[20px]" id="theme-icon">light_mode</span><span id="theme-label" class="hidden sm:inline font-label-md text-label-md font-bold whitespace-nowrap">밝은 화면 버전</span></button>
+<span class="material-symbols-outlined text-[20px]" id="theme-icon">&#xe518;</span><span id="theme-label" class="hidden sm:inline font-label-md text-label-md font-bold whitespace-nowrap">밝은 화면 버전</span></button>
 <a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="bg-secondary text-on-secondary px-5 py-2.5 rounded-lg font-label-md text-label-md font-bold hover:opacity-90 transition-all active:scale-[0.98] hidden sm:flex items-center gap-1.5">
-<span class="material-symbols-outlined text-[18px]">chat_bubble</span>카카오톡 문의</a>
+<span class="material-symbols-outlined text-[18px]">&#xe0cb;</span>카카오톡 문의</a>
 </div>
 </div>
 </nav>
@@ -189,7 +188,7 @@
 <div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
 <div class="space-y-7">
 <div class="inline-flex items-center gap-2 bg-secondary-fixed/60 text-secondary border border-secondary/25 px-3 py-1 rounded-full">
-<span class="material-symbols-outlined text-[16px]">workspace_premium</span>
+<span class="material-symbols-outlined text-[16px]">&#xe7af;</span>
 <span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">MEXX · 고2 추석 특강 접수 중</span>
 </div>
 <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface tracking-tight">
@@ -201,28 +200,28 @@
 <p class="font-headline-md text-[15px] text-secondary mt-3 tracking-tight">국어, 가뿐하게 · 경쾌하게!</p>
 <div class="flex flex-wrap gap-4 pt-2">
 <a href="#courses" class="bg-secondary text-on-secondary px-7 py-3.5 rounded-xl font-headline-md text-[17px] font-bold hover:shadow-lg hover:opacity-90 transition-all active:scale-[0.98] flex items-center gap-2">
-강좌 보기 <span class="material-symbols-outlined">arrow_forward</span></a>
+강좌 보기 <span class="material-symbols-outlined">&#xe5c8;</span></a>
 <a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="bg-surface-container-lowest text-secondary border border-secondary/40 px-7 py-3.5 rounded-xl font-headline-md text-[17px] hover:bg-secondary-fixed/40 transition-all active:scale-[0.98]">수강 상담하기</a>
 </div>
 <div class="flex flex-wrap items-center gap-3 pt-1">
-<span class="inline-flex items-center gap-1 text-on-surface-variant text-[13px] font-bold"><span class="material-symbols-outlined text-[16px] text-secondary">stylus_note</span>무료 진단</span>
-<a href="https://oreum1222.github.io/oreum-fassessment/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-secondary-fixed/40 text-secondary border border-secondary/30 px-4 py-2.5 rounded-lg font-label-md text-[14px] font-bold hover:bg-secondary-fixed/70 hover:border-secondary/50 transition-all active:scale-[0.98]"><span class="material-symbols-outlined text-[18px]">psychology</span>학습 성향 진단</a>
-<a href="https://oreum1222.github.io/oreum-mocksys/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-secondary-fixed/40 text-secondary border border-secondary/30 px-4 py-2.5 rounded-lg font-label-md text-[14px] font-bold hover:bg-secondary-fixed/70 hover:border-secondary/50 transition-all active:scale-[0.98]"><span class="material-symbols-outlined text-[18px]">fact_check</span>모의고사 오답 진단</a>
+<span class="inline-flex items-center gap-1 text-on-surface-variant text-[13px] font-bold"><span class="material-symbols-outlined text-[16px] text-secondary">&#xf603;</span>무료 진단</span>
+<a href="https://oreum1222.github.io/oreum-fassessment/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-secondary-fixed/40 text-secondary border border-secondary/30 px-4 py-2.5 rounded-lg font-label-md text-[14px] font-bold hover:bg-secondary-fixed/70 hover:border-secondary/50 transition-all active:scale-[0.98]"><span class="material-symbols-outlined text-[18px]">&#xea4a;</span>학습 성향 진단</a>
+<a href="https://oreum1222.github.io/oreum-mocksys/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-secondary-fixed/40 text-secondary border border-secondary/30 px-4 py-2.5 rounded-lg font-label-md text-[14px] font-bold hover:bg-secondary-fixed/70 hover:border-secondary/50 transition-all active:scale-[0.98]"><span class="material-symbols-outlined text-[18px]">&#xf0c5;</span>모의고사 오답 진단</a>
 </div>
 <div class="flex flex-col gap-2.5 pt-6 border-t border-outline-variant">
-<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">bolt</span><span class="font-label-md text-on-surface"><b class="text-secondary">추석 특강</b> · 고2 화법과 언어 <span class="text-secondary">[문법]</span> 9/24(목)·9/25(금) 09:30–12:30 · 2회 완성</span></div>
-<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">auto_stories</span><span class="font-label-md text-on-surface-variant"><b class="text-on-surface">8월 23일(일) 개강</b> · 고2 수능 대비반 <span class="text-secondary">[문학·독서]</span> 14:00–17:00</span></div>
-<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">record_voice_over</span><span class="font-label-md text-on-surface-variant"><b class="text-on-surface">8월 30일(일) 개강</b> · 고2 화법과 언어 연합반 <span class="text-secondary">[언어·문법]</span> 10:00–13:00</span></div>
+<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">&#xea0b;</span><span class="font-label-md text-on-surface"><b class="text-secondary">추석 특강</b> · 고2 화법과 언어 <span class="text-secondary">[문법]</span> 9/24(목)·9/25(금) 09:30–12:30 · 2회 완성</span></div>
+<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">&#xe666;</span><span class="font-label-md text-on-surface-variant"><b class="text-on-surface">8월 23일(일) 개강</b> · 고2 수능 대비반 <span class="text-secondary">[문학·독서]</span> 14:00–17:00</span></div>
+<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">&#xe91f;</span><span class="font-label-md text-on-surface-variant"><b class="text-on-surface">8월 30일(일) 개강</b> · 고2 화법과 언어 연합반 <span class="text-secondary">[언어·문법]</span> 10:00–13:00</span></div>
 </div>
 <a href="students.html" class="stu-cta group mt-6 flex items-center justify-between gap-3 w-full px-5 py-4 rounded-xl border border-secondary/45 bg-secondary-fixed/30 hover:bg-secondary-fixed/60 hover:border-secondary/70 transition-all active:scale-[0.99] no-underline">
 <span class="flex items-center gap-3 min-w-0">
-<span class="w-9 h-9 rounded-lg bg-secondary text-on-secondary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[20px]">school</span></span>
+<span class="w-9 h-9 rounded-lg bg-secondary text-on-secondary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[20px]">&#xe80c;</span></span>
 <span class="flex flex-col min-w-0 text-left">
 <span class="font-bold text-on-surface text-[15px] leading-tight">MEXX 수강생이신가요?</span>
 <span class="text-on-surface-variant text-[12.5px] leading-tight mt-0.5">진단 · 보강 · 클리닉 · 시간표를 한 곳에서</span>
 </span>
 </span>
-<span class="flex items-center gap-1 text-secondary font-bold text-[14px] whitespace-nowrap shrink-0">수강생 전용 <span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span></span>
+<span class="flex items-center gap-1 text-secondary font-bold text-[14px] whitespace-nowrap shrink-0">수강생 전용 <span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">&#xe5c8;</span></span>
 </a>
 </div>
 <!-- Portrait credibility card (국민대 적중 카드 포맷 → MEXX 콘텐츠) -->
@@ -237,7 +236,7 @@
 <span class="inline-flex items-center px-4 py-1.5 rounded-full font-label-sm text-label-sm font-bold" style="background:rgba(74,227,192,.14);color:#4ae3c0;border:1px solid rgba(74,227,192,.32)">MEXX 국어 · 김가경T</span>
 <p class="mt-5 font-display-lg text-[28px] font-extrabold tracking-tight" style="color:#e8ecf4">국어 <span style="color:#4ae3c0">김가경T</span></p>
 <p class="mt-3 text-[13.5px] leading-relaxed" style="color:#9aa4ba">메가스터디 수능 모의고사 출제<br/>강남대성 수능 문항공모전 선발<br/>10년 이상의 현장 강의 경험</p>
-<a href="teacher.html" class="mt-5 flex items-center justify-center gap-1.5 w-full py-3.5 rounded-xl font-bold text-[15px] hover:opacity-90 transition-all" style="background:#4ae3c0;color:#06251f">강사 소개 자세히 보기 <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+<a href="teacher.html" class="mt-5 flex items-center justify-center gap-1.5 w-full py-3.5 rounded-xl font-bold text-[15px] hover:opacity-90 transition-all" style="background:#4ae3c0;color:#06251f">강사 소개 자세히 보기 <span class="material-symbols-outlined text-[18px]">&#xe5c8;</span></a>
 </div>
 </div>
 </div>
@@ -260,11 +259,11 @@
 <img src="https://img.youtube.com/vi/IhiCxYKepUk/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/IhiCxYKepUk/hqdefault.jpg'" alt="고2 화법과 언어 OT" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></div>
 <span class="absolute top-3 left-3 bg-secondary text-on-secondary text-label-sm font-bold px-3 py-1 rounded-full">OT</span>
-<span class="absolute inset-0 flex items-center justify-center"><span class="w-14 h-14 rounded-full bg-secondary/90 text-on-secondary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-[30px]" style="font-variation-settings:'FILL' 1;">play_arrow</span></span></span>
+<span class="absolute inset-0 flex items-center justify-center"><span class="w-14 h-14 rounded-full bg-secondary/90 text-on-secondary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-[30px]" style="font-variation-settings:'FILL' 1;">&#xe037;</span></span></span>
 </div>
 <div class="p-5 flex items-center justify-between gap-2">
 <h3 class="font-headline-md text-[16px] text-on-surface">고2 화법과 언어 · OT</h3>
-<span class="material-symbols-outlined text-secondary shrink-0 text-[20px]">arrow_outward</span>
+<span class="material-symbols-outlined text-secondary shrink-0 text-[20px]">&#xf8ce;</span>
 </div>
 </a>
 <!-- 화법과 언어 연합반 OT -->
@@ -273,11 +272,11 @@
 <img src="https://img.youtube.com/vi/KKwodkRZF4A/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/KKwodkRZF4A/hqdefault.jpg'" alt="고2 화법과 언어 맛보기" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></div>
 <span class="absolute top-3 left-3 bg-secondary text-on-secondary text-label-sm font-bold px-3 py-1 rounded-full">맛보기</span>
-<span class="absolute inset-0 flex items-center justify-center"><span class="w-14 h-14 rounded-full bg-secondary/90 text-on-secondary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-[30px]" style="font-variation-settings:'FILL' 1;">play_arrow</span></span></span>
+<span class="absolute inset-0 flex items-center justify-center"><span class="w-14 h-14 rounded-full bg-secondary/90 text-on-secondary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-[30px]" style="font-variation-settings:'FILL' 1;">&#xe037;</span></span></span>
 </div>
 <div class="p-5 flex items-center justify-between gap-2">
 <h3 class="font-headline-md text-[16px] text-on-surface">고2 화법과 언어 · 맛보기 강의</h3>
-<span class="material-symbols-outlined text-secondary shrink-0 text-[20px]">arrow_outward</span>
+<span class="material-symbols-outlined text-secondary shrink-0 text-[20px]">&#xf8ce;</span>
 </div>
 </a>
 <!-- 수능 대비반 OT -->
@@ -286,11 +285,11 @@
 <img src="https://img.youtube.com/vi/19RorH_MA_E/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/19RorH_MA_E/hqdefault.jpg'" alt="고2 수능 대비반 OT" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></div>
 <span class="absolute top-3 left-3 bg-secondary text-on-secondary text-label-sm font-bold px-3 py-1 rounded-full">OT</span>
-<span class="absolute inset-0 flex items-center justify-center"><span class="w-14 h-14 rounded-full bg-secondary/90 text-on-secondary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-[30px]" style="font-variation-settings:'FILL' 1;">play_arrow</span></span></span>
+<span class="absolute inset-0 flex items-center justify-center"><span class="w-14 h-14 rounded-full bg-secondary/90 text-on-secondary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-[30px]" style="font-variation-settings:'FILL' 1;">&#xe037;</span></span></span>
 </div>
 <div class="p-5 flex items-center justify-between gap-2">
 <h3 class="font-headline-md text-[16px] text-on-surface">고2 · 수능 대비반</h3>
-<span class="material-symbols-outlined text-secondary shrink-0 text-[20px]">arrow_outward</span>
+<span class="material-symbols-outlined text-secondary shrink-0 text-[20px]">&#xf8ce;</span>
 </div>
 </a>
 </div>
@@ -323,17 +322,17 @@
 <section id="reviews" class="bg-surface-container-low border-y border-outline-variant py-16 overflow-hidden">
 <div class="max-w-container-max mx-auto px-margin-desktop mb-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
 <div class="text-center lg:text-left">
-<span class="inline-flex items-center gap-1.5 text-secondary font-label-sm text-label-sm font-bold tracking-wider mb-3 bg-secondary-fixed/60 border border-secondary/25 px-3 py-1 rounded-full"><span class="material-symbols-outlined text-[15px]" style="font-variation-settings:'FILL' 1;">favorite</span>실제 후기</span>
+<span class="inline-flex items-center gap-1.5 text-secondary font-label-sm text-label-sm font-bold tracking-wider mb-3 bg-secondary-fixed/60 border border-secondary/25 px-3 py-1 rounded-full"><span class="material-symbols-outlined text-[15px]" style="font-variation-settings:'FILL' 1;">&#xe87e;</span>실제 후기</span>
 <h2 class="font-headline-lg text-headline-lg md:text-display-lg-mobile text-on-surface tracking-tight">‘김가경 국어 연구소’ 유튜브 채널의<br/>수강 후기</h2>
 <p class="mt-3 text-on-surface-variant font-body-md">구독자 3만, 월 조회수 510만 이상의 채널은<br/>지금도 국어 공부하는 학생들로 가득합니다.</p>
 </div>
 <div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 w-full max-w-md mx-auto lg:ml-auto">
-<div class="flex items-center gap-2 mb-4"><span class="material-symbols-outlined text-[20px]" style="color:#ff4e45;font-variation-settings:'FILL' 1;">smart_display</span><span class="text-[13px] text-on-surface-variant font-medium">김가경 국어 연구소 · 채널 분석</span></div>
+<div class="flex items-center gap-2 mb-4"><span class="material-symbols-outlined text-[20px]" style="color:#ff4e45;font-variation-settings:'FILL' 1;">&#xf06a;</span><span class="text-[13px] text-on-surface-variant font-medium">김가경 국어 연구소 · 채널 분석</span></div>
 <div class="flex items-baseline gap-2.5 flex-wrap"><span class="text-[38px] font-extrabold text-on-surface tracking-tight leading-none">3만<span class="text-secondary">+</span></span><span class="text-[13px] text-on-surface-variant">구독자</span></div>
-<div class="inline-flex items-center gap-1.5 mt-2.5 text-[12.5px] font-semibold rounded-lg px-2.5 py-1" style="color:#5fe39a;background:rgba(95,227,154,.1)"><span class="material-symbols-outlined text-[15px]">trending_up</span>지난 28일 +2,543</div>
+<div class="inline-flex items-center gap-1.5 mt-2.5 text-[12.5px] font-semibold rounded-lg px-2.5 py-1" style="color:#5fe39a;background:rgba(95,227,154,.1)"><span class="material-symbols-outlined text-[15px]">&#xe8e5;</span>지난 28일 +2,543</div>
 <div class="grid grid-cols-2 gap-3 mt-5 pt-[18px] border-t border-outline-variant">
-<div><div class="flex items-center gap-1.5 text-on-surface-variant text-[12px] mb-1.5"><span class="material-symbols-outlined text-[15px]">visibility</span>28일 조회수</div><div class="text-[22px] font-bold text-secondary">510.7만</div></div>
-<div><div class="flex items-center gap-1.5 text-on-surface-variant text-[12px] mb-1.5"><span class="material-symbols-outlined text-[15px]">schedule</span>28일 시청 시간</div><div class="text-[22px] font-bold text-secondary">3.9만<span class="text-[13px] text-on-surface-variant font-normal"> 시간</span></div></div>
+<div><div class="flex items-center gap-1.5 text-on-surface-variant text-[12px] mb-1.5"><span class="material-symbols-outlined text-[15px]">&#xe8f4;</span>28일 조회수</div><div class="text-[22px] font-bold text-secondary">510.7만</div></div>
+<div><div class="flex items-center gap-1.5 text-on-surface-variant text-[12px] mb-1.5"><span class="material-symbols-outlined text-[15px]">&#xefd6;</span>28일 시청 시간</div><div class="text-[22px] font-bold text-secondary">3.9만<span class="text-[13px] text-on-surface-variant font-normal"> 시간</span></div></div>
 </div>
 </div>
 </div>
@@ -392,8 +391,8 @@
   function card(r,i){
     var c=pal[i%pal.length];
     var ini=r.n.charAt(0);
-    var likes=(r.l!=null)?'<span class="rv-lk"><span class="material-symbols-outlined">thumb_up</span>'+r.l+'</span>':'';
-    return '<div class="rv-card"><div class="rv-top"><div class="rv-ava" style="background:linear-gradient(135deg,'+c+','+c+'66)">'+ini+'</div><div class="rv-id"><span class="rv-nm">'+r.n+'</span><span class="rv-sc">유튜브 후기</span></div><span class="rv-yt material-symbols-outlined" style="font-variation-settings:\'FILL\' 1;">smart_display</span></div><p class="rv-tx">'+r.t+'</p><div class="rv-ft">'+likes+'</div></div>';
+    var likes=(r.l!=null)?'<span class="rv-lk"><span class="material-symbols-outlined">&#xf577;</span>'+r.l+'</span>':'';
+    return '<div class="rv-card"><div class="rv-top"><div class="rv-ava" style="background:linear-gradient(135deg,'+c+','+c+'66)">'+ini+'</div><div class="rv-id"><span class="rv-nm">'+r.n+'</span><span class="rv-sc">유튜브 후기</span></div><span class="rv-yt material-symbols-outlined" style="font-variation-settings:\'FILL\' 1;">&#xf06a;</span></div><p class="rv-tx">'+r.t+'</p><div class="rv-ft">'+likes+'</div></div>';
   }
   function fill(id,arr){var e=document.getElementById(id);if(!e)return;var h=arr.map(card).join('');e.innerHTML=h+h;}
   fill('rvTrackA',A);fill('rvTrackB',B);
@@ -415,11 +414,11 @@
 <img src="https://img.youtube.com/vi/1s62A28kxVY/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/1s62A28kxVY/hqdefault.jpg'" alt="2027학년도 수능 커리큘럼" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></div>
 <span class="absolute top-3 left-3 bg-secondary text-on-secondary text-label-sm font-bold px-3 py-1 rounded-full">커리큘럼</span>
-<span class="absolute inset-0 flex items-center justify-center"><span class="w-16 h-16 rounded-full bg-secondary/90 text-on-secondary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-[34px]" style="font-variation-settings:'FILL' 1;">play_arrow</span></span></span>
+<span class="absolute inset-0 flex items-center justify-center"><span class="w-16 h-16 rounded-full bg-secondary/90 text-on-secondary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-[34px]" style="font-variation-settings:'FILL' 1;">&#xe037;</span></span></span>
 </div>
 <div class="p-5 flex items-center justify-between gap-3">
 <h3 class="font-headline-md text-[17px] text-on-surface">2027학년도 수능 커리큘럼</h3>
-<span class="material-symbols-outlined text-secondary shrink-0">arrow_outward</span>
+<span class="material-symbols-outlined text-secondary shrink-0">&#xf8ce;</span>
 </div>
 </a>
 <a href="https://youtu.be/Ky9ti2laUWQ" target="_blank" rel="noopener" class="course-card-hover group bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden no-underline block">
@@ -427,11 +426,11 @@
 <img src="https://img.youtube.com/vi/Ky9ti2laUWQ/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/Ky9ti2laUWQ/hqdefault.jpg'" alt="평가원 고난도 독서 기출 해설" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></div>
 <span class="absolute top-3 left-3 bg-secondary text-on-secondary text-label-sm font-bold px-3 py-1 rounded-full">맛보기</span>
-<span class="absolute inset-0 flex items-center justify-center"><span class="w-16 h-16 rounded-full bg-secondary/90 text-on-secondary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-[34px]" style="font-variation-settings:'FILL' 1;">play_arrow</span></span></span>
+<span class="absolute inset-0 flex items-center justify-center"><span class="w-16 h-16 rounded-full bg-secondary/90 text-on-secondary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-[34px]" style="font-variation-settings:'FILL' 1;">&#xe037;</span></span></span>
 </div>
 <div class="p-5 flex items-center justify-between gap-3">
 <h3 class="font-headline-md text-[17px] text-on-surface">독서 맛보기 강의</h3>
-<span class="material-symbols-outlined text-secondary shrink-0">arrow_outward</span>
+<span class="material-symbols-outlined text-secondary shrink-0">&#xf8ce;</span>
 </div>
 </a>
 <a href="https://youtu.be/It2uv0BDeo0" target="_blank" rel="noopener" class="course-card-hover group bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden no-underline block">
@@ -439,11 +438,11 @@
 <img src="https://img.youtube.com/vi/It2uv0BDeo0/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/It2uv0BDeo0/hqdefault.jpg'" alt="문법 맛보기 강의" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></div>
 <span class="absolute top-3 left-3 bg-secondary text-on-secondary text-label-sm font-bold px-3 py-1 rounded-full">맛보기</span>
-<span class="absolute inset-0 flex items-center justify-center"><span class="w-16 h-16 rounded-full bg-secondary/90 text-on-secondary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-[34px]" style="font-variation-settings:'FILL' 1;">play_arrow</span></span></span>
+<span class="absolute inset-0 flex items-center justify-center"><span class="w-16 h-16 rounded-full bg-secondary/90 text-on-secondary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-[34px]" style="font-variation-settings:'FILL' 1;">&#xe037;</span></span></span>
 </div>
 <div class="p-5 flex items-center justify-between gap-3">
 <h3 class="font-headline-md text-[17px] text-on-surface">문법 맛보기 강의</h3>
-<span class="material-symbols-outlined text-secondary shrink-0">arrow_outward</span>
+<span class="material-symbols-outlined text-secondary shrink-0">&#xf8ce;</span>
 </div>
 </a>
 </div>
@@ -459,12 +458,12 @@
 <p class="text-body-md text-on-surface-variant max-w-xl mx-auto">하나라도 ‘내 얘기’ 같다면, 지금이 국어를 푸는 방식을 바로잡을 때입니다.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex items-start gap-4"><span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">rule</span><p class="font-body-md text-on-surface leading-relaxed">지문을 읽었는데<br/><b class="font-semibold">선지에서 자주 흔들리는</b> 학생</p></div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex items-start gap-4"><span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">schedule</span><p class="font-body-md text-on-surface leading-relaxed">문학은 감으로 풀고,<br/><b class="font-semibold">독서는 시간에 쫓기는</b> 학생</p></div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex items-start gap-4"><span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">extension</span><p class="font-body-md text-on-surface leading-relaxed">문법을 외웠는데,<br/><b class="font-semibold">문제에 적용하면 틀리는</b> 학생</p></div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex items-start gap-4"><span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">show_chart</span><p class="font-body-md text-on-surface leading-relaxed">내신은 버티는데<br/><b class="font-semibold">모의고사는 불안한</b> 학생</p></div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex items-start gap-4"><span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">replay</span><p class="font-body-md text-on-surface leading-relaxed">해설을 보면 이해되는데<br/><b class="font-semibold">혼자 풀면 다시 틀리는</b> 학생</p></div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex items-start gap-4"><span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">trending_flat</span><p class="font-body-md text-on-surface leading-relaxed">국어 공부량은 많은데<br/><b class="font-semibold">점수가 제자리인</b> 학생</p></div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex items-start gap-4"><span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">&#xf1c2;</span><p class="font-body-md text-on-surface leading-relaxed">지문을 읽었는데<br/><b class="font-semibold">선지에서 자주 흔들리는</b> 학생</p></div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex items-start gap-4"><span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">&#xefd6;</span><p class="font-body-md text-on-surface leading-relaxed">문학은 감으로 풀고,<br/><b class="font-semibold">독서는 시간에 쫓기는</b> 학생</p></div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex items-start gap-4"><span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">&#xe87b;</span><p class="font-body-md text-on-surface leading-relaxed">문법을 외웠는데,<br/><b class="font-semibold">문제에 적용하면 틀리는</b> 학생</p></div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex items-start gap-4"><span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">&#xe6e1;</span><p class="font-body-md text-on-surface leading-relaxed">내신은 버티는데<br/><b class="font-semibold">모의고사는 불안한</b> 학생</p></div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex items-start gap-4"><span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">&#xe042;</span><p class="font-body-md text-on-surface leading-relaxed">해설을 보면 이해되는데<br/><b class="font-semibold">혼자 풀면 다시 틀리는</b> 학생</p></div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex items-start gap-4"><span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">&#xe8e4;</span><p class="font-body-md text-on-surface leading-relaxed">국어 공부량은 많은데<br/><b class="font-semibold">점수가 제자리인</b> 학생</p></div>
 </div>
 </div>
 </section>
@@ -479,14 +478,14 @@
 <h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 mb-3">지금 신청하는 강좌</h2>
 <p class="text-body-md text-on-surface-variant max-w-xl">추석 2회 특강으로 중간고사 문법을 끝내고, 화법과 언어와 첫 수능 국어로 이어갑니다.</p>
 </div>
-<a href="courses.html" class="shrink-0 inline-flex items-center gap-1.5 text-secondary font-label-md font-bold hover:gap-2.5 transition-all whitespace-nowrap">전체 강좌 보기 <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+<a href="courses.html" class="shrink-0 inline-flex items-center gap-1.5 text-secondary font-label-md font-bold hover:gap-2.5 transition-all whitespace-nowrap">전체 강좌 보기 <span class="material-symbols-outlined text-[18px]">&#xe5c8;</span></a>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
 <!-- 추석 특강 (대표 강조) -->
 <a href="course.html?c=cs2" class="course-card-hover relative bg-surface-container-lowest border-2 border-secondary/50 rounded-2xl overflow-hidden flex flex-col no-underline shadow-[0_0_0_1px_rgba(74,227,192,.12)]">
 <span class="absolute top-3 right-3 z-10 bg-secondary text-on-secondary text-[11px] font-extrabold px-2.5 py-1 rounded-full shadow">추석 한정 · 2회</span>
 <div class="chd h-32 relative flex flex-col justify-between px-6 py-5" style="background:linear-gradient(135deg,#123a33,#0c1a17)">
-<span class="material-symbols-outlined text-secondary text-[40px]">bolt</span>
+<span class="material-symbols-outlined text-secondary text-[40px]">&#xea0b;</span>
 <span class="text-secondary font-extrabold text-[23px] tracking-tight">고2 · 추석 특강</span>
 </div>
 <div class="p-6 flex flex-col flex-grow">
@@ -494,7 +493,7 @@
 <h3 class="font-headline-md text-[19px] text-on-surface mb-2">화법과 언어 추석 특강</h3>
 <p class="text-body-md text-on-surface-variant mb-4">출제자가 나올 것만 짚는 중간고사 문법 총정리. 딱 2회로 끝냅니다.</p>
 <div class="mt-auto pt-4 border-t border-outline-variant flex justify-between items-center">
-<span class="font-label-md text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">bolt</span>2회 완성</span>
+<span class="font-label-md text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">&#xea0b;</span>2회 완성</span>
 <span class="font-label-md text-secondary font-bold">9/24~25</span>
 </div>
 </div>
@@ -502,7 +501,7 @@
 <!-- 화법과 언어 연합반 -->
 <a href="course.html?c=h2" class="course-card-hover bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden flex flex-col no-underline">
 <div class="chd h-32 relative flex flex-col justify-between px-6 py-5" style="background:linear-gradient(135deg,#1c2333,#12151c)">
-<span class="material-symbols-outlined text-secondary/80 text-[40px]">record_voice_over</span>
+<span class="material-symbols-outlined text-secondary/80 text-[40px]">&#xe91f;</span>
 <span class="text-secondary font-extrabold text-[23px] tracking-tight">고2 · 화법과 언어</span>
 </div>
 <div class="p-6 flex flex-col flex-grow">
@@ -510,7 +509,7 @@
 <h3 class="font-headline-md text-[19px] text-on-surface mb-2">화법과 언어 연합반</h3>
 <p class="text-body-md text-on-surface-variant mb-4">2학기 중간고사를 언어(문법) 중심으로. 학교별 출제 방식까지 따로 대비합니다.</p>
 <div class="mt-auto pt-4 border-t border-outline-variant flex justify-between items-center">
-<span class="font-label-md text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">event_repeat</span>5회차</span>
+<span class="font-label-md text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">&#xeb7b;</span>5회차</span>
 <span class="font-label-md text-secondary font-bold">8/30 개강</span>
 </div>
 </div>
@@ -518,7 +517,7 @@
 <!-- 수능 대비반 -->
 <a href="course.html?c=sn2" class="course-card-hover bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden flex flex-col no-underline">
 <div class="chd h-32 relative flex flex-col justify-between px-6 py-5" style="background:linear-gradient(135deg,#0e2a26,#12151c)">
-<span class="material-symbols-outlined text-secondary/80 text-[40px]">auto_stories</span>
+<span class="material-symbols-outlined text-secondary/80 text-[40px]">&#xe666;</span>
 <span class="text-secondary font-extrabold text-[23px] tracking-tight">고2 · 수능 국어</span>
 </div>
 <div class="p-6 flex flex-col flex-grow">
@@ -526,7 +525,7 @@
 <h3 class="font-headline-md text-[19px] text-on-surface mb-2">수능 대비반 · 첫 수능 국어</h3>
 <p class="text-body-md text-on-surface-variant mb-4">문학과 독서를 평가원 기출의 출제 원리로. 첫 수능 독해의 기준을 세웁니다.</p>
 <div class="mt-auto pt-4 border-t border-outline-variant flex justify-between items-center">
-<span class="font-label-md text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">event_repeat</span>4회차</span>
+<span class="font-label-md text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">&#xeb7b;</span>4회차</span>
 <span class="font-label-md text-secondary font-bold">8/23 개강</span>
 </div>
 </div>
@@ -544,22 +543,22 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
 <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
-<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">menu_book</span></div>
+<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">&#xea19;</span></div>
 <h4 class="font-headline-md text-[17px] text-on-surface mb-1">자체 제작 개념서</h4>
 <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">현대문법·고전문법·문학개념어·고전시가 — 강좌별 자체 교재로 선택과 집중.</p>
 </div>
 <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
-<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">assignment</span></div>
+<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">&#xe85d;</span></div>
 <h4 class="font-headline-md text-[17px] text-on-surface mb-1">내신 빈출 유형 복습 워크북</h4>
 <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">매주 복습 과제를 워크북 형태로 배부해 배운 내용을 체화합니다.</p>
 </div>
 <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
-<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">quiz</span></div>
+<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">&#xf04c;</span></div>
 <h4 class="font-headline-md text-[17px] text-on-surface mb-1">매주 복습 시험</h4>
 <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">매주 복습 시험으로 학습을 점검하고 빈틈을 바로잡습니다.</p>
 </div>
 <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
-<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">support_agent</span></div>
+<div class="w-12 h-12 bg-secondary-fixed text-secondary rounded-xl flex items-center justify-center mb-4"><span class="material-symbols-outlined">&#xf0e2;</span></div>
 <h4 class="font-headline-md text-[17px] text-on-surface mb-1">클리닉 + 카톡 채널</h4>
 <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">주 1회 질의응답 클리닉과<br>카카오톡 채널로 상시 질문이 가능합니다.</p>
 </div>
@@ -577,24 +576,24 @@
 </div>
 <div class="grid gap-4 max-w-3xl mx-auto">
 <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-3 md:gap-5 bg-surface-container-lowest border border-outline-variant rounded-xl p-5">
-<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-on-surface-variant/50 text-[20px] mt-0.5">close</span><p class="text-on-surface-variant text-[14px] leading-relaxed">문법 개념을 외웠는데 문제에서 못 씀</p></div>
-<span class="material-symbols-outlined text-secondary justify-self-start md:justify-self-center rotate-90 md:rotate-0">arrow_forward</span>
-<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">check</span><p class="text-on-surface text-[14px] font-medium leading-relaxed">개념이 선지에서 어떻게 변형되는지 판단함</p></div>
+<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-on-surface-variant/50 text-[20px] mt-0.5">&#xe5cd;</span><p class="text-on-surface-variant text-[14px] leading-relaxed">문법 개념을 외웠는데 문제에서 못 씀</p></div>
+<span class="material-symbols-outlined text-secondary justify-self-start md:justify-self-center rotate-90 md:rotate-0">&#xe5c8;</span>
+<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">&#xe668;</span><p class="text-on-surface text-[14px] font-medium leading-relaxed">개념이 선지에서 어떻게 변형되는지 판단함</p></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-3 md:gap-5 bg-surface-container-lowest border border-outline-variant rounded-xl p-5">
-<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-on-surface-variant/50 text-[20px] mt-0.5">close</span><p class="text-on-surface-variant text-[14px] leading-relaxed">고전시가를 해석 위주로만 봄</p></div>
-<span class="material-symbols-outlined text-secondary justify-self-start md:justify-self-center rotate-90 md:rotate-0">arrow_forward</span>
-<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">check</span><p class="text-on-surface text-[14px] font-medium leading-relaxed">갈래·화자·상황으로 구조화해 읽음</p></div>
+<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-on-surface-variant/50 text-[20px] mt-0.5">&#xe5cd;</span><p class="text-on-surface-variant text-[14px] leading-relaxed">고전시가를 해석 위주로만 봄</p></div>
+<span class="material-symbols-outlined text-secondary justify-self-start md:justify-self-center rotate-90 md:rotate-0">&#xe5c8;</span>
+<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">&#xe668;</span><p class="text-on-surface text-[14px] font-medium leading-relaxed">갈래·화자·상황으로 구조화해 읽음</p></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-3 md:gap-5 bg-surface-container-lowest border border-outline-variant rounded-xl p-5">
-<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-on-surface-variant/50 text-[20px] mt-0.5">close</span><p class="text-on-surface-variant text-[14px] leading-relaxed">선지를 감으로 고름</p></div>
-<span class="material-symbols-outlined text-secondary justify-self-start md:justify-self-center rotate-90 md:rotate-0">arrow_forward</span>
-<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">check</span><p class="text-on-surface text-[14px] font-medium leading-relaxed">지문 근거로 지우고 남김</p></div>
+<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-on-surface-variant/50 text-[20px] mt-0.5">&#xe5cd;</span><p class="text-on-surface-variant text-[14px] leading-relaxed">선지를 감으로 고름</p></div>
+<span class="material-symbols-outlined text-secondary justify-self-start md:justify-self-center rotate-90 md:rotate-0">&#xe5c8;</span>
+<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">&#xe668;</span><p class="text-on-surface text-[14px] font-medium leading-relaxed">지문 근거로 지우고 남김</p></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-3 md:gap-5 bg-surface-container-lowest border border-outline-variant rounded-xl p-5">
-<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-on-surface-variant/50 text-[20px] mt-0.5">close</span><p class="text-on-surface-variant text-[14px] leading-relaxed">내신 범위를 암기만 함</p></div>
-<span class="material-symbols-outlined text-secondary justify-self-start md:justify-self-center rotate-90 md:rotate-0">arrow_forward</span>
-<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">check</span><p class="text-on-surface text-[14px] font-medium leading-relaxed">외부 지문·변형 문제까지 대응함</p></div>
+<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-on-surface-variant/50 text-[20px] mt-0.5">&#xe5cd;</span><p class="text-on-surface-variant text-[14px] leading-relaxed">내신 범위를 암기만 함</p></div>
+<span class="material-symbols-outlined text-secondary justify-self-start md:justify-self-center rotate-90 md:rotate-0">&#xe5c8;</span>
+<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">&#xe668;</span><p class="text-on-surface text-[14px] font-medium leading-relaxed">외부 지문·변형 문제까지 대응함</p></div>
 </div>
 </div>
 </div>
@@ -609,7 +608,7 @@
 <div class="w-56 h-56 rounded-full border-[3px] border-secondary p-1.5 mx-auto overflow-hidden bg-surface-container-lowest">
 <img alt="가경T" class="w-full h-full object-cover object-top rounded-full" src="profile.png"/>
 </div>
-<div class="absolute bottom-3 right-3 bg-secondary text-on-secondary w-10 h-10 rounded-full flex items-center justify-center shadow-lg"><span class="material-symbols-outlined text-[20px]" style="font-variation-settings:'FILL' 1;">verified</span></div>
+<div class="absolute bottom-3 right-3 bg-secondary text-on-secondary w-10 h-10 rounded-full flex items-center justify-center shadow-lg"><span class="material-symbols-outlined text-[20px]" style="font-variation-settings:'FILL' 1;">&#xef76;</span></div>
 </div>
 <h3 class="font-headline-md text-headline-md text-on-surface mt-6">가경 T</h3>
 <p class="text-label-md text-secondary font-bold">MEXX 종합반 국어</p>
@@ -619,17 +618,17 @@
 <h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 mb-8">출제 경향을, 국어를, 필요를 잘 아는 강사</h2>
 <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
 <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
-<span class="material-symbols-outlined text-secondary mb-3">edit_document</span>
+<span class="material-symbols-outlined text-secondary mb-3">&#xf88c;</span>
 <h4 class="font-headline-md text-[17px] text-on-surface mb-1 whitespace-nowrap">출제 경향을 잘 아는 강사</h4>
 <p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed">메가스터디 수능 모의고사 출제<br/>강남대성 수능 문항공모전 선발</p>
 </div>
 <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
-<span class="material-symbols-outlined text-secondary mb-3">school</span>
+<span class="material-symbols-outlined text-secondary mb-3">&#xe80c;</span>
 <h4 class="font-headline-md text-[17px] text-on-surface mb-1">국어를 잘 아는 강사</h4>
 <p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed">국어국문학 전공<br>평가원 6회 만점<br>10년+ 현장 강의</p>
 </div>
 <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
-<span class="material-symbols-outlined text-secondary mb-3">trending_up</span>
+<span class="material-symbols-outlined text-secondary mb-3">&#xe8e5;</span>
 <h4 class="font-headline-md text-[17px] text-on-surface mb-1">필요를 잘 아는 강사</h4>
 <p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed">유튜브 개인 채널 구독자 3만<br/>전국 국어 강사 채널 7위 내<br/>많은 이들이 필요로 하는 강의</p>
 </div>
@@ -648,35 +647,35 @@
 </div>
 <div class="space-y-3" id="faq-list">
 <details hidden class="group bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
-<summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-headline-md text-[16px] text-on-surface">단과강좌와 썸머스쿨 종합반은 뭐가 다른가요?<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180 shrink-0">expand_more</span></summary>
+<summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-headline-md text-[16px] text-on-surface">단과강좌와 썸머스쿨 종합반은 뭐가 다른가요?<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180 shrink-0">&#xe5cf;</span></summary>
 <div class="px-5 pb-5 text-on-surface-variant text-[14px] leading-relaxed">단과는 일요일에 진행하는 <b class="text-on-surface">국어 단일 강좌</b>(고1 고전 · 고2 화법과 언어)이고, 썸머스쿨 종합반은 <b class="text-on-surface">평일 오전 종합반 안의 국어 수업</b>입니다(중3 현대문법 월 · 고1 고전문법 금).</div>
 </details>
 <details class="group bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
-<summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-headline-md text-[16px] text-on-surface">문법·고전을 처음 접하는 학생도 따라갈 수 있나요?<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180 shrink-0">expand_more</span></summary>
+<summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-headline-md text-[16px] text-on-surface">문법·고전을 처음 접하는 학생도 따라갈 수 있나요?<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180 shrink-0">&#xe5cf;</span></summary>
 <div class="px-5 pb-5 text-on-surface-variant text-[14px] leading-relaxed">네. 암기가 아니라 <b class="text-on-surface">‘문제에 쓰이는 기준’</b>으로 처음부터 잡아갑니다. 고전 문법은 학생별로 부족한 현대 문법 기본기를 <b class="text-on-surface">영상 강의로 지원</b>하기도 합니다.</div>
 </details>
 <details class="group bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
-<summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-headline-md text-[16px] text-on-surface">내신과 수능이 함께 대비되나요?<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180 shrink-0">expand_more</span></summary>
+<summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-headline-md text-[16px] text-on-surface">내신과 수능이 함께 대비되나요?<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180 shrink-0">&#xe5cf;</span></summary>
 <div class="px-5 pb-5 text-on-surface-variant text-[14px] leading-relaxed">국어 개념은 내신·수능이 동일합니다. <b class="text-on-surface">2학기 내신 영역</b>을 다지면서 <b class="text-on-surface">수능식 사고</b>까지 함께 설계합니다.</div>
 </details>
 <details class="group bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
-<summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-headline-md text-[16px] text-on-surface">결석 시 보강·자료 제공이 되나요?<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180 shrink-0">expand_more</span></summary>
+<summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-headline-md text-[16px] text-on-surface">결석 시 보강·자료 제공이 되나요?<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180 shrink-0">&#xe5cf;</span></summary>
 <div class="px-5 pb-5 text-on-surface-variant text-[14px] leading-relaxed">네, <b class="text-on-surface">보강 영상</b>을 지원합니다.</div>
 </details>
 <details class="group bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
-<summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-headline-md text-[16px] text-on-surface">과제·관리는 어떻게 이루어지나요?<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180 shrink-0">expand_more</span></summary>
+<summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-headline-md text-[16px] text-on-surface">과제·관리는 어떻게 이루어지나요?<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180 shrink-0">&#xe5cf;</span></summary>
 <div class="px-5 pb-5 text-on-surface-variant text-[14px] leading-relaxed">매주 <b class="text-on-surface">복습 워크북</b>과 <b class="text-on-surface">복습 시험</b>, <b class="text-on-surface">카카오톡 채널 질의응답</b>, 그리고 오답을 통한 <b class="text-on-surface">진단 보고서</b>(수업 과정 동안 누적된 데이터 활용)로 관리합니다.</div>
 </details>
 <details class="group bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
-<summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-headline-md text-[16px] text-on-surface">고전 문법을 왜 지금(방학)에 해야 하나요?<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180 shrink-0">expand_more</span></summary>
+<summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-headline-md text-[16px] text-on-surface">고전 문법을 왜 지금(방학)에 해야 하나요?<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180 shrink-0">&#xe5cf;</span></summary>
 <div class="px-5 pb-5 text-on-surface-variant text-[14px] leading-relaxed"><b class="text-on-surface">2학기 내신 주요 범위</b>라, 방학에 개념을 먼저 잡으면 학기 중에는 외부 지문·적용에 집중할 수 있습니다.</div>
 </details>
 <details class="group bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
-<summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-headline-md text-[16px] text-on-surface">중3인데 개념 강의를 들어도 되나요?<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180 shrink-0">expand_more</span></summary>
+<summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-headline-md text-[16px] text-on-surface">중3인데 개념 강의를 들어도 되나요?<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180 shrink-0">&#xe5cf;</span></summary>
 <div class="px-5 pb-5 text-on-surface-variant text-[14px] leading-relaxed">네. 고등 국어 개념은 <b class="text-on-surface">고1~고3까지 동일</b>해서, 미리 잡아두면 큰 강점이 됩니다.</div>
 </details>
 <details class="group bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
-<summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-headline-md text-[16px] text-on-surface">수강 신청·상담은 어떻게 하나요?<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180 shrink-0">expand_more</span></summary>
+<summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-headline-md text-[16px] text-on-surface">수강 신청·상담은 어떻게 하나요?<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180 shrink-0">&#xe5cf;</span></summary>
 <div class="px-5 pb-5 text-on-surface-variant text-[14px] leading-relaxed"><a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="text-secondary font-bold hover:underline">카카오톡 채널</a>로 문의해 주세요.</div>
 </details>
 </div>
@@ -690,7 +689,7 @@
 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-3">국어를 가뿐하게 시작하세요</h2>
 <p class="text-on-surface-variant max-w-xl mx-auto mb-8">수강·상담 문의는 카카오톡 채널로 편하게 남겨주세요.</p>
 <div class="flex flex-wrap justify-center gap-4">
-<a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="bg-secondary text-on-secondary px-7 py-3.5 rounded-xl font-headline-md text-[17px] font-bold hover:opacity-90 transition-all flex items-center gap-2"><span class="material-symbols-outlined">chat_bubble</span>수강 상담하기</a>
+<a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" class="bg-secondary text-on-secondary px-7 py-3.5 rounded-xl font-headline-md text-[17px] font-bold hover:opacity-90 transition-all flex items-center gap-2"><span class="material-symbols-outlined">&#xe0cb;</span>수강 상담하기</a>
 <a href="https://www.instagram.com/g00dg00d12_22/?hl=ko" target="_blank" rel="noopener" class="bg-surface-container-lowest border border-outline-variant text-on-surface px-7 py-3.5 rounded-xl font-headline-md text-[17px] hover:border-secondary/40 transition-all">인스타그램</a>
 <a href="https://youtube.com/channel/UCrEYhXaFqlcnxn1wpsiUKEg" target="_blank" rel="noopener" class="bg-surface-container-lowest border border-outline-variant text-on-surface px-7 py-3.5 rounded-xl font-headline-md text-[17px] hover:border-secondary/40 transition-all">유튜브</a>
 </div>
@@ -715,7 +714,7 @@
 <!-- QR 진입 학습 성향 진단 팝업 -->
 <div id="survey-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/75 backdrop-blur-sm px-5">
 <div class="relative w-full max-w-md rounded-2xl border border-secondary/30 bg-surface-container-lowest p-8 text-center">
-<button onclick="closeSurvey()" aria-label="닫기" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined">close</span></button>
+<button onclick="closeSurvey()" aria-label="닫기" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined">&#xe5cd;</span></button>
 <!-- 변형 A: 개강 안내 (~7/10) -->
 <div id="pop-opening">
 <img src="mexx-symbol.png" alt="MEXX" class="w-16 h-16 mx-auto mb-5 rounded-2xl shadow-lg"/>
@@ -728,7 +727,7 @@
 <div class="flex items-center justify-between gap-3"><span class="text-[14px] text-on-surface font-bold">고1 썸머스쿨 · 고전문법</span><span class="text-[13px] text-secondary font-bold whitespace-nowrap">7/24(금) 개강</span></div>
 <div class="flex items-center justify-between gap-3"><span class="text-[14px] text-on-surface font-bold">중3 썸머스쿨 · 현대문법</span><span class="text-[13px] text-secondary font-bold whitespace-nowrap">7/27(월) 개강</span></div>
 </div>
-<a href="courses.html" class="flex items-center justify-center gap-2 w-full py-3.5 bg-secondary text-on-secondary rounded-xl font-bold text-[16px] hover:opacity-90 transition-all">강좌 자세히 보기 <span class="material-symbols-outlined text-[20px]">arrow_forward</span></a>
+<a href="courses.html" class="flex items-center justify-center gap-2 w-full py-3.5 bg-secondary text-on-secondary rounded-xl font-bold text-[16px] hover:opacity-90 transition-all">강좌 자세히 보기 <span class="material-symbols-outlined text-[20px]">&#xe5c8;</span></a>
 <button onclick="closeSurvey()" class="mt-3 text-on-surface-variant text-[14px] hover:text-on-surface transition-colors">나중에 볼게요</button>
 </div>
 <!-- 변형 B: 수강생 전용 안내 (7/11~) -->
@@ -738,12 +737,12 @@
 <h3 class="font-headline-lg text-[26px] text-on-surface mb-2 tracking-tight">수강생 전용 페이지 안내</h3>
 <p class="font-label-md text-[14px] font-bold text-secondary mb-6 leading-relaxed">진단 · 보강 · 클리닉 · 시간표를 한 곳에서</p>
 <div class="text-left bg-surface-container rounded-xl p-4 mb-6 space-y-3">
-<div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">psychology</span><span class="text-[14px] text-on-surface font-bold">학습 성향 · 모의고사 오답 진단</span></div>
-<div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">smart_display</span><span class="text-[14px] text-on-surface font-bold">결석 · 보강 신청</span></div>
-<div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">support_agent</span><span class="text-[14px] text-on-surface font-bold">질의응답 · 클리닉</span></div>
-<div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">calendar_month</span><span class="text-[14px] text-on-surface font-bold">강의 시간표 · 개강일</span></div>
+<div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">&#xea4a;</span><span class="text-[14px] text-on-surface font-bold">학습 성향 · 모의고사 오답 진단</span></div>
+<div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">&#xf06a;</span><span class="text-[14px] text-on-surface font-bold">결석 · 보강 신청</span></div>
+<div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">&#xf0e2;</span><span class="text-[14px] text-on-surface font-bold">질의응답 · 클리닉</span></div>
+<div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[19px]">&#xebcc;</span><span class="text-[14px] text-on-surface font-bold">강의 시간표 · 개강일</span></div>
 </div>
-<a href="students.html" class="flex items-center justify-center gap-2 w-full py-3.5 bg-secondary text-on-secondary rounded-xl font-bold text-[16px] hover:opacity-90 transition-all">수강생 전용 페이지 바로가기 <span class="material-symbols-outlined text-[20px]">arrow_forward</span></a>
+<a href="students.html" class="flex items-center justify-center gap-2 w-full py-3.5 bg-secondary text-on-secondary rounded-xl font-bold text-[16px] hover:opacity-90 transition-all">수강생 전용 페이지 바로가기 <span class="material-symbols-outlined text-[20px]">&#xe5c8;</span></a>
 <button onclick="closeSurvey()" class="mt-3 text-on-surface-variant text-[14px] hover:text-on-surface transition-colors">나중에 볼게요</button>
 </div>
 </div>
@@ -753,11 +752,11 @@
     var d=document.documentElement, light=d.classList.toggle('light');
     d.classList.toggle('dark', !light);
     try{ localStorage.setItem('mexx-theme', light?'light':'dark'); }catch(e){}
-    var ic=document.getElementById('theme-icon'); if(ic) ic.textContent = light?'dark_mode':'light_mode';
+    var ic=document.getElementById('theme-icon'); if(ic) ic.textContent = light?'\ue51c':'\ue518';
     var lb=document.getElementById('theme-label'); if(lb) lb.textContent = light?'어두운 화면 버전':'밝은 화면 버전';
     var m=document.querySelector('meta[name=theme-color]'); if(m) m.content = light?'#f6f8fc':'#0a0c10';
   }
-  (function(){ var l=document.documentElement.classList.contains('light'); var ic=document.getElementById('theme-icon'); if(ic) ic.textContent = l?'dark_mode':'light_mode'; var lb=document.getElementById('theme-label'); if(lb) lb.textContent = l?'어두운 화면 버전':'밝은 화면 버전'; })();
+  (function(){ var l=document.documentElement.classList.contains('light'); var ic=document.getElementById('theme-icon'); if(ic) ic.textContent = l?'\ue51c':'\ue518'; var lb=document.getElementById('theme-label'); if(lb) lb.textContent = l?'어두운 화면 버전':'밝은 화면 버전'; })();
   function closeNotice(){var b=document.getElementById('notice-bar');if(b)b.style.display='none';var n=document.querySelector('nav');if(n)n.style.top='0';}
   function openSurvey(){var m=document.getElementById('survey-modal');if(m){m.classList.remove('hidden');m.classList.add('flex');document.body.style.overflow='hidden';}}
   function closeSurvey(){var m=document.getElementById('survey-modal');if(m){m.classList.add('hidden');m.classList.remove('flex');document.body.style.overflow='';}try{sessionStorage.setItem('survey_seen','1');}catch(e){}}
