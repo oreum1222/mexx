@@ -56,13 +56,14 @@
     --c-secondary-fixed:208 240 233; --c-on-tertiary-container:9 150 128; --c-tertiary-fixed:9 150 128;
     --c-tertiary-container:223 244 238; --c-primary:237 242 248; --c-primary-container:228 235 243; --c-on-primary-container:84 95 117;
   }
-  @font-face{font-family:'Material Symbols Outlined';font-style:normal;font-weight:400;font-display:block;src:url(material-symbols-mexx-v2.woff2) format('woff2');}@font-face{font-family:'Material Symbols Filled';font-style:normal;font-weight:400;font-display:block;src:url(material-symbols-mexx-fill-v2.woff2) format('woff2');}.material-symbols-outlined{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+  @font-face{font-family:'Material Symbols Outlined';font-style:normal;font-weight:400;font-display:block;src:url(material-symbols-mexx-v2.woff2) format('woff2');}@font-face{font-family:'Material Symbols Filled';font-style:normal;font-weight:400;font-display:block;src:url(material-symbols-mexx-fill-v2.woff2) format('woff2');}.material-symbols-outlined:not(.msi){visibility:hidden}.msi-svg{display:block;width:1em;height:1em;fill:currentColor}.material-symbols-outlined{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
   .fi{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(0.22,1,0.36,1);}
   .fi.v{opacity:1;transform:translateY(0);}
   .crd-hover{transition:all .3s cubic-bezier(0.4,0,0.2,1);}
   .crd-hover:hover{transform:translateY(-4px);border-color:rgba(74,227,192,.38);box-shadow:0 16px 38px rgba(0,0,0,.5),0 0 0 1px rgba(74,227,192,.1);}
   ::-webkit-scrollbar{width:8px;height:8px;}::-webkit-scrollbar-track{background:rgb(var(--c-surface-bright));}::-webkit-scrollbar-thumb{background:rgb(var(--c-surface-container-highest));border-radius:4px;}
 </style>
+<script src="msi.js?v=1" defer></script>
 </head>
 <body class="bg-background text-on-surface font-body-md" style="word-break:keep-all;overflow-wrap:break-word">
 <!-- Nav -->
