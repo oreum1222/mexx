@@ -24,7 +24,9 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--ink);position:relative;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    -webkit-font-smoothing:antialiased;overflow-x:clip;word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty;}
+  h1,h2,h3,.cph,.pinh,.sh,.cph b{text-wrap:balance;}
+  .nb{white-space:nowrap;}
   .wrap{max-width:1180px;margin:0 auto;padding:0 30px;}
   .mono{font-family:'IBM Plex Mono';}
 
@@ -53,9 +55,9 @@
     opacity:0;transition:opacity .8s ease;}
   .hvbg.playing{opacity:1;}
   .hscrim{position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(90deg,rgba(6,6,7,.95) 0%,rgba(6,6,7,.84) 28%,rgba(6,6,7,.46) 58%,rgba(6,6,7,.16) 100%),
-      linear-gradient(0deg,rgba(6,6,7,.66) 0%,transparent 30%),
-      linear-gradient(180deg,rgba(6,6,7,.9) 0%,rgba(6,6,7,.4) 9%,transparent 22%);}
+    background:linear-gradient(90deg,rgba(6,6,7,.97) 0%,rgba(6,6,7,.93) 34%,rgba(6,6,7,.74) 54%,rgba(6,6,7,.2) 78%,rgba(6,6,7,.06) 100%),
+      linear-gradient(0deg,rgba(6,6,7,.82) 0%,rgba(6,6,7,.3) 22%,transparent 40%),
+      linear-gradient(180deg,rgba(6,6,7,.92) 0%,rgba(6,6,7,.45) 9%,transparent 24%);}
   .hero-inner{position:relative;z-index:3;width:100%;max-width:1180px;margin:0 auto;padding:0 40px;}
   .col-l{text-align:left;min-width:0;max-width:660px;}
   .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:500;color:#cfcfcb;
@@ -107,11 +109,11 @@
 
   /* sections */
   section.blk{position:relative;z-index:5;padding:104px 0;border-top:1px solid rgba(255,255,255,.05);}
-  .kicker{font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7c7c79;
-    display:inline-flex;align-items:center;gap:8px;}
+  .kicker{font-family:'Noto Sans KR';font-size:14px;font-weight:600;letter-spacing:.02em;color:#8f8f8c;
+    display:inline-flex;align-items:center;gap:9px;}
   .kicker::before{content:"";width:22px;height:1px;background:#3a3a3c;}
   h2.sh{font-weight:900;letter-spacing:-.03em;line-height:1.2;font-size:clamp(26px,3.6vw,44px);margin:18px 0 0;word-break:keep-all;}
-  .sub2{color:var(--muted);font-size:15.5px;line-height:1.7;margin-top:14px;max-width:560px;}
+  .sub2{color:#b0b0ac;font-size:18.5px;line-height:1.7;margin-top:16px;max-width:640px;}
 
   .rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);}
   .rv.in{opacity:1;transform:none;}
@@ -120,14 +122,33 @@
   .courses{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px;}
   .course{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px 28px;display:flex;flex-direction:column;min-height:280px;transition:border-color .25s,transform .25s;}
   .course:hover{border-color:rgba(255,255,255,.26);transform:translateY(-3px);}
-  .course .ct{font-family:'IBM Plex Mono';font-size:12px;color:#9a9a97;letter-spacing:.02em;}
-  .course h3{font-size:24px;font-weight:800;letter-spacing:-.02em;margin:14px 0 6px;}
-  .course .tm{font-size:13.5px;color:#b9b9b5;font-family:'IBM Plex Mono';}
-  .course p{color:var(--muted);font-size:14.5px;line-height:1.72;margin-top:16px;flex:1;}
+  .course .ct{font-family:'IBM Plex Mono';font-size:13.5px;color:#9a9a97;letter-spacing:.02em;}
+  .course h3{font-size:29px;font-weight:800;letter-spacing:-.02em;margin:15px 0 8px;}
+  .course .tm{font-size:15.5px;color:#c2c2be;font-family:'IBM Plex Mono';}
+  .course p{color:#a9a9a5;font-size:16.5px;line-height:1.72;margin-top:18px;flex:1;word-break:keep-all;overflow-wrap:break-word;}
   .course .foot{display:flex;align-items:center;justify-content:space-between;margin-top:22px;padding-top:18px;border-top:1px solid var(--line);}
-  .course .open{font-size:14px;font-weight:700;}
+  .course .open{font-size:16.5px;font-weight:700;}
   .course .go{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:#cfcfcb;}
   .course:hover .go{background:var(--ink);color:#0a0a0a;}
+
+  /* ruled draw-in grid (THE FOCUS 스타일: 선이 그어지며 구획) */
+  .coursesframe{position:relative;margin-top:40px;}
+  .courses.ruled{gap:0;margin-top:0;}
+  .courses.ruled .course{background:none;border:0;border-radius:0;padding:38px 34px 34px;}
+  .courses.ruled .course:first-child{padding-left:4px;}
+  .courses.ruled .course:last-child{padding-left:44px;}
+  .courses.ruled .course:hover{transform:none;background:rgba(255,255,255,.018);}
+  /* 트랙(옅은 선 자리)은 항상 보이고, 그 위로 밝은 선이 차오름 */
+  .rline{position:absolute;background:rgba(255,255,255,.08);pointer-events:none;z-index:2;}
+  .rline::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.5);}
+  .rline-top{top:0;left:0;width:100%;height:1px;}
+  .rline-bot{bottom:0;left:0;width:100%;height:1px;}
+  .rline-mid{top:14px;left:50%;width:1px;height:calc(100% - 28px);}
+  .rline-top::after,.rline-bot::after{transform:scaleX(0);transform-origin:left;}
+  .rline-mid::after{transform:scaleY(0);transform-origin:top;}
+  .coursesframe.in .rline-top::after{transform:scaleX(1);transition:transform 1.05s cubic-bezier(.22,1,.36,1) .05s;}
+  .coursesframe.in .rline-bot::after{transform:scaleX(1);transition:transform 1.05s cubic-bezier(.22,1,.36,1) .2s;}
+  .coursesframe.in .rline-mid::after{transform:scaleY(1);transition:transform .9s cubic-bezier(.22,1,.36,1) .5s;}
 
   /* clock */
   .clockwrap{margin-top:48px;background:linear-gradient(180deg,#0b0c10,#08090c);border:1px solid var(--line);border-radius:24px;
@@ -139,9 +160,21 @@
   .clock .exam b{color:#fff;font-weight:600;}
   .sched{display:flex;flex-direction:column;gap:12px;}
   .srow{display:flex;align-items:center;gap:16px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.015);}
-  .srow .t{font-family:'IBM Plex Mono';font-size:19px;font-weight:600;color:#fff;min-width:66px;}
-  .srow .d b{display:block;font-size:15px;font-weight:600;}
-  .srow .d span{font-size:12.5px;color:var(--muted);}
+  .srow .t{font-family:'IBM Plex Mono';font-size:22px;font-weight:600;color:#fff;min-width:74px;}
+  .srow .d b{display:block;font-size:18px;font-weight:600;}
+  .srow .d span{font-size:14px;color:var(--muted);margin-top:3px;display:block;}
+  /* analog clock 08:40 */
+  .clockface{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;}
+  .clocksvg{width:clamp(180px,24vw,244px);height:auto;filter:drop-shadow(0 12px 34px rgba(0,0,0,.55));}
+  .clocksvg .tk{stroke:rgba(206,210,220,.32);stroke-width:2;}
+  .clocksvg .tkM{stroke:rgba(224,227,233,.62);stroke-width:2.6;}
+  .clocksvg .hh{stroke:url(#silver);stroke-width:6;stroke-linecap:round;}
+  .clocksvg .mh{stroke:url(#silver);stroke-width:3.8;stroke-linecap:round;}
+  .clocksvg .sh{stroke:url(#silverThin);stroke-width:1.6;stroke-linecap:round;}
+  .clocklabel{font-family:'IBM Plex Mono';font-size:14px;letter-spacing:.16em;color:#c9c9c5;}
+  .examline{font-size:17px;line-height:1.62;color:#e7e7e3;margin-bottom:22px;}
+  .examline b{color:#fff;font-weight:700;}
+  .examline em{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:8px;font-family:'IBM Plex Mono';letter-spacing:.02em;}
 
   /* teacher */
   .tgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;margin-top:44px;align-items:center;}
@@ -149,8 +182,8 @@
   .tphoto img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(.15) contrast(1.03);}
   .strong{display:flex;flex-direction:column;gap:14px;margin-top:26px;}
   .scard{border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:var(--card);}
-  .scard b{font-size:16px;font-weight:700;}
-  .scard p{color:var(--muted);font-size:13.5px;line-height:1.65;margin-top:6px;}
+  .scard b{font-size:19px;font-weight:700;}
+  .scard p{color:#a6a6a2;font-size:15.5px;line-height:1.68;margin-top:8px;}
 
   /* youtube channel card */
   .ytcard{margin-top:44px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--card);}
@@ -179,7 +212,7 @@
     display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#cfcfcb;flex-shrink:0;}
   .qcard .qwho{font-size:13px;color:#c7c7c3;font-weight:600;}
   .qcard .ytm{margin-left:auto;font-size:11px;color:#ff5069;font-family:'IBM Plex Mono';display:flex;align-items:center;gap:5px;}
-  .qcard p{font-size:14px;line-height:1.65;color:#d6d6d2;}
+  .qcard p{font-size:15px;line-height:1.65;color:#d6d6d2;}
 
   /* videos */
   .vids{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px;}
@@ -190,18 +223,18 @@
   .vid .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
   .vid .play span{width:46px;height:46px;border-radius:50%;background:rgba(10,10,10,.6);border:1px solid rgba(255,255,255,.4);
     display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;backdrop-filter:blur(4px);}
-  .vid .cap{padding:15px 18px;font-size:14px;font-weight:600;display:flex;justify-content:space-between;align-items:center;}
+  .vid .cap{padding:15px 18px;font-size:15.5px;font-weight:600;display:flex;justify-content:space-between;align-items:center;}
   .vid .cap small{color:#7c7c79;font-family:'IBM Plex Mono';font-weight:400;font-size:11px;}
 
   /* faq */
   .faq{margin-top:40px;border-top:1px solid var(--line);}
   details{border-bottom:1px solid var(--line);}
   summary{list-style:none;cursor:pointer;padding:22px 6px;display:flex;justify-content:space-between;align-items:center;gap:20px;
-    font-size:16.5px;font-weight:600;}
+    font-size:18.5px;font-weight:600;}
   summary::-webkit-details-marker{display:none;}
   summary .pl{color:#7c7c79;font-size:20px;transition:transform .25s;flex-shrink:0;}
   details[open] summary .pl{transform:rotate(45deg);color:#fff;}
-  details .ans{padding:0 6px 24px;color:var(--muted);font-size:14.5px;line-height:1.75;max-width:720px;}
+  details .ans{padding:0 6px 24px;color:#a6a6a2;font-size:16px;line-height:1.75;max-width:760px;}
 
   /* cta */
   .cta-blk{text-align:center;padding:120px 0;}
@@ -212,6 +245,48 @@
   footer{border-top:1px solid var(--line);padding:40px 0;color:#6c6c69;font-size:13px;}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center;}
   footer a{color:#9a9a97;text-decoration:none;margin-left:16px;}
+
+  /* ① 입체감(depth) */
+  .hvbg{transform:scale(1.06);will-change:transform;}
+  .hero-inner{will-change:transform,opacity;}
+  .course,.vid,.scard,.qcard,.stat,.ytcard,.clockwrap{
+    box-shadow:0 16px 44px -20px rgba(0,0,0,.75), 0 3px 10px -4px rgba(0,0,0,.45);}
+  .course,.vid,.scard{transition:transform .32s cubic-bezier(.2,.7,.2,1),border-color .3s,box-shadow .32s;}
+  .course:hover,.vid:hover{transform:translateY(-7px);border-color:rgba(255,255,255,.28);
+    box-shadow:0 30px 60px -24px rgba(0,0,0,.85), 0 8px 20px -8px rgba(0,0,0,.55);}
+  .scard:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.24);}
+  section.blk::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+    width:min(760px,86%);height:220px;pointer-events:none;z-index:0;
+    background:radial-gradient(ellipse at center top,rgba(150,162,180,.07),transparent 72%);}
+  section.blk>.wrap{position:relative;z-index:1;}
+
+  /* ② 메시지 머물게 (pinned) */
+  .pinwrap{position:relative;height:220vh;z-index:5;}
+  .pin{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:0 26px;overflow:hidden;}
+  .pin .pk{font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7c7c79;margin-bottom:24px;}
+  .pinh{font-weight:900;letter-spacing:-.035em;line-height:1.24;font-size:clamp(30px,5.2vw,62px);color:#e8ebee;
+    word-break:keep-all;max-width:900px;will-change:transform,opacity;}
+  .pinh b{color:#fff;font-weight:900;}
+  .pin .pglow2{position:absolute;top:50%;left:50%;width:70vw;height:60vh;transform:translate(-50%,-50%);z-index:-1;
+    background:radial-gradient(ellipse at center,rgba(150,162,180,.09),transparent 68%);filter:blur(30px);}
+
+  /* full-screen clock pin */
+  .clockpin{position:relative;height:210vh;z-index:5;}
+  .cpin{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:70px 24px;}
+  .cpin .pglow2{position:absolute;top:50%;left:50%;width:80vw;height:70vh;transform:translate(-50%,-50%);z-index:-1;
+    background:radial-gradient(ellipse at center,rgba(150,162,180,.08),transparent 66%);filter:blur(34px);}
+  .cpin-inner{display:flex;flex-direction:column;align-items:center;text-align:center;will-change:transform,opacity;}
+  .cpk{font-family:'Noto Sans KR';font-size:15px;font-weight:600;letter-spacing:.02em;color:#8a8a86;margin-bottom:10px;}
+  .bigclock{width:min(56vh,440px);max-width:86vw;margin:14px 0 6px;}
+  .bigclock .clocksvg{width:100%;height:auto;filter:drop-shadow(0 24px 60px rgba(0,0,0,.6));}
+  .bigclock .sh{animation:none;}
+  .bigclock.hit .clocksvg{animation:clockhit .6s ease;}
+  @keyframes clockhit{35%{transform:scale(1.035);}100%{transform:scale(1);}}
+  .cph{font-weight:900;letter-spacing:-.03em;line-height:1.22;font-size:clamp(26px,3.9vw,48px);margin-top:30px;color:#eef0f2;word-break:keep-all;}
+  .cph b{color:#fff;}
+  .cpsub{color:var(--muted);font-size:14.5px;margin-top:14px;font-family:'IBM Plex Mono';letter-spacing:.01em;}
+  .sched2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px;max-width:820px;}
 
   @media (prefers-reduced-motion:reduce){
     .hold,.pop,.top,.scroll{opacity:1!important;transform:none!important;filter:none!important;animation:none!important;}
@@ -231,11 +306,16 @@
     .mportrait b{font-weight:900;font-size:23px;letter-spacing:-.02em;margin-top:2px;color:#c7c7c3;}
     .mportrait b span{color:#fff;}
     .courses,.clockwrap,.tgrid,.vids{grid-template-columns:1fr;}
+    .coursesframe .rline-mid{display:none;}
+    .courses.ruled .course{padding:30px 4px;}
+    .courses.ruled .course:first-child{padding-left:4px;border-bottom:1px solid rgba(255,255,255,.12);}
+    .courses.ruled .course:last-child{padding-left:4px;}
     .ytstats{grid-template-columns:1fr 1fr;}
     .ytstats>div{padding:18px 16px;}
     .ytstats .n{font-size:25px;white-space:nowrap;}
     .ytstats .l{font-size:11.5px;}
-    .top nav{display:none;} .wrap{padding:0 20px;} .herologo{display:none;}
+    .top nav{display:none;} .wrap{padding:0 20px;} .herologo{display:none;} .pinwrap{height:150vh;}
+    .clockpin{height:160vh;} .bigclock{width:min(46vh,300px);} .sched2{grid-template-columns:1fr;} .cph{font-size:clamp(24px,6.6vw,34px);}
   }
 </style>
 </head>
@@ -272,49 +352,106 @@
   <div class="scroll" id="sc"><span>SCROLL</span><span class="ar"></span></div>
 </main>
 
+<!-- PINNED MESSAGE -->
+<section class="pinwrap">
+  <div class="pin">
+    <span class="pglow2"></span>
+    <span class="pk">2026 · 2학기</span>
+    <h2 class="pinh">10월 11일,<br><b>진짜 ‘글’을 읽는 수업</b>이 시작됩니다.</h2>
+  </div>
+</section>
+
 <!-- COURSES -->
 <section class="blk" id="courses">
   <div class="wrap">
-    <div class="rv"><span class="kicker">Courses · 지금 신청</span>
+    <div class="rv"><span class="kicker">지금 신청받는 강좌</span>
       <h2 class="sh">10월 11일, 두 강좌가 함께 시작합니다.</h2>
-      <p class="sub2">기말고사를 대비하는 화법과 언어 연합반과, 첫 수능을 준비하는 수능 국어 시즌2. 일요일 하루에 국어를 끝냅니다.</p>
+      <p class="sub2">새로운 교육과정의 <span class="nb">화법과 언어 연합반</span>과, 새로운 수능을 준비하는 <span class="nb">수능 국어 시즌2</span>. <span class="nb">일요일에 개강합니다.</span></p>
     </div>
-    <div class="courses">
+    <div class="coursesframe" id="coursegrid">
+      <i class="rline rline-top"></i><i class="rline rline-bot"></i><i class="rline rline-mid"></i>
+      <div class="courses ruled">
       <div class="course rv">
         <span class="ct">고2 · 화법과 언어 · 단과</span>
         <h3>화법과 언어 연합반</h3>
         <span class="tm">일 10:00–13:00 · 4회차 · 기말 대비</span>
-        <p>2학기 기말고사 문장편을 언어(문법) 중심으로. 문장 성분부터 피동·사동 표현까지 네 번에 정리합니다.</p>
+        <p>문장편(문장 성분, 문장의 짜임새, 문법 요소)을 중심으로 다룹니다. 화법과 언어 내신 범위이자 수능 범위입니다.</p>
         <div class="foot"><span class="open">10월 11일(일) 개강</span><span class="go">→</span></div>
       </div>
       <div class="course rv">
         <span class="ct">고2 · 수능 국어 · 단과</span>
         <h3>수능 국어 시즌2</h3>
         <span class="tm">일 14:00–17:00 · 4회차 · 첫 수능 국어</span>
-        <p>9월 20일 사전 OT에 이어 10월 11일 정식 개강. 법, 고전시가, 경제 지문을 무엇부터 잡는지 배웁니다.</p>
+        <p>수능 국어 시즌1 수업 당시 현강생&nbsp;단&nbsp;한&nbsp;명도 이탈하지 않고 종강, 한&nbsp;주&nbsp;만에 수강생이 2배가 된 그&nbsp;수업. 시즌&nbsp;2 시작합니다.</p>
         <div class="foot"><span class="open">10월 11일(일) 정식 개강</span><span class="go">→</span></div>
+      </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CLOCK / SCHEDULE -->
-<section class="blk" id="clock">
-  <div class="wrap">
-    <div class="rv"><span class="kicker">Timetable · 매주 일요일</span>
-      <h2 class="sh">국어는 08:40, 하루의 첫 시험입니다.</h2>
-      <p class="sub2">수능 국어 영역은 아침 8시 40분에 시작합니다. 하루의 컨디션과 등급을 가르는 첫 80분 — 그 시험을 위해, 개강일부터 매주 함께 훈련합니다.</p>
+<!-- CLOCK (full-screen pinned, sweeps to 08:40) -->
+<section class="clockpin" id="clock">
+  <div class="cpin">
+    <span class="pglow2"></span>
+    <div class="cpin-inner" id="cpinner">
+      <span class="cpk">수능 1교시 국어</span>
+      <div class="bigclock" id="bigclock">
+        <svg class="clocksvg" viewBox="0 0 200 200" role="img" aria-label="오전 8시 40분">
+          <defs>
+            <linearGradient id="silver" gradientUnits="userSpaceOnUse" x1="58" y1="36" x2="146" y2="168">
+              <stop offset="0" stop-color="#ffffff"/>
+              <stop offset="0.28" stop-color="#c2c4ca"/>
+              <stop offset="0.5" stop-color="#f6f7f9"/>
+              <stop offset="0.72" stop-color="#a4a6ae"/>
+              <stop offset="1" stop-color="#e2e3e7"/>
+            </linearGradient>
+            <linearGradient id="silverThin" gradientUnits="userSpaceOnUse" x1="72" y1="28" x2="128" y2="172">
+              <stop offset="0" stop-color="#eceef1"/><stop offset="0.5" stop-color="#b6b8bf"/><stop offset="1" stop-color="#e6e7ea"/>
+            </linearGradient>
+            <radialGradient id="sheen" cx="0.5" cy="0.34" r="0.72">
+              <stop offset="0" stop-color="rgba(205,210,222,.13)"/>
+              <stop offset="0.62" stop-color="rgba(120,124,135,.03)"/>
+              <stop offset="1" stop-color="rgba(0,0,0,0)"/>
+            </radialGradient>
+          </defs>
+          <circle cx="100" cy="100" r="94" fill="rgba(255,255,255,.012)" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
+          <circle cx="100" cy="100" r="94" fill="url(#sheen)"/>
+          <line class="tkM" x1="100" y1="10" x2="100" y2="22" transform="rotate(0 100 100)"/>
+          <line class="tk" x1="100" y1="11" x2="100" y2="19" transform="rotate(30 100 100)"/>
+          <line class="tk" x1="100" y1="11" x2="100" y2="19" transform="rotate(60 100 100)"/>
+          <line class="tkM" x1="100" y1="10" x2="100" y2="22" transform="rotate(90 100 100)"/>
+          <line class="tk" x1="100" y1="11" x2="100" y2="19" transform="rotate(120 100 100)"/>
+          <line class="tk" x1="100" y1="11" x2="100" y2="19" transform="rotate(150 100 100)"/>
+          <line class="tkM" x1="100" y1="10" x2="100" y2="22" transform="rotate(180 100 100)"/>
+          <line class="tk" x1="100" y1="11" x2="100" y2="19" transform="rotate(210 100 100)"/>
+          <line class="tk" x1="100" y1="11" x2="100" y2="19" transform="rotate(240 100 100)"/>
+          <line class="tkM" x1="100" y1="10" x2="100" y2="22" transform="rotate(270 100 100)"/>
+          <line class="tk" x1="100" y1="11" x2="100" y2="19" transform="rotate(300 100 100)"/>
+          <line class="tk" x1="100" y1="11" x2="100" y2="19" transform="rotate(330 100 100)"/>
+          <line class="mh" id="bmh" x1="100" y1="100" x2="100" y2="32" transform="rotate(240 100 100)"/>
+          <line class="hh" id="bhh" x1="100" y1="100" x2="100" y2="58" transform="rotate(260 100 100)"/>
+          <line class="sh" id="bsh" x1="100" y1="100" x2="100" y2="18" transform="rotate(300 100 100)"/>
+          <circle cx="100" cy="100" r="6.5" fill="url(#silver)"/>
+          <circle cx="100" cy="100" r="2.4" fill="#2a2a2e"/>
+        </svg>
+      </div>
+      <h2 class="cph">국어는 <b>하루의 첫 시험</b>입니다.</h2>
+      <p class="cpsub">08:40 – 10:00</p>
     </div>
-    <div class="clockwrap rv">
-      <div class="clock">
-        <div class="cdlabel">10월 11일(일) 개강까지</div>
-        <div class="now"><span id="cd">-일 --:--:--</span></div>
-        <div class="exam">매주 <b>일요일</b>, 국어를 하루에 끝내는 두 강좌.<br>지금 등록하면 첫 수업부터 함께 시작합니다.</div>
-      </div>
-      <div class="sched">
-        <div class="srow"><span class="t">10:00</span><span class="d"><b>화법과 언어 연합반</b><span>일요일 · 기말 문장편</span></span></div>
-        <div class="srow"><span class="t">14:00</span><span class="d"><b>수능 국어 시즌2</b><span>일요일 · 문학과 독서</span></span></div>
-      </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="blk" id="timetable">
+  <div class="wrap">
+    <div class="rv"><span class="kicker">매주 일요일 시간표</span>
+      <h2 class="sh">그래서 중요합니다.<br>그러므로 우리는 매주 일요일에 만납니다.</h2>
+      <p class="sub2">수능 국어를 하루에 끝내는 <span class="nb">두 강좌.</span> 개강일부터 <span class="nb">매주 함께합니다.</span></p>
+    </div>
+    <div class="sched2 rv">
+      <div class="srow"><span class="t">10:00</span><span class="d"><b>화법과 언어 연합반</b><span>일요일 · 기말 문장편</span></span></div>
+      <div class="srow"><span class="t">14:00</span><span class="d"><b>수능 국어 시즌2</b><span>일요일 · 문학과 독서</span></span></div>
     </div>
   </div>
 </section>
@@ -322,16 +459,16 @@
 <!-- TEACHER -->
 <section class="blk" id="teacher">
   <div class="wrap">
-    <div class="rv"><span class="kicker">Teacher · 김가경</span>
+    <div class="rv"><span class="kicker">강사 김가경</span>
       <h2 class="sh">출제 경향을, 국어를, 학생의 필요를 아는 강사.</h2></div>
     <div class="tgrid">
       <div class="tphoto rv"><img src="https://hanti.oreumyak.com/profile.png" alt="국어 강사 김가경"/></div>
       <div class="rv">
         <p class="sub2">모의고사를 직접 출제하는 시선으로 국어를 가르칩니다. 감이 아니라 지문의 근거로 읽는 법, 개념이 문제에서 어떻게 변형되는지를 학생이 스스로 판단하도록 훈련합니다.</p>
         <div class="strong">
-          <div class="scard"><b>출제 경향을 아는 강사</b><p>메가스터디 수능 모의고사 출제 · 강남대성 문항공모전 선발</p></div>
-          <div class="scard"><b>국어를 아는 강사</b><p>국어국문학 전공 · 수능 국어 만점 · 10년 이상 현장 강의</p></div>
-          <div class="scard"><b>필요를 아는 강사</b><p>유튜브 개인 채널 구독자 3만 · 많은 학생이 찾는 국어 강의</p></div>
+          <div class="scard"><b>출제 경향을 아는 강사</b><p><span class="nb">메가스터디 수능 모의고사 출제</span> · <span class="nb">강남대성 문항공모전 선발</span> · <span class="nb">바탕국어연구소 출제</span></p></div>
+          <div class="scard"><b>국어를 아는 강사</b><p><span class="nb">국어국문학 전공</span> · <span class="nb">수능 국어 만점</span> · <span class="nb">10년 이상 현장 강의</span></p></div>
+          <div class="scard"><b>필요를 아는 강사</b><p><span class="nb">유튜브 개인 채널 구독자 3만</span> · <span class="nb">많은 학생이 찾는 국어 강의</span></p></div>
         </div>
       </div>
     </div>
@@ -341,9 +478,9 @@
 <!-- REVIEWS -->
 <section class="blk" id="reviews">
   <div class="wrap">
-    <div class="rv"><span class="kicker">Reviews · 유튜브 채널</span>
+    <div class="rv"><span class="kicker">유튜브 수강 후기</span>
       <h2 class="sh">지금도 국어를 공부하는 학생들로 가득합니다.</h2>
-      <p class="sub2">구독자 3만, 월 조회수 510만 이상. ‘김가경 국어 연구소’ 채널에 남은 실제 수강 후기입니다.</p></div>
+      <p class="sub2"><span class="nb">구독자 3만</span>, <span class="nb">월 조회수 510만 이상.</span> <span class="nb">‘김가경 국어 연구소’</span> 채널에 남은 <span class="nb">실제 수강 후기</span>입니다.</p></div>
     <div class="ytcard rv">
       <div class="ythead">
         <span class="lg"><svg width="34" height="24" viewBox="0 0 34 24" aria-hidden="true"><rect width="34" height="24" rx="6" fill="#FF0033"/><path d="M13 7 L24 12 L13 17 Z" fill="#fff"/></svg></span>
@@ -364,9 +501,9 @@
 <!-- VIDEOS -->
 <section class="blk" id="videos">
   <div class="wrap">
-    <div class="rv"><span class="kicker">Preview · 영상으로 먼저</span>
+    <div class="rv"><span class="kicker">영상으로 먼저 보기</span>
       <h2 class="sh">수업을 영상으로 미리 만나보세요.</h2>
-      <p class="sub2">각 강좌의 방향과 수업 스타일을 OT·맛보기 영상으로 확인하실 수 있습니다.</p></div>
+      <p class="sub2">각 강좌의 방향과 수업 스타일을 <span class="nb">OT·맛보기 영상으로</span> <span class="nb">확인하실 수 있습니다.</span></p></div>
     <div class="vids">
       <a class="vid rv" href="https://youtu.be/19RorH_MA_E" target="_blank" rel="noopener">
         <div class="thumb"><img src="https://img.youtube.com/vi/19RorH_MA_E/hqdefault.jpg" alt=""/><div class="play"><span>▶</span></div></div>
@@ -384,7 +521,7 @@
 <!-- FAQ -->
 <section class="blk" id="faq">
   <div class="wrap" style="max-width:820px;">
-    <div class="rv"><span class="kicker">FAQ · 자주 묻는 질문</span>
+    <div class="rv"><span class="kicker">자주 묻는 질문</span>
       <h2 class="sh">궁금증을 먼저 풀어 드립니다.</h2></div>
     <div class="faq rv">
       <details><summary>문법·고전을 처음 접하는 학생도 따라갈 수 있나요?<span class="pl">+</span></summary>
@@ -406,7 +543,7 @@
 <!-- CTA -->
 <section class="blk" id="contact">
   <div class="wrap cta-blk">
-    <div class="rv"><span class="kicker" style="justify-content:center;">Contact</span>
+    <div class="rv"><span class="kicker" style="justify-content:center;">상담 문의</span>
       <h2>국어를 가뿐하게 시작하세요.</h2>
       <p>수강·상담 문의는 카카오톡 채널로 편하게 남겨주세요.</p>
       <a class="btn" href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener">카카오톡 수강 상담 →</a></div>
@@ -456,16 +593,19 @@
   /* nav stuck */
   addEventListener('scroll',()=>{document.getElementById('top').classList.toggle('stuck',scrollY>60);});
 
-  /* 개강 countdown */
+  /* 개강 countdown (있을 때만) */
   const cd=document.getElementById('cd');
-  const target=new Date('2026-10-11T10:00:00+09:00').getTime();
-  function tickCd(){let ms=target-Date.now();const p=n=>String(n).padStart(2,'0');
-    if(ms<=0){cd.textContent='개강 · 수업 진행 중';return;}
-    const day=Math.floor(ms/86400000);ms-=day*86400000;
-    const hh=Math.floor(ms/3600000);ms-=hh*3600000;
-    const mm=Math.floor(ms/60000);ms-=mm*60000;const ss=Math.floor(ms/1000);
-    cd.textContent=day+'일 '+p(hh)+':'+p(mm)+':'+p(ss);}
-  tickCd();setInterval(tickCd,1000);
+  if(cd){
+    const target=new Date('2026-10-11T10:00:00+09:00').getTime();
+    const p=n=>String(n).padStart(2,'0');
+    function tickCd(){let ms=target-Date.now();
+      if(ms<=0){cd.textContent='개강 · 수업 진행 중';return;}
+      const day=Math.floor(ms/86400000);ms-=day*86400000;
+      const hh=Math.floor(ms/3600000);ms-=hh*3600000;
+      const mm=Math.floor(ms/60000);ms-=mm*60000;const ss=Math.floor(ms/1000);
+      cd.textContent=day+'일 '+p(hh)+':'+p(mm)+':'+p(ss);}
+    tickCd();setInterval(tickCd,1000);
+  }
 
   /* reviews marquee */
   const QUOTES=[
@@ -506,6 +646,65 @@
   new IntersectionObserver((es)=>{es.forEach(e=>{if(!userPaused&&!reduceV){
     if(e.isIntersecting)hv.play().then(reveal).catch(()=>{});else hv.pause();}});},{threshold:0.12}).observe(heroEl);
   document.addEventListener('visibilitychange',()=>{if(document.hidden)hv.pause();else if(!userPaused&&!reduceV)hv.play().catch(()=>{});});
+
+  /* ① 히어로 패럴랙스 + ② 핀 메시지 */
+  const heroEl2=document.querySelector('.hero'), hvbg2=document.getElementById('hv'), hin=document.querySelector('.hero-inner');
+  const pinwrap=document.querySelector('.pinwrap'), pinh=document.querySelector('.pinh');
+  const cpinwrap=document.querySelector('.clockpin'), cpinner=document.getElementById('cpinner');
+  let heroH=heroEl2?heroEl2.offsetHeight:0;
+  addEventListener('resize',()=>{heroH=heroEl2?heroEl2.offsetHeight:0;});
+  let ticking=false;
+  function fx(){
+    ticking=false;
+    if(reduce)return;
+    const sc=scrollY;
+    if(innerWidth<=760){
+      /* 모바일: 스크롤 구동 페이드/스케일 비활성 — 콘텐츠는 항상 보이게(단 한 번의 초기 호출로도 확정) */
+      if(hin){hin.style.opacity='1';hin.style.transform='none';}
+      if(pinh){pinh.style.opacity='1';pinh.style.transform='none';}
+      if(cpinner){cpinner.style.opacity='1';cpinner.style.transform='none';}
+      if(hvbg2 && getComputedStyle(hvbg2).display!=='none') hvbg2.style.transform='none';
+      return;
+    }
+    if(heroEl2 && sc<heroH+260){
+      if(hvbg2 && getComputedStyle(hvbg2).display!=='none') hvbg2.style.transform='scale(1.06) translateY('+(sc*0.03).toFixed(1)+'px)';
+      if(hin){ hin.style.transform='translateY('+(sc*0.22).toFixed(1)+'px)'; hin.style.opacity=Math.max(0,1-sc/(heroH*0.82)).toFixed(3); }
+    }
+    if(pinwrap && pinh){
+      const r=pinwrap.getBoundingClientRect(); const span=Math.max(1,pinwrap.offsetHeight-innerHeight);
+      const p=Math.min(1,Math.max(0,-r.top/span));
+      const s=(0.96+0.06*Math.min(1,p*1.5)).toFixed(3);
+      let op=1; if(p<0.1)op=p/0.1; else if(p>0.9)op=(1-p)/0.1;
+      pinh.style.transform='scale('+s+')'; pinh.style.opacity=Math.max(0,Math.min(1,op)).toFixed(3);
+    }
+    if(cpinwrap && cpinner){
+      const r=cpinwrap.getBoundingClientRect(); const span=Math.max(1,cpinwrap.offsetHeight-innerHeight);
+      const p=Math.min(1,Math.max(0,-r.top/span));
+      const s=(0.9+0.1*Math.min(1,p*2.2)).toFixed(3);
+      let op=1; if(p<0.1)op=p/0.1; else if(p>0.88)op=(1-p)/0.12;
+      cpinner.style.transform='scale('+s+')'; cpinner.style.opacity=Math.max(0,Math.min(1,op)).toFixed(3);
+    }
+  }
+  /* 초침 스윕 → 08:40:00 */
+  const bsh=document.getElementById('bsh'),bmh=document.getElementById('bmh'),bhh=document.getElementById('bhh'),bigclock=document.getElementById('bigclock');
+  if(bigclock){
+    let swept=false;
+    const doSweep=()=>{ if(swept)return; swept=true;
+      if(reduce){bsh.setAttribute('transform','rotate(360 100 100)');bigclock.classList.add('hit');return;}
+      let sec=50; // 08:39:50에서 시작
+      const tk=setInterval(()=>{ sec++; bsh.setAttribute('transform','rotate('+(sec*6)+' 100 100)');
+        if(sec>=60){ clearInterval(tk); bigclock.classList.add('hit'); } // 08:40:00 땡
+      },400);
+    };
+    new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)doSweep();});},{threshold:0.3}).observe(bigclock);
+  }
+  /* 강좌 구분선 draw-in */
+  const cgrid=document.getElementById('coursegrid');
+  if(cgrid){ if(reduce){cgrid.classList.add('in');}
+    else new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');}});},{threshold:0.3}).observe(cgrid);
+  }
+  addEventListener('scroll',()=>{ if(!ticking){ticking=true;requestAnimationFrame(fx);} },{passive:true});
+  fx();
 })();
 </script>
 </body>
