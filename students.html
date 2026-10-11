@@ -249,55 +249,47 @@
   .jt .gi{display:inline-block;font-size:10.5px;font-weight:700;color:#ededea;background:rgba(237,237,234,.14);border-radius:5px;padding:1px 6px;margin-left:3px;white-space:nowrap;}
   .jt-note{font-size:11.5px;color:rgb(var(--c-on-surface-variant));padding:9px 13px 11px;border-top:1px dashed rgb(var(--c-outline-variant));line-height:1.5;}
 </style>
-<section class="hidden mt-20">
+<section class="mt-20" id="hwc-section">
   <div class="text-center mb-9">
     <span class="inline-flex items-center gap-2 bg-secondary-fixed/60 text-secondary border border-secondary/25 px-3 py-1 rounded-full mb-3"><span class="material-symbols-outlined text-[16px]">&#xebcc;</span><span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">숙제 달력</span></span>
     <h2 class="font-headline-lg text-[26px] md:text-[30px] font-bold text-on-surface tracking-tight">숙제 달력</h2>
-    <p class="text-on-surface-variant text-[14px] mt-2">단과반과 종합반 과제를 주차별로 정리했습니다.</p>
+    <p class="text-on-surface-variant text-[14px] mt-2">수업별 주차 과제입니다. 과제 검사 시스템과 자동으로 연동됩니다.</p>
   </div>
-
-  <!-- 단과 -->
-  <div class="max-w-2xl mx-auto">
-    <div class="hwc-group"><span class="tag dan">단과</span><span class="meta">일요일반, 5주, 마감 매주 금요일 밤 자정</span><span class="line"></span></div>
-    <div class="flex items-center gap-4 mb-4 text-[13px] pl-0.5">
-      <span class="inline-flex items-center gap-1.5"><span class="hwc-badge b-go2">고2</span><span class="text-on-surface-variant">화법과 언어</span></span>
-      <span class="inline-flex items-center gap-1.5"><span class="hwc-badge b-go1">고1</span><span class="text-on-surface-variant">고전 영역</span></span>
-    </div>
-    <div id="hwc-list" class="flex flex-col gap-3"></div>
-    <p class="text-on-surface-variant text-[12px] mt-4 pl-0.5">※ 과제 완료 후 <b class="text-on-surface">매주 금요일 밤 자정</b>까지 과제 검사 시스템에 응답해 주세요.</p>
+  <div class="max-w-2xl mx-auto flex flex-col gap-9" id="hwc-courses">
+    <p class="text-center text-on-surface-variant text-[13px] py-10" id="hwc-loading">과제 일정을 불러오는 중…</p>
   </div>
-
+  <p class="text-on-surface-variant text-[12px] mt-6 text-center">※ 과제 완료 후 마감 전까지 과제 검사 시스템에 응답해 주세요.</p>
 </section>
 <script>
+  /* 숙제 달력 — 과제 검사 시스템(oreum1222.github.io/homework)의 courses.js를 라이브로 읽어 렌더링 */
   (function(){
-    var GRADES={go2:{badge:'고2',course:'화법과 언어',cls:'g-go2',b:'b-go2'},go1:{badge:'고1',course:'고전 영역',cls:'g-go1',b:'b-go1'}};
-    var ORDER=['go2','go1'];
-    var WEEKS=[
-      {wk:'1주차',due:'7/17',items:{go2:'품사편 워크북 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">&#xea19;</span>교재 4–77쪽</span>',go1:'<div class="hwc-part"><span class="hwc-sub">고전시가</span>고대가요 워크북 + 교재 「정읍사」 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">&#xea19;</span>교재 58–59쪽</span></div>'}},
-      {wk:'2주차',due:'7/24',items:{go2:'문장 성분 워크북 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">&#xea19;</span>교재 82–103쪽</span>',go1:'<div class="hwc-part"><span class="hwc-sub">고전시가</span>향가 워크북 + 교재 향가 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">&#xea19;</span>교재 60–65쪽</span></div><div class="hwc-part"><span class="hwc-sub">고전문법</span>교재 문항 1–25번</div>'}},
-      {wk:'3주차',due:'7/31',items:{go2:'형태소와 단어 워크북 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">&#xea19;</span>교재 108–183쪽</span>',go1:'<div class="hwc-part"><span class="hwc-sub">고전시가</span>고려가요 워크북 + 교재 고려가요 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">&#xea19;</span>교재 66–77쪽</span></div><div class="hwc-part"><span class="hwc-sub">고전문법</span>교재 문항 26–50번</div>'}},
-      {wk:'4주차',due:'8/7',items:{go2:'음운의 정의와 체계 워크북 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">&#xea19;</span>교재 188–193쪽</span>',go1:'<div class="hwc-part"><span class="hwc-sub">고전시가</span>시조와 가사 워크북 + 교재 시조·가사 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">&#xea19;</span>교재 78–137쪽</span></div><div class="hwc-part"><span class="hwc-sub">고전문법</span>교재 문항 51–75번</div>'}},
-      {wk:'5주차',due:'8/14',items:{go2:'음운 변동 워크북 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">&#xea19;</span>교재 198–292쪽</span>',go1:'<div class="hwc-part"><span class="hwc-sub">고전시가</span>가사 워크북 + 교재 가사 풀기<span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">&#xea19;</span>교재 138–207쪽</span></div><div class="hwc-part"><span class="hwc-sub">고전문법</span>교재 문항 76–92번 + 수능 기출 전문항</div>'}}
-    ];
-    var YEAR=2026, days=['일','월','화','수','목','금','토'];
-    function dueDate(s){var p=s.split('/');return new Date(YEAR,+p[0]-1,+p[1],23,59,59);}
-    var today=new Date(); today.setHours(0,0,0,0);
-    var nowIdx=-1; for(var i=0;i<WEEKS.length;i++){ if(dueDate(WEEKS[i].due)>=today){nowIdx=i;break;} }
-    var html=WEEKS.map(function(w,i){
-      var d=dueDate(w.due), dow=days[d.getDay()];
-      var keys=ORDER.filter(function(k){return w.items[k];});
-      var cells=keys.map(function(k){var g=GRADES[k];
-        return '<div class="hwc-cell '+g.cls+'">'
-          +'<div class="flex items-center gap-2 mb-1.5"><span class="hwc-badge '+g.b+'">'+g.badge+'</span><span class="font-bold text-on-surface text-[14px]">'+g.course+'</span></div>'
-          +'<div class="text-on-surface-variant text-[14px] leading-relaxed">'+w.items[k]+'</div></div>';
+    var box=document.getElementById('hwc-courses');
+    function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
+    function fail(){ box.innerHTML='<p class="text-center text-on-surface-variant text-[13px] py-10">과제 일정을 불러오지 못했습니다. 잠시 후 다시 시도하거나 카카오톡 채널로 문의해 주세요.</p>'; }
+    function render(){
+      var all=(window.COURSE_LIST||[]).filter(function(c){return c.academy==='hanti';});
+      if(!all.length){ box.innerHTML='<p class="text-center text-on-surface-variant text-[13px] py-10">현재 등록된 과제가 없습니다. 문의는 카카오톡 채널로 남겨주세요.</p>'; return; }
+      box.innerHTML=all.map(function(c){
+        var weeks=(c.weeks||[]).filter(function(w){return w.status!=='tentative';});
+        var rows=weeks.map(function(w){
+          var wklabel=w.tag?w.tag:(w.week+'주차');
+          var due=w.date||'상시';
+          var task=String(w.label||'').replace(/^\s*\d+주차에\s*한\s*숙제\s*검사\s*[·.]?\s*/,'').replace(/^\s*\d+주차\s*[·.]?\s*/,'');
+          if(!task) task=w.area||'';
+          return '<div class="hwc-week"><div class="hwc-head">'
+            +'<span class="font-bold text-on-surface text-[15px]">'+esc(wklabel)+'</span>'
+            +'<span class="inline-flex items-center gap-1 text-on-surface-variant text-[13px] font-semibold whitespace-nowrap"><span class="material-symbols-outlined text-[16px]">&#xe878;</span>'+esc(due)+'</span></div>'
+            +'<div class="hwc-cell g-go2"><div class="text-on-surface text-[14px] leading-relaxed font-medium">'+esc(task)
+            +(w.area?' <span class="hwc-pg"><span class="material-symbols-outlined text-[12px]">&#xea19;</span>'+esc(w.area)+'</span>':'')+'</div></div></div>';
+        }).join('');
+        return '<div><div class="hwc-group"><span class="tag dan">'+esc(c.period||'단과')+'</span><span class="meta">'+esc((c.grade?c.grade+' · ':'')+ (c.name||''))+'</span><span class="line"></span></div>'
+          +'<div class="flex flex-col gap-3">'+(rows||'<p class="text-on-surface-variant text-[13px]">등록된 주차가 없습니다.</p>')+'</div></div>';
       }).join('');
-      var nowPill=i===nowIdx?'<span class="ml-2 inline-flex items-center rounded-full bg-secondary text-on-secondary text-[11px] font-bold px-2 py-0.5">이번 주</span>':'';
-      return '<div class="hwc-week'+(i===nowIdx?' now':'')+'">'
-        +'<div class="hwc-head"><span class="font-bold text-on-surface text-[15px]">'+w.wk+nowPill+'</span>'
-        +'<span class="inline-flex items-center gap-1 text-on-surface-variant text-[13px] font-semibold whitespace-nowrap"><span class="material-symbols-outlined text-[16px]">&#xe878;</span>'+w.due+' ('+dow+') 자정 마감</span></div>'
-        +'<div class="hwc-body" style="grid-template-columns:repeat('+keys.length+',minmax(0,1fr))">'+cells+'</div></div>';
-    }).join('');
-    document.getElementById('hwc-list').innerHTML=html;
+    }
+    var s=document.createElement('script');
+    s.src='https://oreum1222.github.io/homework/data/courses.js?v='+Date.now();
+    s.onload=render; s.onerror=fail;
+    document.body.appendChild(s);
   })();
 </script>
 </main>
