@@ -37,31 +37,33 @@
 </script>
 <style>
   :root, html.dark {
-    --c-background:10 12 16; --c-surface-bright:12 15 21; --c-surface:10 12 16;
-    --c-surface-container-lowest:18 21 28; --c-surface-container-low:14 18 24;
-    --c-surface-container:22 29 43; --c-surface-container-high:28 35 51; --c-surface-container-highest:42 51 80;
-    --c-outline-variant:30 37 54; --c-outline:90 99 128;
-    --c-on-surface:232 236 244; --c-on-surface-variant:139 149 173;
-    --c-secondary:74 227 192; --c-on-secondary:6 37 31; --c-on-primary:10 12 16;
-    --c-secondary-fixed:18 50 44; --c-on-tertiary-container:74 227 192; --c-tertiary-fixed:74 227 192;
-    --c-tertiary-container:14 42 38; --c-primary:13 20 34; --c-primary-container:24 34 52; --c-on-primary-container:139 149 173;
+    --c-background:6 6 7; --c-surface-bright:14 15 19; --c-surface:6 6 7;
+    --c-surface-container-lowest:12 13 17; --c-surface-container-low:15 16 20;
+    --c-surface-container:19 21 26; --c-surface-container-high:25 27 32; --c-surface-container-highest:38 40 46;
+    --c-outline-variant:38 40 46; --c-outline:110 114 126;
+    --c-on-surface:246 246 244; --c-on-surface-variant:143 143 140;
+    --c-secondary:237 237 234; --c-on-secondary:10 10 12; --c-on-primary:10 10 12;
+    --c-secondary-fixed:34 36 42; --c-on-tertiary-container:237 237 234; --c-tertiary-fixed:237 237 234;
+    --c-tertiary-container:24 26 31; --c-primary:12 13 17; --c-primary-container:18 20 25; --c-on-primary-container:143 143 140;
   }
   html.light {
-    --c-background:246 248 252; --c-surface-bright:255 255 255; --c-surface:246 248 252;
-    --c-surface-container-lowest:255 255 255; --c-surface-container-low:240 243 249;
-    --c-surface-container:255 255 255; --c-surface-container-high:238 242 248; --c-surface-container-highest:226 233 243;
-    --c-outline-variant:225 231 240; --c-outline:148 157 176;
-    --c-on-surface:18 26 40; --c-on-surface-variant:84 95 117;
-    --c-secondary:9 150 128; --c-on-secondary:255 255 255; --c-on-primary:18 26 40;
-    --c-secondary-fixed:208 240 233; --c-on-tertiary-container:9 150 128; --c-tertiary-fixed:9 150 128;
-    --c-tertiary-container:223 244 238; --c-primary:237 242 248; --c-primary-container:228 235 243; --c-on-primary-container:84 95 117;
+    --c-background:6 6 7; --c-surface-bright:14 15 19; --c-surface:6 6 7;
+    --c-surface-container-lowest:12 13 17; --c-surface-container-low:15 16 20;
+    --c-surface-container:19 21 26; --c-surface-container-high:25 27 32; --c-surface-container-highest:38 40 46;
+    --c-outline-variant:38 40 46; --c-outline:110 114 126;
+    --c-on-surface:246 246 244; --c-on-surface-variant:143 143 140;
+    --c-secondary:237 237 234; --c-on-secondary:10 10 12; --c-on-primary:10 10 12;
+    --c-secondary-fixed:34 36 42; --c-on-tertiary-container:237 237 234; --c-tertiary-fixed:237 237 234;
+    --c-tertiary-container:24 26 31; --c-primary:12 13 17; --c-primary-container:18 20 25; --c-on-primary-container:143 143 140;
   }
   @font-face{font-family:'Material Symbols Outlined';font-style:normal;font-weight:400;font-display:block;src:url(material-symbols-mexx-v2.woff2) format('woff2');}@font-face{font-family:'Material Symbols Filled';font-style:normal;font-weight:400;font-display:block;src:url(material-symbols-mexx-fill-v2.woff2) format('woff2');}.material-symbols-outlined:not(.msi){visibility:hidden}.msi-svg{display:block;width:1em;height:1em;fill:currentColor}.material-symbols-outlined{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
   .fi{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(0.22,1,0.36,1);}
   .fi.v{opacity:1;transform:translateY(0);}
   .crd-hover{transition:all .3s cubic-bezier(0.4,0,0.2,1);}
-  .crd-hover:hover{transform:translateY(-4px);border-color:rgba(74,227,192,.38);box-shadow:0 16px 38px rgba(0,0,0,.5),0 0 0 1px rgba(74,227,192,.1);}
+  .crd-hover:hover{transform:translateY(-4px);border-color:rgba(237,237,234,.38);box-shadow:0 16px 38px rgba(0,0,0,.5),0 0 0 1px rgba(237,237,234,.1);}
   ::-webkit-scrollbar{width:8px;height:8px;}::-webkit-scrollbar-track{background:rgb(var(--c-surface-bright));}::-webkit-scrollbar-thumb{background:rgb(var(--c-surface-container-highest));border-radius:4px;}
+
+  #theme-toggle{display:none!important;}
 </style>
 <script src="msi.js?v=1" defer></script>
 </head>
@@ -85,7 +87,7 @@
 
 <!-- Hero -->
 <section class="relative overflow-hidden bg-surface-bright border-b border-outline-variant py-14 md:py-18">
-<div class="absolute -top-32 -right-20 w-[600px] h-[600px] rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(74,227,192,.1),transparent 70%)"></div>
+<div class="absolute -top-32 -right-20 w-[600px] h-[600px] rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(237,237,234,.1),transparent 70%)"></div>
 <div class="max-w-container-max mx-auto px-margin-desktop relative z-10 text-center">
 <span class="inline-flex items-center gap-2 bg-secondary-fixed/60 text-secondary border border-secondary/25 px-3 py-1 rounded-full mb-4"><span class="material-symbols-outlined text-[16px]">&#xe7af;</span><span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">MEXX 수강생</span></span>
 <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface tracking-tight">수강생 전용</h1>
@@ -104,9 +106,9 @@
   #hw-notice[open] .hw-hint{display:none;}
 </style>
 <details id="hw-notice" class="relative bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden mb-10 shadow-[0_10px_30px_rgba(0,0,0,.35)]">
-  <div class="h-[3px] w-full" style="background:linear-gradient(90deg,#f2d485,#e8b94e,#f2d485)"></div>
+  <div class="h-[3px] w-full" style="background:linear-gradient(90deg,#ededea,#ededea,#ededea)"></div>
   <summary class="cursor-pointer select-none flex items-center gap-4 px-5 md:px-7 py-5">
-    <span class="shrink-0 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px] font-bold" style="background:linear-gradient(135deg,#f4d788,#e6b955);color:#3a2c07"><span class="material-symbols-outlined text-[15px]">&#xef49;</span>필독 · 과제 검사</span>
+    <span class="shrink-0 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px] font-bold" style="background:linear-gradient(135deg,#ededea,#ededea);color:#1c1e23"><span class="material-symbols-outlined text-[15px]">&#xef49;</span>필독 · 과제 검사</span>
     <div class="flex-grow min-w-0">
       <h3 class="font-headline-md text-[17px] md:text-[19px] font-bold text-on-surface truncate">과제 검사 시스템 안내</h3>
       <p class="text-on-surface-variant text-[13px] mt-0.5">과제 검사 마감은 반별로 다릅니다 (연합반 일 10:10 / 수능국어반 일 14:10) <span class="hw-hint">· <span class="text-secondary font-semibold">눌러서 펼치기</span></span></p>
@@ -117,13 +119,13 @@
     <p class="text-on-surface-variant text-[11px] tracking-[0.12em] font-semibold mb-4 mt-5">[ 김가경 국어 연구소 ]</p>
     <p class="text-on-surface text-[14.5px] leading-relaxed">MEXX <b>가경T 단과 수강생</b>에게 안내합니다. 과제 및 과제 검사 방법을 소개합니다. 기본적으로 과제는 가경T가 <b>강의 말미에 공지</b>하지만, 혹시라도 놓치는 경우 꼭 가경T MEXX 사이트에서 확인하기 바랍니다.</p>
 
-    <div class="mt-5 flex items-start gap-3 rounded-xl px-4 py-4" style="background:rgba(240,196,74,.10);border:1px solid rgba(240,196,74,.30)">
-      <span class="material-symbols-outlined text-[20px] mt-0.5" style="color:#e8b94e">&#xefd6;</span>
+    <div class="mt-5 flex items-start gap-3 rounded-xl px-4 py-4" style="background:rgba(237,237,234,.10);border:1px solid rgba(237,237,234,.30)">
+      <span class="material-symbols-outlined text-[20px] mt-0.5" style="color:#ededea">&#xefd6;</span>
       <div>
         <p class="font-bold text-on-surface text-[15px]">과제 검사 기한 (반별로 다릅니다)</p>
         <div class="mt-2 flex flex-col gap-1.5 text-[13.5px]">
-          <div class="text-on-surface-variant">– <b class="text-on-surface">화법과 언어 연합반</b> : 매주 <b style="color:#e8b94e">일요일 10:10</b>까지</div>
-          <div class="text-on-surface-variant">– <b class="text-on-surface">수능 국어반</b> : 매주 <b style="color:#e8b94e">일요일 14:10</b>까지</div>
+          <div class="text-on-surface-variant">– <b class="text-on-surface">화법과 언어 연합반</b> : 매주 <b style="color:#ededea">일요일 10:10</b>까지</div>
+          <div class="text-on-surface-variant">– <b class="text-on-surface">수능 국어반</b> : 매주 <b style="color:#ededea">일요일 14:10</b>까지</div>
         </div>
         <p class="text-on-surface-variant text-[12.5px] mt-2 leading-relaxed">과제 검사는 <b class="text-on-surface">수업 시작 10분 뒤</b>에 마감됩니다. 매주 적용되며, 안내 문자가 없더라도 자신의 반 기한까지 꼭 응해 주세요. 기한을 놓치면 과제 제출로 인정되지 않습니다.</p>
       </div>
@@ -203,41 +205,41 @@
 <!-- 숙제 달력 -->
 <style>
   .hwc-week{border:1px solid rgb(var(--c-outline-variant));border-radius:14px;overflow:hidden;background:rgb(var(--c-surface-container-lowest));}
-  .hwc-week.now{border-color:rgba(74,227,192,.55);box-shadow:0 0 0 1px rgba(74,227,192,.25);}
+  .hwc-week.now{border-color:rgba(237,237,234,.55);box-shadow:0 0 0 1px rgba(237,237,234,.25);}
   .hwc-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 16px;background:rgb(var(--c-surface-container));border-bottom:1px solid rgb(var(--c-outline-variant));}
   .hwc-body{display:grid;}
   .hwc-cell{padding:14px 16px;border-top:3px solid transparent;}
   .hwc-cell + .hwc-cell{border-left:1px solid rgb(var(--c-outline-variant));}
-  .hwc-cell.g-go1{border-top-color:#e6b955;}
+  .hwc-cell.g-go1{border-top-color:#ededea;}
   .hwc-cell.g-go2{border-top-color:rgb(var(--c-secondary));}
   .hwc-badge{flex-shrink:0;min-width:40px;text-align:center;font-weight:800;font-size:12px;border-radius:8px;padding:5px 8px;line-height:1;}
-  .b-go1{background:linear-gradient(135deg,#f4d788,#e6b955);color:#3a2c07;}
+  .b-go1{background:linear-gradient(135deg,#ededea,#ededea);color:#1c1e23;}
   .b-go2{background:rgb(var(--c-secondary));color:rgb(var(--c-on-secondary));}
   .hwc-pg{display:flex;align-items:center;gap:2px;width:fit-content;margin-top:7px;font-size:11px;font-weight:700;padding:2px 6px;border-radius:6px;white-space:nowrap;}
-  .hwc-cell.g-go1 .hwc-pg{background:rgba(230,185,85,.14);color:#e6b955;}
-  .hwc-cell.g-go2 .hwc-pg{background:rgba(74,227,192,.13);color:rgb(var(--c-secondary));}
+  .hwc-cell.g-go1 .hwc-pg{background:rgba(237,237,234,.14);color:#ededea;}
+  .hwc-cell.g-go2 .hwc-pg{background:rgba(237,237,234,.13);color:rgb(var(--c-secondary));}
   .hwc-sub{display:block;font-size:11px;font-weight:800;letter-spacing:.02em;margin-bottom:2px;}
-  .hwc-cell.g-go1 .hwc-sub{color:#e6b955;}
+  .hwc-cell.g-go1 .hwc-sub{color:#ededea;}
   .hwc-cell.g-go2 .hwc-sub{color:rgb(var(--c-secondary));}
   .hwc-part + .hwc-part{margin-top:11px;padding-top:11px;border-top:1px dashed rgb(var(--c-outline-variant));}
   .hwc-group{display:flex;align-items:center;gap:9px;margin-bottom:13px;}
   .hwc-group .tag{font-size:12px;font-weight:800;letter-spacing:.04em;padding:4px 12px;border-radius:20px;flex-shrink:0;}
   .hwc-group .tag.dan{background:rgb(var(--c-secondary-fixed));color:rgb(var(--c-secondary));}
-  .hwc-group .tag.jong{background:rgba(91,141,239,.16);color:#7aa2f0;}
+  .hwc-group .tag.jong{background:rgba(237,237,234,.16);color:#ededea;}
   .hwc-group .meta{font-size:12px;color:rgb(var(--c-on-surface-variant));}
   .hwc-group .line{flex-grow:1;height:1px;background:rgb(var(--c-outline-variant));}
   .jt-wrap{border:1px solid rgb(var(--c-outline-variant));border-radius:12px;overflow:hidden;margin-bottom:12px;background:rgb(var(--c-surface-container-lowest));}
   .jt-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 14px;background:rgb(var(--c-surface-container));border-bottom:1px solid rgb(var(--c-outline-variant));}
   .jt-badge{font-size:11px;font-weight:800;border-radius:7px;padding:3px 8px;flex-shrink:0;}
-  .jb-h1{background:linear-gradient(135deg,#f4d788,#e6b955);color:#3a2c07;}
-  .jb-m3{background:#5b8def;color:#fff;}
+  .jb-h1{background:linear-gradient(135deg,#ededea,#ededea);color:#1c1e23;}
+  .jb-m3{background:#ededea;color:#fff;}
   .jt table{width:100%;border-collapse:collapse;}
   .jt th{background:rgb(var(--c-surface-container-low));color:rgb(var(--c-on-surface-variant));font-size:11.5px;font-weight:700;text-align:left;padding:7px 13px;}
   .jt td{padding:10px 13px;border-top:1px solid rgb(var(--c-outline-variant));font-size:13px;color:rgb(var(--c-on-surface));vertical-align:top;line-height:1.5;}
   .jt td.wk{font-weight:800;white-space:nowrap;}
   .jt td.due{white-space:nowrap;color:rgb(var(--c-on-surface-variant));font-weight:600;font-size:12.5px;}
   .jt .kx{color:rgb(var(--c-secondary));font-weight:700;}
-  .jt .gi{display:inline-block;font-size:10.5px;font-weight:700;color:#7aa2f0;background:rgba(91,141,239,.14);border-radius:5px;padding:1px 6px;margin-left:3px;white-space:nowrap;}
+  .jt .gi{display:inline-block;font-size:10.5px;font-weight:700;color:#ededea;background:rgba(237,237,234,.14);border-radius:5px;padding:1px 6px;margin-left:3px;white-space:nowrap;}
   .jt-note{font-size:11.5px;color:rgb(var(--c-on-surface-variant));padding:9px 13px 11px;border-top:1px dashed rgb(var(--c-outline-variant));line-height:1.5;}
 </style>
 <section class="hidden mt-20">
