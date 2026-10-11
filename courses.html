@@ -26,7 +26,7 @@
 <meta name="twitter:image" content="https://hanti.oreumyak.com/og-image.png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
   tailwind.config = { darkMode:"class", theme:{ extend:{
     "colors":{ "background":"rgb(var(--c-background) / <alpha-value>)","surface-bright":"rgb(var(--c-surface-bright) / <alpha-value>)","surface":"rgb(var(--c-surface) / <alpha-value>)","surface-container-lowest":"rgb(var(--c-surface-container-lowest) / <alpha-value>)","surface-container-low":"rgb(var(--c-surface-container-low) / <alpha-value>)","surface-container":"rgb(var(--c-surface-container) / <alpha-value>)","surface-container-high":"rgb(var(--c-surface-container-high) / <alpha-value>)","surface-container-highest":"rgb(var(--c-surface-container-highest) / <alpha-value>)","outline-variant":"rgb(var(--c-outline-variant) / <alpha-value>)","outline":"rgb(var(--c-outline) / <alpha-value>)","on-surface":"rgb(var(--c-on-surface) / <alpha-value>)","on-surface-variant":"rgb(var(--c-on-surface-variant) / <alpha-value>)","secondary":"rgb(var(--c-secondary) / <alpha-value>)","on-secondary":"rgb(var(--c-on-secondary) / <alpha-value>)","on-primary":"rgb(var(--c-on-primary) / <alpha-value>)","secondary-fixed":"rgb(var(--c-secondary-fixed) / <alpha-value>)","on-tertiary-container":"rgb(var(--c-on-tertiary-container) / <alpha-value>)","tertiary-fixed":"rgb(var(--c-tertiary-fixed) / <alpha-value>)","tertiary-container":"rgb(var(--c-tertiary-container) / <alpha-value>)","primary":"rgb(var(--c-primary) / <alpha-value>)","primary-container":"rgb(var(--c-primary-container) / <alpha-value>)","on-primary-container":"rgb(var(--c-on-primary-container) / <alpha-value>)" },
@@ -66,6 +66,13 @@
   #theme-toggle{display:none!important;}
 </style>
 <script src="msi.js?v=1" defer></script>
+<style id="indextone">
+  /* index 질감: 큰 Noto Sans KR 900 제목 · 타이트 자간 · balance */
+  h1,h2{font-family:'Noto Sans KR',sans-serif;}
+  h1{font-weight:900!important;letter-spacing:-.04em!important;line-height:1.12;text-wrap:balance;word-break:keep-all;}
+  h2{font-weight:900!important;letter-spacing:-.03em!important;line-height:1.2;text-wrap:balance;word-break:keep-all;}
+  p,li,.font-body-lg,.font-body-md{text-wrap:pretty;}
+</style>
 </head>
 <body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col" style="word-break:keep-all;overflow-wrap:break-word">
 <!-- Nav -->
