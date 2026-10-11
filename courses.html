@@ -72,6 +72,20 @@
   h1{font-weight:900!important;letter-spacing:-.04em!important;line-height:1.12;text-wrap:balance;word-break:keep-all;}
   h2{font-weight:900!important;letter-spacing:-.03em!important;line-height:1.2;text-wrap:balance;word-break:keep-all;}
   p,li,.font-body-lg,.font-body-md{text-wrap:pretty;}
+  /* 평평한 선-구획 강좌 카드 (index 질감) */
+  #course-grid{gap:0!important;border-top:1px solid rgba(255,255,255,.13);}
+  .cflat{display:flex;flex-direction:column;padding:34px 30px 30px;border-bottom:1px solid rgba(255,255,255,.13);color:inherit;transition:background .25s;}
+  .cflat:hover{background:rgba(255,255,255,.025);}
+  .cflat-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:28px;}
+  .cflat-ic{font-size:36px;color:#ededea;}
+  .cflat-grade{font-size:13.5px;font-weight:700;color:#8f8f8c;letter-spacing:.02em;}
+  .cflat-meta{font-size:14px;font-weight:700;color:#c2c2be;letter-spacing:.01em;}
+  .cflat-title{font-family:'Noto Sans KR',sans-serif;font-weight:900;letter-spacing:-.02em;font-size:23px;color:#f6f6f4;margin:9px 0 10px;line-height:1.25;}
+  .cflat-desc{color:#a9a9a5;font-size:15.5px;line-height:1.72;flex:1;word-break:keep-all;}
+  .cflat-foot{display:flex;align-items:center;justify-content:space-between;margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);}
+  .cflat-ses{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#8f8f8c;}
+  .cflat-more{display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:700;color:#ededea;}
+  @media(min-width:768px){ .cflat{border-bottom:none;} #course-grid{border-bottom:1px solid rgba(255,255,255,.13);} #course-grid>.cflat+.cflat{border-left:1px solid rgba(255,255,255,.13);} }
 </style>
 </head>
 <body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col" style="word-break:keep-all;overflow-wrap:break-word">
@@ -102,7 +116,7 @@
 </section>
 
 <main class="flex-grow max-w-container-max mx-auto w-full px-margin-desktop py-12">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="course-grid"></div>
+<div class="grid grid-cols-1 md:grid-cols-2" id="course-grid"></div>
 <p class="hidden text-center text-on-surface-variant py-16" id="empty">현재 개설된 강좌가 없습니다.</p>
 
 <!-- 강좌 선택 가이드 (강의 준비 중 — 숨김) -->
@@ -148,19 +162,17 @@
 <script>
   const grid=document.getElementById('course-grid'), empty=document.getElementById('empty');
   function card(c){
-    return `<a href="course.html?c=${c.id}" class="crd-hover bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden flex flex-col no-underline">
-      <div class="chd h-32 relative flex flex-col justify-between px-6 py-5" style="background:${c.headerbg}">
-        <span class="material-symbols-outlined text-secondary text-[40px]">${c.icon}</span>
-        <span class="text-secondary font-extrabold text-[23px] tracking-tight">${c.grade} ${c.kind==='단과'?'단과':'종합'}</span>
+    return `<a href="course.html?c=${c.id}" class="cflat no-underline">
+      <div class="cflat-top">
+        <span class="material-symbols-outlined cflat-ic">${c.icon}</span>
+        <span class="cflat-grade">${c.grade} · ${c.kind==='단과'?'단과':'종합'}</span>
       </div>
-      <div class="p-6 flex flex-col flex-grow">
-        <span class="text-secondary font-bold font-label-sm uppercase mb-2">${c.kind} · ${c.day} ${c.time}</span>
-        <h3 class="font-headline-md text-[19px] text-on-surface mb-2">${c.subject}</h3>
-        <p class="text-body-md text-on-surface-variant mb-5">${c.desc}</p>
-        <div class="mt-auto pt-4 border-t border-outline-variant flex justify-between items-center">
-          <span class="font-label-md text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">&#xeb7b;</span>${c.sessions}</span>
-          <span class="font-label-md text-secondary font-bold flex items-center gap-1">상세 보기 <span class="material-symbols-outlined text-[18px]">&#xe5c8;</span></span>
-        </div>
+      <div class="cflat-meta">${c.kind} · ${c.day} ${c.time}</div>
+      <h3 class="cflat-title">${c.subject}</h3>
+      <p class="cflat-desc">${c.desc}</p>
+      <div class="cflat-foot">
+        <span class="cflat-ses"><span class="material-symbols-outlined text-[18px]">&#xeb7b;</span>${c.sessions}</span>
+        <span class="cflat-more">상세 보기 <span class="material-symbols-outlined text-[18px]">&#xe5c8;</span></span>
       </div></a>`;
   }
   const list=(window.COURSES||[]);
