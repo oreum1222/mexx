@@ -79,6 +79,7 @@
   h2{font-weight:900!important;letter-spacing:-.03em!important;line-height:1.2;text-wrap:balance;word-break:keep-all;}
   p,li,.font-body-lg,.font-body-md{text-wrap:pretty;}
 </style>
+<script src="analytics.js" defer></script>
 </head>
 <body class="bg-background text-on-surface font-body-md" style="word-break:keep-all;overflow-wrap:break-word">
 <!-- Nav -->
@@ -103,7 +104,7 @@
 <div class="absolute -top-32 -right-20 w-[600px] h-[600px] rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(237,237,234,.1),transparent 70%)"></div>
 <div class="max-w-container-max mx-auto px-margin-desktop py-12 md:py-16 relative z-10">
 <nav class="flex items-center gap-2 text-label-md text-on-surface-variant mb-6">
-<a href="courses.html" class="hover:text-secondary">강좌 목록</a><span class="material-symbols-outlined text-[16px]">&#xe5cc;</span><span id="bc" class="text-on-surface"></span>
+<a href="index.html" class="hover:text-secondary">홈</a><span class="material-symbols-outlined text-[16px]">&#xe5cc;</span><a href="courses.html" class="hover:text-secondary">강좌 목록</a><span class="material-symbols-outlined text-[16px]">&#xe5cc;</span><span id="bc" class="text-on-surface"></span>
 </nav>
 <div id="hero"></div>
 </div>
@@ -220,4 +221,5 @@
   function toggleTheme(){var d=document.documentElement,light=d.classList.toggle('light');d.classList.toggle('dark',!light);try{localStorage.setItem('mexx-theme',light?'light':'dark');}catch(e){}var ic=document.getElementById('theme-icon');if(ic)ic.textContent=light?'\ue51c':'\ue518';var lb=document.getElementById('theme-label');if(lb)lb.textContent=light?'\uc5b4\ub450\uc6b4 \ud654\uba74 \ubc84\uc804':'\ubc1d\uc740 \ud654\uba74 \ubc84\uc804';var m=document.querySelector('meta[name=theme-color]');if(m)m.content=light?'#f6f8fc':'#0a0c10';}
   (function(){var nav=document.querySelector('nav');if(!nav)return;var kakao=nav.querySelector('a[href*="pf.kakao.com"]');var light=document.documentElement.classList.contains('light');var btn=document.createElement('button');btn.id='theme-toggle';btn.setAttribute('aria-label','\ub2e4\ud06c/\ub77c\uc774\ud2b8 \ubaa8\ub4dc \uc804\ud658');btn.title='\ub2e4\ud06c/\ub77c\uc774\ud2b8 \uc804\ud658';btn.className='h-10 px-3 rounded-lg border border-outline-variant text-on-surface-variant hover:text-secondary hover:border-secondary transition-colors flex items-center gap-1.5 shrink-0';btn.innerHTML='<span class="material-symbols-outlined text-[20px]" id="theme-icon">'+(light?'\ue51c':'\ue518')+'</span><span id="theme-label" class="hidden sm:inline font-label-md text-label-md font-bold whitespace-nowrap">'+(light?'\uc5b4\ub450\uc6b4 \ud654\uba74 \ubc84\uc804':'\ubc1d\uc740 \ud654\uba74 \ubc84\uc804')+'</span>';btn.onclick=toggleTheme;if(kakao&&kakao.parentElement){kakao.parentElement.insertBefore(btn,kakao);}else{nav.appendChild(btn);}})();
 </script>
+<script src="mobile-cta.js" defer></script>
 </body></html>
