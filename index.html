@@ -372,30 +372,61 @@
   .rcell .rsub{font-size:14px;color:#9a9a96;margin-top:14px;line-height:1.65;word-break:keep-all;text-wrap:pretty;}
   .rnote{margin-top:24px;font-size:13.5px;color:#8f8f8c;display:inline-flex;align-items:center;gap:10px;word-break:keep-all;}
   .rnote::before{content:"";width:22px;height:1px;background:#3a3a3c;flex-shrink:0;}
-  @media(max-width:760px){.rstat{grid-template-columns:1fr;} .rstat>.rcell+.rcell{border-left:none;}}
+  /* 성장 그래프 + 숫자 카운트업 */
+  .gchart{display:flex;align-items:flex-end;gap:14px;margin-top:24px;height:150px;}
+  .gcol{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;}
+  .gval{font-weight:900;letter-spacing:-.03em;color:#f6f6f4;font-size:clamp(28px,3.1vw,40px);line-height:1;margin-bottom:11px;white-space:nowrap;opacity:0;transform:translateY(8px);}
+  .gval .u{font-size:.42em;font-weight:800;color:#b0b0ac;margin-left:1px;}
+  .gcol.from .gval{color:#7c7c79;}
+  .gbar{width:100%;max-width:60px;height:0;border-radius:5px 5px 0 0;}
+  .gbar.from{background:rgba(255,255,255,.13);}
+  .gbar.to{background:linear-gradient(180deg,#f6f6f4,#c4c4c0);box-shadow:0 0 34px rgba(246,246,244,.13);}
+  .gcap{font-size:12.5px;font-weight:600;color:#8f8f8c;margin-top:12px;white-space:nowrap;}
+  .gar{align-self:center;color:#5c5c5a;font-size:19px;margin:0 -4px 46px;flex:0 0 auto;}
+  .rstat.in .gbar{height:var(--h);transition:height 1.2s cubic-bezier(.22,1,.36,1) .15s;}
+  .rstat.in .gval{opacity:1;transform:none;transition:opacity .55s ease .55s,transform .55s ease .55s;}
+  .schools{display:flex;gap:7px;margin-top:22px;}
+  .schools i{position:relative;flex:1;height:8px;border-radius:4px;background:rgba(255,255,255,.12);overflow:hidden;}
+  .schools i::after{content:"";position:absolute;inset:0;background:var(--ink);border-radius:4px;transform:scaleX(0);transform-origin:left;}
+  .rstat.in .schools i::after{transform:scaleX(1);transition:transform .7s cubic-bezier(.22,1,.36,1);}
+  .rstat.in .schools i:nth-child(1)::after{transition-delay:.2s;}
+  .rstat.in .schools i:nth-child(2)::after{transition-delay:.33s;}
+  .rstat.in .schools i:nth-child(3)::after{transition-delay:.46s;}
+  .rstat.in .schools i:nth-child(4)::after{transition-delay:.59s;}
+  @media(max-width:760px){.rstat{grid-template-columns:1fr;} .rstat>.rcell+.rcell{border-left:none;} .gchart{height:140px;}}
+  @media(prefers-reduced-motion:reduce){.rstat .gbar{height:var(--h);} .rstat .gval{opacity:1;transform:none;} .schools i::after{transform:scaleX(1);}}
 </style>
 <section class="blk" id="results">
   <div class="wrap">
     <div class="rv"><span class="kicker">올해, 학생들이 보여 준 결과</span>
       <h2 class="sh">결과로 증명합니다.</h2>
-      <p class="sub2"><span class="nb">화법과 언어 연합반 중간고사,</span> <span class="nb">수강한 네 학교 모두 1등급.</span> 그리고 <span class="nb">한 달 만에</span> 두 배로 커진 강의실.</p>
+      <p class="sub2"><span class="nb">화법과 언어 연합반 중간고사,</span> <span class="nb">수강한 네 학교 모두 1등급.</span> <span class="nb">그리고 한 달 만에</span> <span class="nb">다섯 배가 된 수강생.</span></p>
     </div>
     <div class="rstat rv">
       <div class="rcell">
         <span class="rlab">화법과 언어 연합반 · 중간고사</span>
-        <div class="rbig">4개교 모두</div>
+        <div class="rbig" style="margin-top:20px;"><span class="num" data-count="4">0</span>개교 모두</div>
         <div class="rbig" style="margin-top:4px;">1등급<span class="u"> 달성</span></div>
-        <div class="rsub">수강생이 다닌 학교에서 모두 1등급이 나왔습니다.</div>
+        <div class="schools" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="rsub">수강생이 다닌 네 학교 모두 1등급이 나왔습니다.</div>
       </div>
       <div class="rcell">
         <span class="rlab">우리들의 첫 수능 국어 · <span class="hl">한 달 만에</span></span>
-        <div class="rbig rgrow"><span class="from">5<span class="u">명</span></span><span class="ar">→</span><span>25<span class="u">명</span></span></div>
-        <div class="rsub"><span class="nb">시즌1에서 시즌2로,</span> 한 달 만에 다섯 배가 된 수능 국어 강의실.</div>
+        <div class="gchart" aria-hidden="true">
+          <div class="gcol from"><span class="gval"><span class="num" data-count="5">0</span><span class="u">명</span></span><div class="gbar from" style="--h:20%"></div><span class="gcap">시즌1</span></div>
+          <span class="gar">→</span>
+          <div class="gcol"><span class="gval"><span class="num" data-count="25">0</span><span class="u">명</span></span><div class="gbar to" style="--h:100%"></div><span class="gcap">시즌2</span></div>
+        </div>
+        <div class="rsub"><span class="nb">시즌1에서 시즌2로,</span> 한 달 만에 수강생이 다섯 배로 늘었습니다.</div>
       </div>
       <div class="rcell">
         <span class="rlab">화법과 언어 연합반 · 9월 → 10월</span>
-        <div class="rbig rgrow"><span class="from">5<span class="u">명</span></span><span class="ar">→</span><span>15<span class="u">명</span></span></div>
-        <div class="rsub"><span class="nb">9월 반에서 10월 반으로,</span> 세 배로 커진 연합반 강의실.</div>
+        <div class="gchart" aria-hidden="true">
+          <div class="gcol from"><span class="gval"><span class="num" data-count="5">0</span><span class="u">명</span></span><div class="gbar from" style="--h:33%"></div><span class="gcap">9월 반</span></div>
+          <span class="gar">→</span>
+          <div class="gcol"><span class="gval"><span class="num" data-count="15">0</span><span class="u">명</span></span><div class="gbar to" style="--h:100%"></div><span class="gcap">10월 반</span></div>
+        </div>
+        <div class="rsub"><span class="nb">9월 반에서 10월 반으로,</span> 수강생이 세 배로 늘었습니다.</div>
       </div>
     </div>
     <p class="rnote rv">종강 한참 뒤에도 성적을 알리는 감사 문자가 이어집니다. 학생 연락처와 이름은 가렸습니다.</p>
@@ -723,6 +754,21 @@
     if(e.target.classList.contains('rv'))e.target.classList.add('in');
     io.unobserve(e.target);}});},{threshold:0.15});
   document.querySelectorAll('section.blk').forEach(s=>io.observe(s));
+
+  /* 성과 숫자 카운트업 */
+  (function(){
+    const rs=document.querySelector('#results .rstat');if(!rs)return;
+    const reduceM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    const nums=[...rs.querySelectorAll('.num[data-count]')];
+    function run(){nums.forEach(n=>{
+      const tgt=+n.dataset.count;
+      if(reduceM){n.textContent=tgt;return;}
+      const dur=1250,t0=performance.now();
+      (function tick(now){const p=Math.min(1,(now-t0)/dur);const e=1-Math.pow(1-p,3);
+        n.textContent=Math.round(tgt*e);if(p<1)requestAnimationFrame(tick);else n.textContent=tgt;})(t0);
+    });}
+    new IntersectionObserver((es,ob)=>{es.forEach(e=>{if(e.isIntersecting){run();ob.disconnect();}});},{threshold:0.3}).observe(rs);
+  })();
 
   /* nav stuck */
   addEventListener('scroll',()=>{document.getElementById('top').classList.toggle('stuck',scrollY>60);});
