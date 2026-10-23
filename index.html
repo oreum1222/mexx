@@ -362,7 +362,7 @@
   <div class="pin">
     <span class="pglow2"></span>
     <span class="pk">2026 · 2학기</span>
-    <h2 class="pinh">10월 11일,<br><b>진짜 ‘글’을 읽는 수업</b>이 시작됩니다.</h2>
+    <h2 class="pinh">11월 1일,<br><b>진짜 ‘글’을 읽는 수업</b>이 시작됩니다.</h2>
   </div>
 </section>
 
@@ -403,7 +403,7 @@
   .winter .kicker{color:#aebacd;}
   .winter .kicker::before{background:#49566a;}
   .winter .wh b{color:#dbe4f2;}
-  .winter .wsub{color:#aab3c4;font-size:18.5px;line-height:1.7;margin-top:16px;max-width:660px;word-break:keep-all;}
+  .winter .wsub{color:#aab3c4;font-size:18.5px;line-height:1.7;margin-top:16px;max-width:660px;word-break:keep-all;text-wrap:pretty;}
   .wgrid{margin-top:42px;position:relative;border-top:1px solid rgba(188,206,234,.16);display:grid;grid-template-columns:1fr 1fr 1fr;}
   .wcard{display:flex;flex-direction:column;padding:32px 26px 28px;border-bottom:1px solid rgba(188,206,234,.16);transition:background .25s;}
   .wgrid>.wcard+.wcard{border-left:1px solid rgba(188,206,234,.16);}
@@ -411,14 +411,14 @@
   .wcard .wct{font-size:13px;font-weight:700;color:#8f9aad;letter-spacing:.02em;}
   .wcard h3{font-family:'Noto Sans KR';font-weight:900;letter-spacing:-.02em;font-size:21px;line-height:1.3;color:#f3f6fb;margin:12px 0 9px;word-break:keep-all;}
   .wcard .wtm{font-size:13.5px;font-weight:700;color:#c3ccdb;line-height:1.55;}
-  .wcard .wdesc{color:#9aa3b4;font-size:14.5px;line-height:1.7;margin-top:13px;flex:1;word-break:keep-all;}
+  .wcard .wdesc{color:#9aa3b4;font-size:14.5px;line-height:1.7;margin-top:13px;flex:1;word-break:keep-all;text-wrap:pretty;}
   .wcard .wopen{margin-top:20px;padding-top:15px;border-top:1px solid rgba(188,206,234,.1);font-size:14.5px;font-weight:800;color:#dbe4f2;}
   .wsoon{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(188,206,234,.14);border-radius:14px;overflow:hidden;}
   .wsoon .si{padding:20px 22px;}
   .wsoon .si+.si{border-left:1px solid rgba(188,206,234,.14);}
   .wsoon .sk{font-size:12px;font-weight:800;letter-spacing:.04em;color:#aebacd;background:rgba(190,206,234,.08);border:1px solid rgba(188,206,234,.18);border-radius:999px;padding:3px 11px;display:inline-block;margin-bottom:11px;}
   .wsoon .st{font-weight:900;font-size:17px;color:#eef2f8;letter-spacing:-.01em;}
-  .wsoon .sm{font-size:13.5px;color:#9aa3b4;margin-top:5px;line-height:1.6;word-break:keep-all;}
+  .wsoon .sm{font-size:13.5px;color:#9aa3b4;margin-top:5px;line-height:1.6;word-break:keep-all;text-wrap:pretty;}
   .wsoon .sd{font-size:13px;font-weight:800;color:#c3ccdb;margin-top:9px;}
   .wsoon-lead{font-size:14px;font-weight:700;color:#aebacd;margin:46px 0 0;display:inline-flex;align-items:center;gap:9px;}
   .wsoon-lead::before{content:"";width:22px;height:1px;background:#49566a;}
@@ -435,14 +435,14 @@
   <div class="wrap">
     <div class="rv"><span class="kicker">다가오는 겨울방학</span>
       <h2 class="sh wh">2027 MEXX 윈터스쿨,<br><b>겨울에 다음 한 학기를 끝냅니다.</b></h2>
-      <p class="wsub">예비 고2·현 고2 대상, 1월 개강. 출제자의 시선으로, 겨울방학 국어의 기준을 세웁니다.</p>
+      <p class="wsub"><span class="nb">예비 고2·현 고2 대상,</span> <span class="nb">1월 개강.</span> 출제자의 시선으로, <span class="nb">겨울방학 국어의</span> <span class="nb">기준을 세웁니다.</span></p>
     </div>
     <div class="wgrid rv">
       <div class="wcard">
         <span class="wct">예비 고2 · 현대문법 · 겨울 정규</span>
         <h3>현대문법 가뿐하게, 경쾌하게!</h3>
         <span class="wtm">일 10:00–13:30 · 월 13:30–17:00<br>두 반 · 6회차</span>
-        <p class="wdesc">품사부터 음운까지 현대문법 전 영역을 개념 → 유형 → 워크북으로. 출제자의 눈으로 수능과 내신을 함께 대비합니다.</p>
+        <p class="wdesc">품사부터 음운까지 현대문법 전 영역을 <span class="nb">개념 → 유형 → 워크북</span>으로. 출제자의 눈으로 <span class="nb">수능과 내신을</span> <span class="nb">함께 대비합니다.</span></p>
         <div class="wopen">1월 3일(일) · 4일(월) 개강</div>
       </div>
       <div class="wcard">
@@ -560,6 +560,50 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<style>
+  .rstat{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--line);margin-top:42px;}
+  .rcell{padding:34px 28px 30px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;}
+  .rstat>.rcell+.rcell{border-left:1px solid var(--line);}
+  .rcell .rlab{font-size:13px;font-weight:700;color:#8f8f8c;letter-spacing:.02em;word-break:keep-all;}
+  .rcell .rbig{font-weight:900;letter-spacing:-.03em;color:#f6f6f4;font-size:clamp(38px,4.6vw,58px);line-height:1.04;margin-top:18px;}
+  .rcell .rbig .u{font-size:.4em;font-weight:800;color:#b0b0ac;margin-left:2px;}
+  .rcell .rgrow{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;}
+  .rcell .rgrow .from{font-weight:800;color:#6d6d6a;}
+  .rcell .rgrow .ar{color:#8f8f8c;font-size:.55em;align-self:center;}
+  .rcell .rsub{font-size:14px;color:#9a9a96;margin-top:14px;line-height:1.65;word-break:keep-all;text-wrap:pretty;}
+  .rnote{margin-top:24px;font-size:13.5px;color:#8f8f8c;display:inline-flex;align-items:center;gap:10px;word-break:keep-all;}
+  .rnote::before{content:"";width:22px;height:1px;background:#3a3a3c;flex-shrink:0;}
+  @media(max-width:760px){.rstat{grid-template-columns:1fr;} .rstat>.rcell+.rcell{border-left:none;}}
+</style>
+<section class="blk" id="results">
+  <div class="wrap">
+    <div class="rv"><span class="kicker">올해, 학생들이 보여 준 결과</span>
+      <h2 class="sh">결과로 증명합니다.</h2>
+      <p class="sub2"><span class="nb">화법과 언어 연합반 중간고사,</span> <span class="nb">수강한 네 학교 모두 1등급.</span> 그리고 <span class="nb">한 달 만에</span> 두 배로 커진 강의실.</p>
+    </div>
+    <div class="rstat rv">
+      <div class="rcell">
+        <span class="rlab">화법과 언어 연합반 · 중간고사</span>
+        <div class="rbig">4개교 모두</div>
+        <div class="rbig" style="margin-top:4px;">1등급<span class="u"> 달성</span></div>
+        <div class="rsub">수강생이 다닌 학교에서 모두 1등급이 나왔습니다.</div>
+      </div>
+      <div class="rcell">
+        <span class="rlab">우리들의 첫 수능 국어 · 한 달 만에</span>
+        <div class="rbig rgrow"><span class="from">5<span class="u">명</span></span><span class="ar">→</span><span>25<span class="u">명</span></span></div>
+        <div class="rsub"><span class="nb">시즌1에서 시즌2로,</span> 한 달 만에 다섯 배가 된 수능 국어 강의실.</div>
+      </div>
+      <div class="rcell">
+        <span class="rlab">화법과 언어 연합반 · 9월 → 10월</span>
+        <div class="rbig rgrow"><span class="from">5<span class="u">명</span></span><span class="ar">→</span><span>15<span class="u">명</span></span></div>
+        <div class="rsub"><span class="nb">9월 반에서 10월 반으로,</span> 세 배로 커진 연합반 강의실.</div>
+      </div>
+    </div>
+    <p class="rnote rv">종강 한참 뒤에도 성적을 알리는 감사 문자가 이어집니다. 학생 연락처와 이름은 가렸습니다.</p>
   </div>
 </section>
 
