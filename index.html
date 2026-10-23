@@ -402,7 +402,7 @@
       <h2 class="sh">결과로 증명합니다.</h2>
       <p class="sub2"><span class="nb">화법과 언어 연합반 중간고사,</span> <span class="nb">수강한 네 학교 모두 1등급.</span> <span class="nb">그리고 한 달 만에</span> <span class="nb">다섯 배가 된 수강생.</span></p>
     </div>
-    <div class="rstat rv">
+    <div class="rstat">
       <div class="rcell">
         <span class="rlab">화법과 언어 연합반 · 중간고사</span>
         <div class="rbig" style="margin-top:20px;"><span class="num" data-count="4">0</span>개교 모두</div>
@@ -755,19 +755,28 @@
     io.unobserve(e.target);}});},{threshold:0.15});
   document.querySelectorAll('section.blk').forEach(s=>io.observe(s));
 
-  /* 성과 숫자 카운트업 */
+  /* 성과 성장 그래프 + 카운트업 : 섹션에 들어올 때마다 다시 재생 */
   (function(){
     const rs=document.querySelector('#results .rstat');if(!rs)return;
     const reduceM=matchMedia('(prefers-reduced-motion:reduce)').matches;
     const nums=[...rs.querySelectorAll('.num[data-count]')];
-    function run(){nums.forEach(n=>{
-      const tgt=+n.dataset.count;
-      if(reduceM){n.textContent=tgt;return;}
-      const dur=1250,t0=performance.now();
-      (function tick(now){const p=Math.min(1,(now-t0)/dur);const e=1-Math.pow(1-p,3);
-        n.textContent=Math.round(tgt*e);if(p<1)requestAnimationFrame(tick);else n.textContent=tgt;})(t0);
-    });}
-    new IntersectionObserver((es,ob)=>{es.forEach(e=>{if(e.isIntersecting){run();ob.disconnect();}});},{threshold:0.3}).observe(rs);
+    let raf=[];
+    function reset(){rs.classList.remove('in');raf.forEach(cancelAnimationFrame);raf=[];nums.forEach(n=>n.textContent='0');}
+    function run(){
+      rs.classList.add('in');
+      nums.forEach(n=>{const tgt=+n.dataset.count;
+        if(reduceM){n.textContent=tgt;return;}
+        const dur=1250,t0=performance.now();
+        (function tick(now){const p=Math.min(1,(now-t0)/dur);const e=1-Math.pow(1-p,3);
+          n.textContent=Math.round(tgt*e);if(p<1){raf.push(requestAnimationFrame(tick));}else n.textContent=tgt;})(performance.now());
+      });
+    }
+    if(reduceM){run();return;}
+    let shown=false;
+    new IntersectionObserver((es)=>{es.forEach(e=>{
+      if(e.isIntersecting){if(!shown){shown=true;run();}}
+      else if(shown){shown=false;reset();}
+    });},{threshold:0.35}).observe(rs);
   })();
 
   /* nav stuck */
