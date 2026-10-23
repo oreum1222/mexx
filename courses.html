@@ -85,7 +85,7 @@
   .cflat-foot{display:flex;align-items:center;justify-content:space-between;margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);}
   .cflat-ses{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#8f8f8c;}
   .cflat-more{display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:700;color:#ededea;}
-  @media(min-width:768px){ .cflat{border-bottom:none;} #course-grid{border-bottom:1px solid rgba(255,255,255,.13);} #course-grid>.cflat+.cflat{border-left:1px solid rgba(255,255,255,.13);} }
+  @media(min-width:768px){ #course-grid>.cflat:nth-child(2n){border-left:1px solid rgba(255,255,255,.13);} }
 </style>
 <script src="analytics.js" defer></script>
 </head>
@@ -159,14 +159,14 @@
 </div>
 </footer>
 
-<script src="courses-data.js?v=20261011"></script>
+<script src="courses-data.js?v=20261024"></script>
 <script>
   const grid=document.getElementById('course-grid'), empty=document.getElementById('empty');
   function card(c){
     return `<a href="course.html?c=${c.id}" class="cflat no-underline">
       <div class="cflat-top">
         <span class="material-symbols-outlined cflat-ic">${c.icon}</span>
-        <span class="cflat-grade">${c.grade} · ${c.kind==='단과'?'단과':'종합'}</span>
+        <span class="cflat-grade">${c.grade} · ${c.kind}</span>
       </div>
       <div class="cflat-meta">${c.kind} · ${c.day} ${c.time}</div>
       <h3 class="cflat-title">${c.subject}</h3>
