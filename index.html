@@ -123,6 +123,7 @@
   /* courses */
   .courses{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px;}
   .course{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px 28px;display:flex;flex-direction:column;min-height:280px;transition:border-color .25s,transform .25s;}
+  a.course{color:inherit;text-decoration:none;cursor:pointer;}
   .course:hover{border-color:rgba(255,255,255,.26);transform:translateY(-3px);}
   .course .ct{font-family:'IBM Plex Mono';font-size:13.5px;color:#9a9a97;letter-spacing:.02em;}
   .course h3{font-size:29px;font-weight:800;letter-spacing:-.02em;margin:15px 0 8px;}
@@ -452,20 +453,20 @@
     <div class="coursesframe" id="coursegrid">
       <i class="rline rline-top"></i><i class="rline rline-bot"></i><i class="rline rline-mid"></i>
       <div class="courses ruled">
-      <div class="course rv">
+      <a class="course rv" href="course.html?c=sn2b">
         <span class="ct">고2 · 수능 국어 · 단과</span>
         <h3>수능 국어 수능 대비반</h3>
         <span class="tm">일 14:00–17:00 · 4회차 · 첫 수능 국어</span>
         <p>문학과 독서를 <span class="nb">평가원 기출의 출제 원리로,</span> <span class="nb">감이 아닌 근거로 읽는</span> <span class="nb">첫 수능 국어입니다.</span></p>
         <div class="foot"><span class="open">11월 1일(일) 개강</span><span class="go">→</span></div>
-      </div>
-      <div class="course rv">
+      </a>
+      <a class="course rv" href="course.html?c=h2s2b">
         <span class="ct">고2 · 화법과 언어 · 단과</span>
         <h3>화법과 언어 연합반</h3>
         <span class="tm">일 10:00–13:00 · 5회차 · 기말 대비</span>
         <p><span class="nb">2학기 기말고사 언어(문법)를</span> <span class="nb">고전문법과 문장편으로,</span> <span class="nb">학교별 출제 방식까지</span> <span class="nb">따로 철벽 대비합니다.</span></p>
         <div class="foot"><span class="open">11월 8일(일) 개강</span><span class="go">→</span></div>
-      </div>
+      </a>
       </div>
     </div>
   </div>
