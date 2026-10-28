@@ -41,6 +41,8 @@
   .pbtn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:14.5px;font-weight:700;border-radius:11px;padding:11px 18px;background:var(--ink);color:#0a0a0a;transition:opacity .2s;}
   .pbtn:hover{opacity:.9;}
   .pbtn.soon{background:none;border:1px dashed rgba(255,255,255,.22);color:#8f8f8c;cursor:default;}
+  .pbtn.ghost{background:none;border:1px solid var(--line);color:#ededea;}
+  .pbtn.ghost:hover{border-color:rgba(255,255,255,.32);background:rgba(255,255,255,.04);opacity:1;}
   .tag{position:absolute;top:22px;right:22px;font-size:11.5px;font-weight:700;color:#8f8f8c;border:1px solid var(--line);border-radius:999px;padding:4px 10px;}
   /* note */
   .note{margin:16px 0 90px;font-size:14px;color:#8f8f8c;display:flex;gap:11px;align-items:flex-start;word-break:keep-all;line-height:1.65;}
@@ -63,28 +65,31 @@
     <p class="sub">2027 예비 고2 겨울 국어 설명회에 참석해 주신 분들께 드리는 자료입니다. 아래에서 받아 가실 수 있습니다.</p>
   </section>
 
-  <!-- 특전 카드: 아래 구조를 복제해 자료를 추가하면 됩니다 -->
+  <!-- 설명회 QR로 안내한 자료를 한곳에 모았습니다 -->
   <section class="perks">
     <article class="perk-card">
-      <span class="tag">준비 중</span>
-      <span class="pnum">01</span>
-      <h3>특전 자료 (제목)</h3>
-      <p>이곳에 자료 설명이 들어갑니다. 무엇을 드리는지, 어떻게 활용하는지 간단히 적습니다.</p>
-      <div class="pact"><span class="pbtn soon">곧 공개</span></div>
+      <span class="pnum">자료 01</span>
+      <h3>무료 학습 진단</h3>
+      <p>1~2분이면 지금 내 국어 상태와 보완할 점을 확인할 수 있습니다. 예비 고2가 겨울에 무엇부터 준비해야 하는지 방향을 잡아 드립니다.</p>
+      <div class="pact"><a class="pbtn" href="https://oreum1222.github.io/oreum-fassessment/" target="_blank" rel="noopener">진단 시작 →</a></div>
     </article>
     <article class="perk-card">
-      <span class="tag">준비 중</span>
-      <span class="pnum">02</span>
-      <h3>특전 자료 (제목)</h3>
-      <p>이곳에 자료 설명이 들어갑니다. 무엇을 드리는지, 어떻게 활용하는지 간단히 적습니다.</p>
-      <div class="pact"><span class="pbtn soon">곧 공개</span></div>
+      <span class="pnum">자료 02</span>
+      <h3>진단 리포트 예시</h3>
+      <p>진단을 마치면 어떤 분석 리포트를 받는지 예시로 보여 드립니다. 결과를 어떻게 읽고 활용하는지 미리 확인하세요.</p>
+      <div class="pact"><a class="pbtn ghost" href="https://oreum1222.github.io/oreum-report-sample/" target="_blank" rel="noopener">예시 보기 →</a></div>
     </article>
     <article class="perk-card">
-      <span class="tag">준비 중</span>
-      <span class="pnum">03</span>
-      <h3>특전 자료 (제목)</h3>
-      <p>이곳에 자료 설명이 들어갑니다. 무엇을 드리는지, 어떻게 활용하는지 간단히 적습니다.</p>
-      <div class="pact"><span class="pbtn soon">곧 공개</span></div>
+      <span class="pnum">자료 03</span>
+      <h3>강의 맛보기 영상</h3>
+      <p>수업 방식과 강의 스타일을 영상으로 미리 확인하세요. 감이 아니라 근거로 읽는 수업이 어떤 모습인지 보여 드립니다.</p>
+      <div class="pact"><a class="pbtn ghost" href="https://youtu.be/KKwodkRZF4A" target="_blank" rel="noopener">영상 보기 →</a></div>
+    </article>
+    <article class="perk-card">
+      <span class="pnum">자료 04</span>
+      <h3>MEXX 가경T 국어 사이트</h3>
+      <p>겨울 강좌와 시간표, 수강 후기를 한눈에 볼 수 있습니다. 궁금한 점은 카카오톡으로 바로 문의하실 수 있습니다.</p>
+      <div class="pact"><a class="pbtn ghost" href="https://hanti.oreumyak.com/" target="_blank" rel="noopener">사이트 보기 →</a></div>
     </article>
   </section>
 
