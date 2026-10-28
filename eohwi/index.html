@@ -67,9 +67,10 @@ h1{font-family:"Noto Serif KR",serif;font-size:40px;font-weight:900;margin:12px 
 .ans.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ink)}.ans.ok .k{background:var(--ok);color:#fff}
 .ans.no{background:var(--no-bg);border-color:var(--no);color:#9a3c29}.ans.no .k{background:var(--no);color:#fff}
 .ans.dim{opacity:.4}.ans.locked{cursor:default}
-.src{text-align:center;margin-top:16px;font-size:13px;color:var(--mute);min-height:20px;opacity:0;transition:.2s}.src.show{opacity:1}.src b{color:var(--acc-ink)}
-.src .exq{margin:9px auto 0;max-width:620px;font-family:"Noto Serif KR",serif;color:#6b6054;font-size:14px;line-height:1.65}
-mark{background:var(--acc-soft);color:var(--acc-ink);font-weight:700;padding:0 2px;border-radius:3px}
+.src{text-align:center;margin:12px 0 2px;font-size:13px;color:var(--mute);min-height:0;opacity:0;transition:.2s}.src.show{opacity:1}.src b{color:var(--acc-ink)}
+.src .srcline{font-size:13px;margin-bottom:2px}
+.src .exq{margin:11px auto 0;max-width:660px;font-family:"Noto Serif KR",serif;color:#413730;font-size:18.5px;line-height:1.75;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:12px;padding:16px 20px;text-align:left}
+mark{background:var(--acc-soft);color:var(--acc-ink);font-weight:800;padding:0 3px;border-radius:3px}
 .next{margin-top:14px;width:100%;background:var(--acc-soft);border:1.5px solid var(--acc-bd);color:var(--acc-ink);font-family:inherit;font-size:17px;font-weight:800;padding:15px;border-radius:14px;cursor:pointer;opacity:0;pointer-events:none;transition:.2s}.next.show{opacity:1;pointer-events:auto}
 /* 전환 */
 .bridge{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:10px}
@@ -109,7 +110,7 @@ mark{background:var(--acc-soft);color:var(--acc-ink);font-weight:700;padding:0 2
 .pop.go{animation:pop .7s ease}
 @keyframes pop{0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}30%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}100%{opacity:0;transform:translate(-50%,-56%) scale(1)}}
 .shake{animation:shk .35s}@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
-@media(max-width:560px){h1{font-size:33px}.word{font-size:46px}.rhero #rHit{font-size:66px}.bridge .big{font-size:28px}}
+@media(max-width:560px){h1{font-size:33px}.word{font-size:46px}.rhero #rHit{font-size:66px}.bridge .big{font-size:28px}.src .exq{font-size:16px;padding:14px 16px}}
 </style></head>
 <body><div class="wrap">
 <div class="brand">국어 김가경T · 어휘력 테스트</div>
@@ -167,8 +168,8 @@ mark{background:var(--acc-soft);color:var(--acc-ink);font-weight:700;padding:0 2
   <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
     <div class="qeyebrow">다음 어휘의 뜻은?</div>
     <div class="word" id="word"></div><div class="hanja" id="hanja"></div>
-    <div class="opts" id="opts"></div>
     <div class="src" id="src"></div>
+    <div class="opts" id="opts"></div>
     <button class="next" id="nextBtn">다음 →</button>
   </div>
 </section>
