@@ -1,0 +1,312 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>평가원 어휘 테스트</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#eef1f8;--mute:#93a0ba;--line:#273247;--line2:#1e2838;--acc:#97a6f2;--acc2:#7c8cf0;--acc-ink:#c3cdfb;--acc-soft:rgba(151,166,242,.14);--acc-bd:rgba(151,166,242,.4);--bg:#0b111c;--card:#141c2b;--navy:#182134;--ok:#8fa2f0;--no:#e08a7a;--no-bg:rgba(224,138,122,.14);--neut:#3a475f}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;background:radial-gradient(1200px 700px at 50% -8%,#182a4a 0%,var(--bg) 60%);color:var(--ink);font-family:"Pretendard Variable",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:760px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;padding:22px 20px 40px}
+.brand{color:var(--acc);font-weight:800;font-size:14px;letter-spacing:.04em;text-align:center}
+.hidden{display:none!important}
+.step{color:var(--mute);font-size:12.5px;font-weight:700;text-align:center;margin-top:4px}
+.step b{color:var(--acc-ink)}
+/* 시작 */
+.center{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:6px}
+h1{font-size:42px;font-weight:900;margin:12px 0 4px;letter-spacing:-.02em}
+.lead{color:var(--mute);font-size:17px;line-height:1.65;margin-bottom:6px}.lead b{color:var(--acc-ink)}
+.how{display:flex;gap:10px;margin:16px 0 4px;max-width:470px;width:100%}
+.how .s{flex:1;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 10px}
+.how .n{width:24px;height:24px;border-radius:8px;background:var(--acc-soft);border:1px solid var(--acc-bd);color:var(--acc-ink);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 7px}
+.how .tt{font-size:14px;font-weight:800}.how .dd{font-size:12px;color:var(--mute);margin-top:3px;line-height:1.4}
+.opt{margin-top:18px;width:100%;max-width:440px}.opt .lbl{font-size:13px;color:var(--mute);font-weight:700;text-align:left;margin:13px 2px 7px}
+.chips{display:flex;gap:9px;flex-wrap:wrap;justify-content:center}
+.chip{flex:1;min-width:80px;background:var(--card);border:1.5px solid var(--line);color:var(--mute);font-family:inherit;font-size:15px;font-weight:700;padding:13px 8px;border-radius:14px;cursor:pointer;transition:.15s}
+.chip.on{background:var(--acc-soft);border-color:var(--acc-bd);color:var(--acc-ink)}.chip:active{transform:scale(.97)}
+.go{margin-top:26px;width:100%;max-width:440px;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#0b111c;border:none;font-family:inherit;font-size:21px;font-weight:800;padding:18px;border-radius:16px;cursor:pointer;box-shadow:0 10px 30px rgba(124,140,240,.35);transition:.15s}
+.go:active{transform:translateY(2px)}
+.tiny{color:var(--mute);font-size:12.5px;margin-top:14px}
+.field{width:100%;max-width:440px;margin-top:18px;display:flex;gap:10px}
+.field input{flex:1;background:var(--card);border:1.5px solid var(--line);border-radius:12px;color:var(--ink);font-family:inherit;font-size:16px;padding:15px 15px;text-align:center}
+.field input::placeholder{color:#5b6882}.field input:focus{outline:none;border-color:var(--acc-bd)}
+.field .nick{flex:1.2}
+.hook{color:var(--acc-ink);font-size:13.5px;font-weight:700;margin-top:12px}
+.rankwrap{width:100%;max-width:500px;margin-top:16px;background:linear-gradient(180deg,var(--navy),var(--card));border:1px solid var(--line);border-radius:18px;padding:18px 18px 10px}
+.rankhead{font-size:13px;font-weight:700;text-align:center;color:var(--mute);margin-bottom:14px;letter-spacing:.02em}
+.rankhead b{color:var(--acc-ink);font-family:"Noto Serif KR",serif;font-size:34px;font-weight:900;display:block;margin-top:5px;letter-spacing:-.01em}
+.lbrow{display:flex;align-items:center;gap:13px;padding:10px 6px;border-bottom:1px solid var(--line2);font-size:14px}
+.lbrow:last-child{border-bottom:none}.lbrow.me{background:var(--acc-soft);border:1px solid var(--acc-bd);border-radius:11px;padding:10px 12px;margin:2px 0}
+.lbrow .rk{width:26px;font-family:"Noto Serif KR",serif;font-weight:900;color:var(--mute);text-align:center;font-size:15px;font-variant-numeric:tabular-nums}
+.lbrow:first-child .rk,.lbrow.me .rk{color:var(--acc-ink)}
+.lbrow .nm{flex:1;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lbrow .sc{color:var(--mute);font-weight:700;font-size:13px;font-variant-numeric:tabular-nums}.lbrow.me .sc{color:var(--acc-ink)}
+.adminbtn{position:fixed;right:14px;bottom:14px;z-index:20;background:var(--card);border:1px solid var(--line);color:var(--mute);font-family:inherit;font-weight:700;font-size:12.5px;padding:9px 13px;border-radius:10px;cursor:pointer}
+/* 공통 HUD */
+.hud{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.bar{flex:1;height:9px;background:var(--card);border-radius:99px;overflow:hidden}.bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acc2),var(--acc));border-radius:99px;transition:width .3s}
+.hudn{font-size:13.5px;color:var(--mute);font-weight:700;white-space:nowrap}.hudn b{color:var(--ink)}
+.combo{color:var(--gold);font-weight:800;font-size:13.5px;min-width:54px;text-align:right;opacity:0;transition:.2s}.combo.show{opacity:1}
+.qcard{flex:1;display:flex;flex-direction:column;justify-content:center}
+.qeyebrow{color:var(--mute);font-size:13.5px;font-weight:700;margin-bottom:14px;text-align:center}
+.word{font-family:"Noto Serif KR",serif;font-weight:900;font-size:60px;line-height:1.1;text-align:center}
+.hanja{font-family:"Noto Serif KR",serif;color:var(--acc-ink);font-size:23px;margin-top:8px;opacity:.9;text-align:center}
+/* 자가체크 버튼 */
+.selfbtns{display:flex;gap:12px;margin-top:40px}
+.selfbtns button{flex:1;font-family:inherit;font-size:19px;font-weight:800;padding:22px;border-radius:16px;cursor:pointer;border:1.5px solid var(--line);background:var(--card);color:var(--ink);transition:.12s}
+.selfbtns .know{border-color:var(--ok);color:#cdeedd;background:var(--ok-bg)}
+.selfbtns .dunno{border-color:var(--mute)}
+.selfbtns button:active{transform:scale(.97)}
+.selfhint{text-align:center;color:var(--mute);font-size:12.5px;margin-top:16px}
+/* 보기 */
+.opts{display:flex;flex-direction:column;gap:11px;margin-top:26px}
+.ans{display:flex;gap:12px;align-items:center;background:var(--card);border:1.5px solid var(--line);color:var(--ink);font-family:"Noto Serif KR",serif;font-size:17px;line-height:1.45;text-align:left;padding:16px 18px;border-radius:14px;cursor:pointer;transition:.12s;font-weight:600}
+.ans .k{flex-shrink:0;width:26px;height:26px;border-radius:8px;background:var(--navy);color:var(--mute);font-family:"Pretendard Variable";font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.ans:hover{border-color:var(--acc-bd)}.ans:active{transform:scale(.99)}
+.ans.ok{background:var(--ok-bg);border-color:var(--ok);color:#d8f7e6}.ans.ok .k{background:var(--ok);color:#06231a}
+.ans.no{background:var(--no-bg);border-color:var(--no);color:#ffdfe4}.ans.no .k{background:var(--no);color:#2a0710}
+.ans.dim{opacity:.4}.ans.locked{cursor:default}
+.src{text-align:center;margin-top:16px;font-size:13px;color:var(--mute);min-height:20px;opacity:0;transition:.2s}.src.show{opacity:1}.src b{color:var(--acc-ink)}
+.next{margin-top:14px;width:100%;background:var(--acc-soft);border:1.5px solid var(--acc-bd);color:var(--acc-ink);font-family:inherit;font-size:17px;font-weight:800;padding:15px;border-radius:14px;cursor:pointer;opacity:0;pointer-events:none;transition:.2s}.next.show{opacity:1;pointer-events:auto}
+/* 전환 */
+.bridge{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:10px}
+.bridge .big{font-size:36px;font-weight:900;line-height:1.3}
+.bridge .em{color:var(--acc-ink)}
+.bridge .cntline{color:var(--mute);font-size:17px;line-height:1.7;margin-top:6px}.bridge .cntline b{color:var(--acc-ink);font-size:22px}
+/* 결과 — 편집형 진단 리포트 */
+.rwrap{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:10px}
+.reyebrow{color:var(--acc);font-weight:800;font-size:12px;letter-spacing:.16em;margin-bottom:16px}
+.rhero{font-family:"Noto Serif KR",serif;font-weight:900;color:var(--acc-ink);line-height:.96;letter-spacing:-.02em;display:flex;align-items:baseline;justify-content:center}
+.rhero #rHit{font-size:88px}
+.rhero .slash{font-size:40px;color:var(--line);font-weight:600;margin:0 10px;position:relative;top:-6px}
+.rhero #rClaim{font-size:44px;color:var(--mute);font-weight:700}
+.rheroCap{color:var(--mute);font-size:13px;margin-top:12px;letter-spacing:.01em}.rheroCap b{color:var(--acc-ink);font-weight:700}
+.rverdict{font-size:21px;font-weight:900;margin:26px 0 8px;letter-spacing:-.01em}
+.rmsg{color:#b4bfd6;font-size:14.5px;line-height:1.72;max-width:450px;margin:0}.rmsg b{color:var(--ink)}.rmsg .hot{color:var(--no);font-weight:800}
+.diag{width:100%;max-width:500px;margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:19px 20px 15px}
+.diagbar{display:flex;height:15px;border-radius:8px;overflow:hidden;background:#0d1524}
+.diagbar .seg{height:100%;transition:width .7s cubic-bezier(.2,.85,.25,1)}
+.seg.real{background:linear-gradient(90deg,var(--acc2),var(--acc))}.seg.bluff{background:var(--no)}.seg.none{background:var(--neut)}
+.diaglgd{margin-top:15px;display:flex;flex-direction:column;gap:9px}
+.lg{display:flex;align-items:center;font-size:13.5px;color:var(--mute)}
+.lg .dot{width:9px;height:9px;border-radius:3px;margin-right:10px;flex:none}
+.dot.real{background:var(--acc)}.dot.bluff{background:var(--no)}.dot.none{background:var(--neut)}
+.lg b{margin-left:auto;color:var(--ink);font-weight:800;font-size:15px;font-variant-numeric:tabular-nums}
+.lists{width:100%;max-width:500px;margin-top:18px;text-align:left}
+.lists .t{font-size:12.5px;font-weight:800;margin:16px 2px 9px;color:var(--mute);letter-spacing:.04em}
+.wrow{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 15px;margin-bottom:7px}
+.wrow .ww{font-family:"Noto Serif KR",serif;font-weight:800;font-size:16.5px}.wrow .ww small{color:var(--acc-ink);font-size:12.5px;margin-left:7px;font-weight:600}
+.wrow .wm{font-family:"Noto Serif KR",serif;color:#cfd8ea;font-size:14px;margin-top:3px}
+.ragain{display:flex;gap:10px;margin-top:26px;width:100%;max-width:500px}
+.ragain button{flex:1;font-family:inherit;font-weight:800;font-size:15.5px;padding:15px;border-radius:14px;cursor:pointer;border:1.5px solid var(--acc-bd)}
+.ragain .primary{background:linear-gradient(135deg,var(--acc),var(--acc2));color:#0b111c;border:none}.ragain .ghost{background:transparent;color:var(--acc-ink)}
+.pop{position:fixed;left:50%;top:38%;transform:translate(-50%,-50%);font-size:60px;font-weight:900;pointer-events:none;opacity:0;z-index:9}
+.pop.go{animation:pop .7s ease}
+@keyframes pop{0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}30%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}100%{opacity:0;transform:translate(-50%,-56%) scale(1)}}
+.shake{animation:shk .35s}@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+@media(max-width:560px){h1{font-size:33px}.word{font-size:46px}.rhero #rHit{font-size:66px}.bridge .big{font-size:28px}}
+</style></head>
+<body><div class="wrap">
+<div class="brand">국어 김가경T · 어휘력 테스트</div>
+
+<section id="start" class="center">
+  <h1>평가원 어휘 테스트</h1>
+  <div class="lead">수능 국어 지문이 <b>뜻풀이 없이</b> 쓰는 어려운 어휘.<br>우리 아이, 정말 알고 있을까요?</div>
+  <div class="how">
+    <div class="s"><div class="n">1</div><div class="tt">자가 체크</div><div class="dd">아는 단어인지 먼저 스스로 표시</div></div>
+    <div class="s"><div class="n">2</div><div class="tt">실전 확인</div><div class="dd">안다고 한 단어를 진짜 아는지 테스트</div></div>
+  </div>
+  <div class="opt">
+    <div class="lbl">영역</div>
+    <div class="chips" id="domChips">
+      <button class="chip on" data-dom="전체">전체</button>
+      <button class="chip" data-dom="독서">독서(비문학)</button>
+      <button class="chip" data-dom="문학">문학</button>
+    </div>
+    <div class="lbl">단어 수</div>
+    <div class="chips" id="numChips">
+      <button class="chip" data-num="10">10개</button>
+      <button class="chip on" data-num="15">15개</button>
+      <button class="chip" data-num="20">20개</button>
+    </div>
+  </div>
+  <div class="field">
+    <input class="nick" id="nick" maxlength="10" placeholder="닉네임 (선택)">
+    <input id="phone" maxlength="13" inputmode="numeric" placeholder="연락처 (선택)">
+  </div>
+  <div class="hook">🏆 끝나면 <b>응시자 중 내 등수</b>를 바로 확인할 수 있어요!<br>닉네임과 연락처를 <b>함께</b> 적으면, 나중에 <b>내 결과를 따로 보내</b> 드려요.</div>
+  <button class="go" id="goBtn" style="margin-top:16px">시작하기</button>
+  <div class="tiny" id="poolInfo"></div>
+</section>
+
+<section id="self" class="qcard hidden">
+  <div class="step">1단계 · 자가 체크</div>
+  <div class="hud"><span class="hudn"><b id="snow">1</b>/<span id="stot">15</span></span><div class="bar"><i id="sbar"></i></div><span class="hudn">아는 단어 <b id="sknow">0</b></span></div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+    <div class="qeyebrow">이 단어, 뜻을 설명할 수 있나요?</div>
+    <div class="word" id="sword"></div>
+    <div class="hanja" id="shanja"></div>
+    <div class="selfbtns"><button class="dunno" id="sNo">✗ 몰라요</button><button class="know" id="sYes">✓ 알아요</button></div>
+    <div class="selfhint">솔직하게! 다음 단계에서 진짜 아는지 확인합니다 · (← 몰라요 / → 알아요)</div>
+  </div>
+</section>
+
+<section id="bridge" class="bridge hidden">
+  <div class="big">그럼, <span class="em">정말 아는지</span><br>지금부터 확인해 볼까요? 👀</div>
+  <div class="cntline">“알아요”라고 한 어휘 <b id="brN">0</b>개<br>이걸 4지선다로 테스트합니다.</div>
+  <button class="go" id="brGo" style="max-width:360px">테스트 시작</button>
+</section>
+
+<section id="quiz" class="qcard hidden">
+  <div class="step">2단계 · 실전 확인</div>
+  <div class="hud"><span class="hudn"><b id="qnow">1</b>/<span id="qtot">0</span></span><div class="bar"><i id="qbar"></i></div><span class="hudn">정답 <b id="score">0</b></span><span class="combo" id="combo"></span></div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+    <div class="qeyebrow">다음 어휘의 뜻은?</div>
+    <div class="word" id="word"></div><div class="hanja" id="hanja"></div>
+    <div class="opts" id="opts"></div>
+    <div class="src" id="src"></div>
+    <button class="next" id="nextBtn">다음 →</button>
+  </div>
+</section>
+
+<section id="result" class="rwrap hidden">
+  <div class="reyebrow">어휘력 진단 결과</div>
+  <div class="rhero"><span id="rHit">0</span><span class="slash">/</span><span id="rClaim">0</span></div>
+  <div class="rheroCap">‘안다’고 한 어휘 중, 뜻을 <b>실제로 설명할 수 있던</b> 수</div>
+  <h2 class="rverdict" id="rtier"></h2>
+  <p class="rmsg" id="rmsg"></p>
+  <div class="diag">
+    <div class="diagbar"><i class="seg real" id="segReal"></i><i class="seg bluff" id="segBluff"></i><i class="seg none" id="segNone"></i></div>
+    <div class="diaglgd">
+      <div class="lg"><span class="dot real"></span>진짜 아는 어휘<b id="stReal">0</b></div>
+      <div class="lg"><span class="dot bluff"></span>아는 줄 알았던 어휘<b id="stBluff">0</b></div>
+      <div class="lg"><span class="dot none"></span>모른다고 한 어휘<b id="stDunno">0</b></div>
+    </div>
+  </div>
+  <div class="rankwrap hidden" id="rankwrap"></div>
+  <div class="lists" id="lists"></div>
+  <div class="ragain"><button class="ghost" id="homeBtn">설정 바꾸기</button><button class="primary" id="againBtn">다시 하기</button></div>
+</section>
+</div>
+<div class="pop" id="pop"></div>
+
+<script>
+const DATA=[{"w": "간과하다", "h": "看過", "m": "큰 관심 없이 대강 보아 넘기다", "d": "독서", "s": "2021학년도 수능", "c": [2, 93, 1]}, {"w": "간구하다", "h": "懇求", "m": "간절히 바라다", "d": "문학", "s": "2021학년도 6월", "c": [0, 2]}, {"w": "간주하다", "h": "看做", "m": "상태, 모양, 성질 따위가 그와 같다고 보거나 그렇다고 여기다", "d": "독서", "s": "2020학년도 9월", "c": [0, 1]}, {"w": "견지하다", "h": "堅持", "m": "어떤 견해나 입장 따위를 굳게 지니거나 지키다", "d": "독서·문학", "s": "2019학년도 수능", "c": [52]}, {"w": "결부하다", "h": "結付", "m": "일정한 사물이나 현상을 서로 연관시키다", "d": "독서·문학", "s": "2019학년도 6월", "c": [12, 16, 5]}, {"w": "결핍하다", "h": "缺乏", "m": "있어야 할 것이 없어지거나 모자라다", "d": "독서·문학", "s": "2022학년도 6월", "c": [4]}, {"w": "경계하다", "h": "警戒", "m": "뜻밖의 사고가 생기지 않도록 조심하여 단속하다", "d": "독서", "s": "2022학년도 6월", "c": []}, {"w": "계몽하다", "h": "啓蒙", "m": "지식수준이 낮거나 인습에 젖은 사람을 가르쳐서 깨우치다", "d": "독서", "s": "2023학년도 수능", "c": []}, {"w": "고수하다", "h": "固守", "m": "차지한 물건이나 형세 따위를 굳게 지키다", "d": "독서·문학", "s": "2019학년도 6월", "c": [9]}, {"w": "고안하다", "h": "考案", "m": "연구하여 새로운 안을 생각해 내다", "d": "독서", "s": "2018학년도 6월", "c": [8]}, {"w": "관조하다", "h": "觀照", "m": "고요한 마음으로 사물이나 현상을 관찰하거나 비추어 보다", "d": "문학", "s": "2026학년도 수능", "c": []}, {"w": "구현하다", "h": "具現", "m": "어떤 내용을 구체적인 사실로 나타나게 하다", "d": "독서·문학", "s": "2018학년도 6월", "c": [33]}, {"w": "귀결하다", "h": "歸結", "m": "어떤 결말이나 결과에 이르다", "d": "독서", "s": "2022학년도 수능", "c": [13, 4]}, {"w": "귀속하다", "h": "歸屬", "m": "재산이나 영토, 권리 따위가 특정 주체에 붙거나 딸리다. 또는 그렇게 하다", "d": "독서", "s": "2024학년도 9월", "c": [12]}, {"w": "규명하다", "h": "糾明", "m": "어떤 사실을 자세히 따져서 바로 밝히다", "d": "독서", "s": "2018학년도 수능", "c": [15]}, {"w": "규정하다", "h": "規定", "m": "규칙으로 정하다", "d": "독서", "s": "2019학년도 6월", "c": [43, 14]}, {"w": "급부하다", "h": "給付", "m": "재물 따위를 대어 주다", "d": "독서", "s": "2019학년도 6월", "c": [4]}, {"w": "기만하다", "h": "欺瞞", "m": "남을 속여 넘기다", "d": "독서·문학", "s": "2023학년도 6월", "c": [18]}, {"w": "기호하다", "h": "嗜好", "m": "즐기고 좋아하다", "d": "독서", "s": "2018학년도 수능", "c": [17]}, {"w": "내재하다", "h": "內在", "m": "어떤 사물이나 범위의 안에 들어 있다", "d": "독서", "s": "2023학년도 9월", "c": [20]}, {"w": "내포하다", "h": "內包", "m": "어떤 성질이나 뜻 따위를 속에 품다", "d": "독서·문학", "s": "2019학년도 6월", "c": [19, 97]}, {"w": "누락하다", "h": "漏落", "m": "기입되어야 할 것이 기록에서 빠지다. 또는 그렇게 되게 하다", "d": "독서", "s": "2024학년도 수능", "c": []}, {"w": "담보하다", "h": "擔保", "m": "맡아서 보증하다", "d": "독서", "s": "2026학년도 9월", "c": []}, {"w": "당면하다", "h": "當面", "m": "바로 눈앞에 당하다", "d": "문학", "s": "2018학년도 수능", "c": []}, {"w": "대두하다", "h": "擡頭", "m": "어떤 세력이나 현상이 새롭게 나타나다. 머리를 쳐든다는 뜻에서 나온 말이다", "d": "독서", "s": "2022학년도 6월", "c": [25]}, {"w": "대변하다", "h": "代辯", "m": "어떤 사람이나 단체를 대신하여 그의 의견이나 태도를 표하다", "d": "독서", "s": "2023학년도 수능", "c": [24]}, {"w": "도래하다", "h": "到來", "m": "어떤 시기나 기회가 닥쳐오다", "d": "독서", "s": "2024학년도 수능", "c": [27]}, {"w": "도출하다", "h": "導出", "m": "판단이나 결론 따위를 이끌어 내다", "d": "독서", "s": "2018학년도 수능", "c": [100, 26]}, {"w": "동경하다", "h": "憧憬", "m": "어떤 것을 간절히 그리워하여 그것만을 생각하다", "d": "문학", "s": "2024학년도 9월", "c": []}, {"w": "둔감하다", "h": "鈍感", "m": "감정이나 감각이 무디다", "d": "독서", "s": "2022학년도 6월", "c": [83]}, {"w": "매개하다", "h": "媒介", "m": "둘 사이에서 양편의 관계를 맺어 주다", "d": "독서·문학", "s": "2018학년도 수능", "c": []}, {"w": "발산하다", "h": "發散", "m": "감정 따위가 밖으로 드러나 해소되거나 분위기 따위가 한껏 드러나다. 또는 그렇게 되게 하다", "d": "독서", "s": "2023학년도 수능", "c": [33, 66, 86, 32]}, {"w": "발췌하다", "h": "拔萃", "m": "책, 글 따위에서 필요하거나 중요한 부분을 가려 뽑아내다", "d": "독서", "s": "2026학년도 9월", "c": [31, 33]}, {"w": "발현하다", "h": "發現", "m": "속에 있거나 숨은 것이 밖으로 나타나다. 또는 나타나게 하다", "d": "독서", "s": "2020학년도 수능", "c": [31, 11, 66, 86, 32]}, {"w": "배격하다", "h": "排擊", "m": "어떤 사상, 의견, 물건 따위를 물리치다", "d": "독서", "s": "2020학년도 9월", "c": [35]}, {"w": "배제하다", "h": "排除", "m": "받아들이지 아니하고 물리쳐 제외하다", "d": "독서·문학", "s": "2018학년도 9월", "c": [34]}, {"w": "복원하다", "h": "復原", "m": "원래대로 회복하다", "d": "독서", "s": "2018학년도 수능", "c": []}, {"w": "봉합하다", "h": "縫合", "m": "수술을 하려고 절단한 자리나 외상(外傷)으로 갈라진 자리를 꿰매어 붙이다", "d": "독서", "s": "2019학년도 9월", "c": [38]}, {"w": "부합하다", "h": "符合", "m": "부신(符信)이 꼭 들어맞듯 사물이나 현상이 서로 꼭 들어맞다", "d": "독서·문학", "s": "2019학년도 6월", "c": [37]}, {"w": "사유하다", "h": "思惟", "m": "대상을 두루 생각하다", "d": "독서·문학", "s": "2022학년도 수능", "c": []}, {"w": "상기하다", "h": "想起", "m": "지난 일을 돌이켜 생각하여 내다", "d": "독서·문학", "s": "2019학년도 수능", "c": [43, 61, 78, 105, 41, 42, 44, 45]}, {"w": "상쇄하다", "h": "相殺", "m": "상반되는 것에 서로 영향을 주어 효과가 없어지게 만들다", "d": "독서", "s": "2021학년도 6월", "c": [42, 44, 40, 43, 45]}, {"w": "상응하다", "h": "相應", "m": "서로 응하거나 어울리다", "d": "독서", "s": "2019학년도 9월", "c": [41, 44, 103, 40, 43, 45]}, {"w": "상정하다", "h": "想定", "m": "어떤 정황을 가정적으로 생각하여 단정하다", "d": "독서·문학", "s": "2019학년도 6월", "c": [40, 15, 41, 42, 44, 45]}, {"w": "상충하다", "h": "相衝", "m": "맞지 아니하고 서로 어긋나다", "d": "독서", "s": "2021학년도 6월", "c": [41, 42, 40, 43, 45]}, {"w": "상회하다", "h": "上廻", "m": "어떤 기준보다 웃돌다", "d": "독서", "s": "2020학년도 수능", "c": [40, 41, 42, 43, 44]}, {"w": "선행하다", "h": "先行", "m": "어떠한 것보다 앞서가거나 앞에 있다", "d": "독서·문학", "s": "2025학년도 수능", "c": [49]}, {"w": "설파하다", "h": "說破", "m": "어떤 내용을 듣는 사람이 납득하도록 분명하게 드러내어 말하다", "d": "독서", "s": "2021학년도 수능", "c": []}, {"w": "성찰하다", "h": "省察", "m": "자기의 마음을 반성하고 살피다", "d": "독서·문학", "s": "2022학년도 수능", "c": [49]}, {"w": "성행하다", "h": "盛行", "m": "매우 성하게 유행하다", "d": "독서", "s": "2021학년도 수능", "c": [46, 48]}, {"w": "소거하다", "h": "消去", "m": "글자나 그림 따위를 지워 없애다", "d": "독서", "s": "2022학년도 수능", "c": [51, 52]}, {"w": "소원하다", "h": "疏遠", "m": "지내는 사이가 두텁지 아니하고 거리가 있어서 서먹서먹하다", "d": "독서", "s": "2024학년도 수능", "c": [50, 52]}, {"w": "소지하다", "h": "所持", "m": "물건을 지니고 있다", "d": "독서", "s": "2018학년도 9월", "c": [3, 50, 51]}, {"w": "수긍하다", "h": "首肯", "m": "옳다고 인정하다", "d": "독서·문학", "s": "2019학년도 6월", "c": [54, 55, 56, 57]}, {"w": "수렴하다", "h": "收斂", "m": "돈이나 물건 따위를 거두어들이다", "d": "독서·문학", "s": "2018학년도 수능", "c": [53, 55, 56, 57]}, {"w": "수립하다", "h": "樹立", "m": "국가나 정부, 제도, 계획 따위를 이룩하여 세우다", "d": "독서", "s": "2022학년도 6월", "c": [71, 53, 54, 56, 57]}, {"w": "수반하다", "h": "隨伴", "m": "붙좇아서 따르다", "d": "독서", "s": "2018학년도 6월", "c": [53, 54, 55, 57]}, {"w": "수용하다", "h": "受容", "m": "어떠한 것을 받아들이다", "d": "독서·문학", "s": "2018학년도 9월", "c": [64, 53, 54, 55, 56]}, {"w": "시사하다", "h": "示唆", "m": "어떤 사실을 넌지시 드러내거나 간접적으로 예고하다", "d": "독서", "s": "2018학년도 9월", "c": []}, {"w": "실정하다", "h": "失政", "m": "정치를 잘못하다", "d": "독서", "s": "2022학년도 6월", "c": []}, {"w": "애도하다", "h": "哀悼", "m": "사람의 죽음을 슬퍼하다", "d": "문학", "s": "2023학년도 6월", "c": []}, {"w": "야기하다", "h": "惹起", "m": "일이나 사건 따위를 끌어 일으키다", "d": "독서·문학", "s": "2018학년도 수능", "c": [40, 78, 105]}, {"w": "열거하다", "h": "列擧", "m": "여러 가지 예나 사실을 낱낱이 죽 늘어놓다", "d": "독서·문학", "s": "2018학년도 6월", "c": []}, {"w": "와해하다", "h": "瓦解", "m": "조직이나 계획 따위가 산산이 무너지고 흩어지다. 또는 조직이나 계획 따위를 산산이 무너뜨리거나 흩어지게 하다. 기와가 깨진다는 뜻에서 나온 말이다", "d": "독서", "s": "2020학년도 6월", "c": []}, {"w": "용인하다", "h": "容認", "m": "용납하여 인정하다", "d": "독서", "s": "2018학년도 수능", "c": [57]}, {"w": "원활하다", "h": "圓滑", "m": "모난 데가 없고 원만하다", "d": "독서", "s": "2024학년도 9월", "c": []}, {"w": "유발하다", "h": "誘發", "m": "어떤 것이 다른 일을 일어나게 하다", "d": "독서·문학", "s": "2018학년도 9월", "c": [31, 33, 86]}, {"w": "응집하다", "h": "凝集", "m": "한군데에 엉겨서 뭉치다. 또는 엉겨서 뭉치게 하다", "d": "독서", "s": "2023학년도 6월", "c": []}, {"w": "의거하다", "h": "依據", "m": "어떤 사실이나 원리 따위에 근거하다", "d": "독서", "s": "2018학년도 9월", "c": [69]}, {"w": "의탁하다", "h": "依託", "m": "어떤 것에 몸이나 마음을 의지하여 맡기다", "d": "독서·문학", "s": "2018학년도 9월", "c": [68]}, {"w": "이론하다", "h": "異論", "m": "다른 이론이나 의견을 내다", "d": "독서", "s": "2021학년도 9월", "c": []}, {"w": "입증하다", "h": "立證", "m": "어떤 증거 따위를 내세워 증명하다", "d": "독서·문학", "s": "2019학년도 수능", "c": [55]}, {"w": "자족하다", "h": "自足", "m": "스스로 넉넉함을 느끼다", "d": "문학", "s": "2023학년도 수능", "c": [73]}, {"w": "자탄하다", "h": "自歎", "m": "자기의 일에 대하여 탄식하다", "d": "문학", "s": "2018학년도 6월", "c": [72, 90, 92]}, {"w": "저해하다", "h": "沮害", "m": "막아서 못 하도록 해치다", "d": "독서", "s": "2021학년도 6월", "c": []}, {"w": "전제하다", "h": "前提", "m": "어떠한 사물이나 현상을 이루기 위하여 먼저 내세우다", "d": "독서·문학", "s": "2019학년도 9월", "c": [77, 78, 76]}, {"w": "전환하다", "h": "轉換", "m": "다른 방향이나 상태로 바꾸다", "d": "독서·문학", "s": "2018학년도 수능", "c": [75]}, {"w": "제고하다", "h": "提高", "m": "수준이나 정도 따위를 끌어올리다", "d": "독서", "s": "2019학년도 수능", "c": [78, 75]}, {"w": "제기하다", "h": "提起", "m": "의견이나 문제를 내어놓다", "d": "독서·문학", "s": "2019학년도 수능", "c": [77, 40, 61, 75, 105]}, {"w": "지대하다", "h": "至大", "m": "더할 수 없이 크다", "d": "독서", "s": "2022학년도 6월", "c": [80]}, {"w": "지양하다", "h": "止揚", "m": "더 높은 단계로 오르기 위하여 어떠한 것을 하지 아니하다", "d": "독서", "s": "2021학년도 수능", "c": [79]}, {"w": "진작하다", "h": "振作", "m": "떨쳐 일어나다. 또는 떨쳐 일으키다", "d": "독서", "s": "2024학년도 9월", "c": []}, {"w": "천역하다", "h": "賤役", "m": "천한 일을 하다", "d": "독서", "s": "2024학년도 9월", "c": []}, {"w": "체감하다", "h": "體感", "m": "몸으로 어떤 감각을 느끼다", "d": "문학", "s": "2021학년도 수능", "c": [85, 29, 84]}, {"w": "체념하다", "h": "諦念", "m": "희망을 버리고 아주 단념하다", "d": "문학", "s": "2020학년도 수능", "c": [83, 85]}, {"w": "체독하다", "h": "體讀", "m": "글을 읽을 때 글자에 표현되어 있는 것 이상으로 그 참뜻을 체득하여 읽다", "d": "독서", "s": "2026학년도 9월", "c": [83, 84]}, {"w": "촉발하다", "h": "觸發", "m": "어떤 일을 당하여 감정, 충동 따위가 일어나다. 또는 그렇게 되게 하다", "d": "독서", "s": "2018학년도 수능", "c": [31, 33, 66, 87]}, {"w": "촉진하다", "h": "促進", "m": "다그쳐 빨리 나아가게 하다", "d": "독서", "s": "2022학년도 9월", "c": [86]}, {"w": "추모하다", "h": "追慕", "m": "죽은 사람을 그리며 생각하다", "d": "문학", "s": "2018학년도 수능", "c": []}, {"w": "치하하다", "h": "致賀", "m": "남이 한 일에 대하여 고마움이나 칭찬의 뜻을 표시하다. 주로 윗사람이 아랫사람에게 한다", "d": "문학", "s": "2019학년도 9월", "c": []}, {"w": "탄식하다", "h": "歎息", "m": "한탄하여 한숨을 쉬다", "d": "문학", "s": "2018학년도 9월", "c": [73, 92]}, {"w": "토로하다", "h": "吐露", "m": "마음에 있는 것을 죄다 드러내어서 말하다", "d": "독서·문학", "s": "2018학년도 9월", "c": []}, {"w": "통탄하다", "h": "痛歎", "m": "몹시 탄식하다", "d": "문학", "s": "2020학년도 수능", "c": [73, 90]}, {"w": "투과하다", "h": "透過", "m": "장애물에 빛이 비치거나 액체가 스미면서 통과하다", "d": "독서", "s": "2024학년도 수능", "c": [0]}, {"w": "편향하다", "h": "偏向", "m": "한쪽으로 치우치다", "d": "독서·문학", "s": "2024학년도 6월", "c": []}, {"w": "폄하하다", "h": "貶下", "m": "가치를 깎아내리다", "d": "문학", "s": "2020학년도 9월", "c": [101]}, {"w": "폐기하다", "h": "廢棄", "m": "못 쓰게 된 것을 버리다", "d": "독서", "s": "2022학년도 6월", "c": []}, {"w": "포괄하다", "h": "包括", "m": "일정한 대상이나 현상 따위를 한데 묶어서 어떤 범위나 한계 안에 모두 들게 하다", "d": "독서·문학", "s": "2020학년도 6월", "c": [20, 98]}, {"w": "포착하다", "h": "捕捉", "m": "꼭 붙잡다", "d": "독서·문학", "s": "2018학년도 9월", "c": [97]}, {"w": "표방하다", "h": "標榜", "m": "어떤 명목을 붙여 주의나 주장 또는 처지를 앞에 내세우다", "d": "문학", "s": "2019학년도 6월", "c": [100]}, {"w": "표출하다", "h": "表出", "m": "겉으로 나타내다", "d": "독서·문학", "s": "2018학년도 6월", "c": [27, 99]}, {"w": "하직하다", "h": "下直", "m": "먼 길을 떠날 때 웃어른께 작별을 고하다", "d": "문학", "s": "2020학년도 6월", "c": [95]}, {"w": "향유하다", "h": "享有", "m": "누리어 가지다", "d": "독서·문학", "s": "2022학년도 6월", "c": []}, {"w": "호응하다", "h": "呼應", "m": "부름이나 호소 따위에 대답하거나 응하다. 부름에 응답한다는 뜻에서 나온 말이다", "d": "독서·문학", "s": "2018학년도 6월", "c": [42]}, {"w": "확충하다", "h": "擴充", "m": "늘리고 넓혀 충실하게 하다", "d": "독서", "s": "2025학년도 수능", "c": []}, {"w": "환기하다", "h": "喚起", "m": "주의나 여론, 생각 따위를 불러일으키다", "d": "독서·문학", "s": "2018학년도 9월", "c": [40, 61, 78, 106]}, {"w": "환원하다", "h": "還元", "m": "본디의 상태로 다시 돌아가다. 또는 그렇게 되게 하다", "d": "독서", "s": "2018학년도 수능", "c": [105]}, {"w": "회의하다", "h": "懷疑", "m": "의심을 품다", "d": "독서·문학", "s": "2019학년도 6월", "c": []}], TRAP={"지양하다": "어떤 목표를 향하여 그쪽으로 뜻이 쏠리어 나아가다", "제고하다": "이미 정한 것을 다시 돌이켜 생각하다", "지대하다": "더할 수 없이 작고 하찮다", "부합하다": "서로 맞지 아니하고 어긋나다", "상충하다": "서로 잘 응하거나 어울리다", "내재하다": "속에 있던 것을 겉으로 드러내다", "내포하다": "속에 품고 있던 것을 겉으로 끄집어내다", "발산하다": "밖으로 흩어진 것을 한곳으로 모으다", "수렴하다": "감정이나 기운이 밖으로 퍼져 나가다", "견지하다": "입장이나 태도를 형편에 따라 바꾸다", "고수하다": "지키던 것을 버리고 물러서다", "유발하다": "어떤 일이 일어나지 못하도록 막다", "저해하다": "어떤 일이 잘되도록 돕고 북돋우다", "촉진하다": "앞으로 나아가지 못하게 가로막다", "배격하다": "기꺼이 받아들여 인정하다", "수용하다": "받아들이지 아니하고 물리치다", "대두하다": "세력이나 현상이 차차 사그라져 사라지다", "폄하하다": "실제보다 높여 치켜세우다", "환기하다": "주의나 생각을 흩어 사라지게 하다", "답습하다": "옛것을 버리고 새롭게 뜯어고치다", "상쇄하다": "서로 힘을 보태어 효과를 더 키우다", "귀속하다": "가졌던 것을 남에게 넘겨 떼어 내다", "소급하다": "앞으로 다가올 일을 미리 헤아리다", "응집하다": "뭉쳐 있던 것이 뿔뿔이 흩어지다", "간과하다": "하나하나 꼼꼼히 따져 자세히 살피다", "관철하다": "하던 일을 중간에 그만두고 꺾다", "소원하다": "사이가 매우 가깝고 정답다", "향유하다": "가진 것을 남에게 모두 내어 주다", "구현하다": "구체적인 것을 추상적인 생각으로 바꾸다", "도출하다": "결론을 미리 정해 놓고 끼워 맞추다"};
+const BACKEND_URL="https://script.google.com/macros/s/AKfycbwJCTVwDMRvqdFXA6QmNHAxV1iLBR3TJXcABPF7IU5xobWQCWKBmbwtTTi4A5-udqqAQg/exec";  // 구글 시트 웹앱 /exec 주소(없으면 이 기기 내 기록만 사용)
+let dom='전체',num=15,pool=[],seq=[],si=0,know=[],claimed=[],qi=0,score=0,combo=0,wrong=[],locked=false,nick='',phone='';
+const $=id=>document.getElementById(id);
+function loadLB(){try{return JSON.parse(localStorage.getItem('eohwiLB')||'[]')}catch(e){return[]}}
+function saveLB(a){try{localStorage.setItem('eohwiLB',JSON.stringify(a.slice(-800)))}catch(e){}}
+const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]];}return a;};
+function fp(){pool=DATA.map((x,i)=>i).filter(i=>dom==='전체'||DATA[i].d.includes(dom));}
+function info(){fp();const n=Math.min(num,pool.length);$('poolInfo').textContent=`${dom} ${pool.length}개 중 ${n}개로 진행`;}
+document.querySelectorAll('#domChips .chip').forEach(b=>b.onclick=()=>{dom=b.dataset.dom;document.querySelectorAll('#domChips .chip').forEach(x=>x.classList.toggle('on',x===b));info();});
+document.querySelectorAll('#numChips .chip').forEach(b=>b.onclick=()=>{num=+b.dataset.num;document.querySelectorAll('#numChips .chip').forEach(x=>x.classList.toggle('on',x===b));info();});
+info();
+$('goBtn').onclick=startSelf; $('againBtn').onclick=startSelf; $('homeBtn').onclick=()=>show('start');
+$('brGo').onclick=startQuiz; $('nextBtn').onclick=next;
+$('sYes').onclick=()=>selfPick(true); $('sNo').onclick=()=>selfPick(false);
+document.addEventListener('keydown',e=>{
+  if(!$('self').classList.contains('hidden')){if(e.key==='ArrowRight')selfPick(true);if(e.key==='ArrowLeft')selfPick(false);}
+});
+function show(id){['start','self','bridge','quiz','result'].forEach(s=>$(s).classList.toggle('hidden',s!==id));const p=$('pop');p.className='pop';p.textContent='';}
+
+function startSelf(){nick=($('nick').value||'').trim();phone=($('phone').value||'').trim();
+  if(!nick) nick='익명';
+  fp();if(pool.length<4){alert('어휘가 부족합니다.');return;}
+  seq=shuffle([...pool]).slice(0,Math.min(num,pool.length));
+  si=0;know=[];show('self');renderSelf();}
+function renderSelf(){const it=DATA[seq[si]];
+  $('snow').textContent=si+1;$('stot').textContent=seq.length;$('sbar').style.width=(si/seq.length*100)+'%';
+  $('sknow').textContent=know.filter(Boolean).length;
+  $('sword').textContent=it.w;$('shanja').textContent=it.h||'';}
+function selfPick(yes){know[si]=yes;si++;
+  if(si>=seq.length){buildClaimed();go2bridge();}else renderSelf();}
+function buildClaimed(){claimed=seq.filter((_,i)=>know[i]);}
+function go2bridge(){$('brN').textContent=claimed.length;
+  if(claimed.length===0){ // 다 몰라요
+    show('result');showResult(); return;}
+  show('bridge');}
+
+function startQuiz(){qi=0;score=0;combo=0;wrong=[];show('quiz');renderQ();}
+function distractors(idx){const it=DATA[idx];const used=new Set([it.m]);const out=[];
+  if(TRAP[it.w]){out.push(TRAP[it.w]);used.add(TRAP[it.w]);}
+  // 비슷한 단어(헷갈리는 짝)의 뜻
+  for(const j of shuffle([...it.c])){if(out.length>=3)break;const m=DATA[j].m;if(!used.has(m)){out.push(m);used.add(m);}}
+  // 부족하면 무작위
+  while(out.length<3){const j=Math.random()*DATA.length|0;const m=DATA[j].m;if(!used.has(m)){out.push(m);used.add(m);}}
+  return out.slice(0,3);}
+function renderQ(){locked=false;const idx=claimed[qi];const it=DATA[idx];
+  $('qnow').textContent=qi+1;$('qtot').textContent=claimed.length;$('score').textContent=score;$('qbar').style.width=(qi/claimed.length*100)+'%';
+  $('word').textContent=it.w;$('hanja').textContent=it.h||'';
+  $('src').className='src';$('src').innerHTML='';$('nextBtn').className='next';
+  const c=$('combo');c.className='combo'+(combo>=2?' show':'');c.textContent=combo>=2?('🔥 '+combo+' 연속'):'';
+  const opts=shuffle([{m:it.m,ok:1},...distractors(idx).map(m=>({m,ok:0}))]);
+  const K=['①','②','③','④'];
+  $('opts').innerHTML=opts.map((o,i)=>`<button class="ans" data-ok="${o.ok}"><span class="k">${K[i]}</span><span>${o.m}</span></button>`).join('');
+  document.querySelectorAll('#opts .ans').forEach(b=>b.onclick=()=>choose(b,idx));}
+function choose(b,idx){if(locked)return;locked=true;const it=DATA[idx];const ok=b.dataset.ok==='1';
+  document.querySelectorAll('#opts .ans').forEach(x=>{x.classList.add('locked');if(x.dataset.ok==='1')x.classList.add('ok');else if(x===b)x.classList.add('no');else x.classList.add('dim');});
+  if(ok){score++;combo++;popup(combo>=3?'🔥':'정답!');}else{combo=0;b.classList.add('shake');wrong.push(idx);popup('✗');}
+  $('score').textContent=score;
+  $('src').className='src show';$('src').innerHTML=`<b>${it.w}</b> · ${it.d} · ${it.s} 지문`;
+  $('nextBtn').className='next show';}
+function popup(t){const p=$('pop');p.textContent=t;p.className='pop';void p.offsetWidth;p.className='pop go';}
+function next(){qi++;if(qi>=claimed.length)showResult();else renderQ();}
+
+function showResult(){show('result');
+  const claim=claimed.length, hit=score, bluff=claim-hit, dunno=seq.length-claim, tot=seq.length||1;
+  $('rClaim').textContent=claim;$('rHit').textContent=hit;
+  $('stReal').textContent=hit;$('stBluff').textContent=bluff;$('stDunno').textContent=dunno;
+  $('segReal').style.width=(hit/tot*100)+'%';
+  $('segBluff').style.width=(bluff/tot*100)+'%';
+  $('segNone').style.width=(dunno/tot*100)+'%';
+  let tier,msg;const pct=claim?hit/claim:0;
+  if(claim===0){tier='채울 공간이 큽니다';msg='모른다고 한 어휘가 많다는 건 그만큼 <b>끌어올릴 여지</b>가 크다는 뜻입니다. 어휘부터 잡으면 독해 속도가 달라집니다.';}
+  else if(bluff===0&&dunno===0){tier='어휘 장벽이 없습니다';msg='전부 알고, 전부 맞혔습니다. 지문의 어휘가 걸림돌이 되지 않는 수준입니다.';}
+  else if(pct>=.8){tier='탄탄한 편입니다';msg=`안다고 한 어휘 대부분을 정확히 알고 있습니다.`+(bluff?` 다만 <span class="hot">${bluff}개</span>는 ‘아는 줄 알았던’ 어휘였습니다.`:'');}
+  else{tier='아는 줄 알았던 어휘';msg=`안다고 한 <b>${claim}개</b> 중 <span class="hot">${bluff}개</span>는 실제로는 정확히 몰랐습니다. 이 <b>‘대충 아는’ 어휘</b>가 지문에서 오답을 만듭니다.`;}
+  $('rtier').textContent=tier;$('rmsg').innerHTML=msg;
+  let h='';
+  if(wrong.length){h+='<div class="t">‘안다’고 했지만 틀린 어휘</div>'+wrong.map(i=>`<div class="wrow"><div class="ww">${DATA[i].w}<small>${DATA[i].h||''}</small></div><div class="wm">${DATA[i].m}.</div></div>`).join('');}
+  const dun=seq.filter((_,i)=>!know[i]);
+  if(dun.length){h+='<div class="t">‘모른다’고 한 어휘</div>'+dun.map(i=>`<div class="wrow"><div class="ww">${DATA[i].w}<small>${DATA[i].h||''}</small></div><div class="wm">${DATA[i].m}.</div></div>`).join('');}
+  $('lists').innerHTML=h;
+  // 등수(같은 조건 응시자 기준) — 서버가 있으면 전 기기 통합, 없으면 이 기기 기록
+  const rec={nick,phone,hit,claim,total:seq.length,pct:claim?Math.round(hit/claim*100):0,dom,num,ts:Date.now()};
+  const all=loadLB();all.push(rec);saveLB(all);
+  const medal=r=>String(r).padStart(2,'0');
+  const esc=s=>String(s==null?'':s).replace(/</g,'');
+  function paint(rank,N,top){$('rankwrap').classList.remove('hidden');
+    $('rankwrap').innerHTML=`<div class="rankhead">${esc(nick||'나')} 님은 같은 조건 응시자 ${N}명 중<b>${rank}위</b></div>`+top;}
+  function localRank(){
+    const bucket=loadLB().filter(a=>a.dom===dom&&a.num===num).sort((a,b)=>b.hit-a.hit||b.pct-a.pct||a.ts-b.ts);
+    const rank=bucket.findIndex(a=>a.ts===rec.ts)+1, N=bucket.length;
+    let top=bucket.slice(0,5).map((a,k)=>`<div class="lbrow${a.ts===rec.ts?' me':''}"><span class="rk">${medal(k+1)}</span><span class="nm">${esc(a.nick||'익명')}</span><span class="sc">${a.hit}개 정답 · ${a.pct}%</span></div>`).join('');
+    if(rank>5)top+=`<div class="lbrow me"><span class="rk">${rank}위</span><span class="nm">${esc(nick||'나')}</span><span class="sc">${hit}개 정답 · ${rec.pct}%</span></div>`;
+    paint(rank,N,top);}
+  if(BACKEND_URL){
+    try{fetch(BACKEND_URL,{method:'POST',mode:'no-cors',body:JSON.stringify(rec)});}catch(e){}
+    $('rankwrap').classList.remove('hidden');$('rankwrap').innerHTML='<div class="rankhead">응시자 등수 집계 중…</div>';
+    let done=false;const fb=setTimeout(()=>{if(!done){done=true;localRank();}},4000);
+    const fn='__rk'+rec.ts, s=document.createElement('script');
+    window[fn]=function(res){if(done)return;done=true;clearTimeout(fb);try{delete window[fn]}catch(e){}s.remove();
+      if(res&&res.ok){let top=(res.top||[]).map((a,k)=>`<div class="lbrow${a.me?' me':''}"><span class="rk">${medal(k+1)}</span><span class="nm">${esc(a.nick||'익명')}</span><span class="sc">${a.hit}개 정답 · ${a.pct}%</span></div>`).join('');
+        if(res.rank>5)top+=`<div class="lbrow me"><span class="rk">${res.rank}위</span><span class="nm">${esc(nick||'나')}</span><span class="sc">${hit}개 정답 · ${rec.pct}%</span></div>`;
+        paint(res.rank,res.total,top);}else localRank();};
+    s.onerror=function(){if(done)return;done=true;clearTimeout(fb);try{delete window[fn]}catch(e){}s.remove();localRank();};
+    s.src=BACKEND_URL+(BACKEND_URL.indexOf('?')>=0?'&':'?')+'callback='+fn+'&dom='+encodeURIComponent(dom)+'&num='+num+'&hit='+hit+'&pct='+rec.pct+'&ts='+rec.ts;
+    document.body.appendChild(s);
+  } else localRank();}
+// 관리자: 주소 끝에 ?admin → 응시 명단(번호 포함) CSV 내보내기 / 기록 초기화
+if(location.search.indexOf('admin')>=0){
+  const mk=(t,fn)=>{const b=document.createElement('button');b.className='adminbtn';b.textContent=t;b.onclick=fn;document.body.appendChild(b);return b;};
+  mk('명단 CSV',()=>{const a=loadLB();if(!a.length){alert('기록이 없습니다.');return;}
+    const rows=[['닉네임','연락처','결과전송대상','맞힌수','안다고한','전체','정답률','영역','단어수','시각']].concat(
+      a.map(r=>[r.nick,r.phone,(r.nick&&r.nick!=='익명'&&r.phone)?'O':'',r.hit,r.claim,r.total,r.pct,r.dom,r.num,new Date(r.ts).toLocaleString('ko-KR')]));
+    const csv='﻿'+rows.map(r=>r.map(x=>'"'+String(x==null?'':x).replace(/"/g,'""')+'"').join(',')).join('\n');
+    const u=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));const d=document.createElement('a');d.href=u;d.download='어휘테스트_응시명단.csv';d.click();}).style.bottom='52px';
+  mk('기록 초기화',()=>{if(confirm('이 기기의 응시 기록을 모두 지울까요?')){try{localStorage.removeItem('eohwiLB')}catch(e){}alert('초기화했습니다.');}});
+}
+</script>
+</body></html>
