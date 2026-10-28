@@ -944,7 +944,7 @@
     <h2>2027 겨울 국어 설명회</h2>
     <div class="big">“고2 국어의 기준”</div>
     <p class="sub"><span class="nb">출제자의 시선으로,</span> <span class="nb">감이 아닌 명확한 근거로.</span> 2년간 달라지는 고2 국어, <span class="nb">겨울에 그 기준을 세웁니다.</span></p>
-    <a class="smpop-perk" href="benefits.html">
+    <a class="smpop-perk" href="benefits.html" id="smpopPerk">
       <span class="pl"><svg class="gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8.5" width="18" height="4" rx="1"/><path d="M5 12.5V20h14v-7.5"/><path d="M12 8.5V20"/><path d="M12 8.5C11 5 9.5 3.8 8 4.4c-1.6.7-.7 4.1 4 4.1zM12 8.5C13 5 14.5 3.8 16 4.4c1.6.7.7 4.1-4 4.1z"/></svg> 설명회 참석자 특전</span>
       <span class="pr">자료실 열기 →</span>
     </a>
@@ -959,7 +959,7 @@
       <li><span class="n">03</span><span>겨울 강좌 안내 — 현대문법과 우리들의 첫 수능 국어</span></li>
     </ul>
     <div class="smpop-cta">
-      <a class="p" href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener">설명회 문의하기</a>
+      <a class="p" href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" id="smpopKakao">설명회 문의하기</a>
       <a class="s" href="#winter" id="smpopWinter">겨울 강좌 보기</a>
     </div>
     <p class="smpop-foot">자세한 시간과 장소는 학원으로 문의해 주세요.</p>
@@ -970,12 +970,17 @@
 (function(){
   var ov=document.getElementById('smpop');if(!ov)return;
   var KEY='smpop_261026';
+  function track(n,p){ if(window.gtag){ window.gtag('event',n,p||{}); } }
   function hiddenToday(){try{return localStorage.getItem(KEY)===new Date().toDateString();}catch(e){return false;}}
-  function open(){ov.hidden=false;setTimeout(function(){ov.classList.add('on');},30);document.getElementById('smpopX').focus();}
+  function open(){ov.hidden=false;setTimeout(function(){ov.classList.add('on');},30);document.getElementById('smpopX').focus();track('seolmyeonghoe_popup_view');}
   function close(){ov.classList.remove('on');setTimeout(function(){ov.hidden=true;},520);}
   if(!hiddenToday()){setTimeout(open,900);}
   document.getElementById('smpopX').addEventListener('click',close);
-  document.getElementById('smpopWinter').addEventListener('click',close);
+  var perk=document.getElementById('smpopPerk');
+  if(perk)perk.addEventListener('click',function(){track('seolmyeonghoe_perk_click');});
+  var kko=document.getElementById('smpopKakao');
+  if(kko)kko.addEventListener('click',function(){track('seolmyeonghoe_munui_click');});
+  document.getElementById('smpopWinter').addEventListener('click',function(){track('seolmyeonghoe_winter_click');close();});
   ov.addEventListener('click',function(e){if(e.target===ov)close();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!ov.hidden)close();});
   document.getElementById('smpopHide').addEventListener('click',function(){try{localStorage.setItem(KEY,new Date().toDateString());}catch(e){}close();});
