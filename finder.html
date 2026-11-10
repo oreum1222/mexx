@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>우리 아이에게 필요한 겨울 강의 찾기 | 김가경 국어 · MEXX</title>
+<meta name="description" content="예비 고2 겨울, 간단한 질문을 하나씩 따라 내려오면 우리 아이에게 필요한 국어 강의가 나옵니다."/>
+<meta property="og:title" content="우리 아이에게 필요한 겨울 강의 찾기"/>
+<meta property="og:description" content="간단한 질문을 따라 내려오면 우리 아이에게 필요한 겨울 국어 강의가 나옵니다."/>
+<link rel="icon" href="favicon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{ --bg:#060607; --ink:#f6f6f4; --muted:#8f8f8c; --accent:#ededea; --line:rgba(255,255,255,.1); --card:#0c0d11; --card2:#101216; }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);}
+  body{font-family:'Noto Sans KR',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:clip;}
+  a{color:inherit;}
+  .wrap{width:100%;max-width:600px;margin:0 auto;padding:0 22px;}
+  /* top bar */
+  .top{position:sticky;top:0;z-index:20;background:rgba(6,6,7,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:860px;}
+  .logo{font-weight:900;letter-spacing:-.02em;font-size:18px;text-decoration:none;}
+  .logo b{color:var(--muted);font-weight:600;font-size:13px;margin-left:7px;letter-spacing:0;}
+  .back{text-decoration:none;font-size:14px;font-weight:600;color:#cfcfcb;border:1px solid var(--line);border-radius:10px;padding:9px 15px;transition:border-color .2s,color .2s;}
+  .back:hover{border-color:rgba(255,255,255,.3);color:var(--ink);}
+  /* hero */
+  .hero{padding:52px 0 8px;text-align:center;}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:600;color:#cfcfcb;border:1px solid var(--line);border-radius:999px;padding:7px 14px;}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--ink);}
+  h1{font-size:clamp(27px,5vw,40px);font-weight:900;letter-spacing:-.035em;line-height:1.16;margin:20px 0 0;word-break:keep-all;}
+  .hero .sub{font-size:15.5px;color:#b0b0ac;margin:14px auto 0;max-width:430px;line-height:1.7;word-break:keep-all;text-wrap:pretty;}
+  .nb{display:inline-block;white-space:nowrap;}
+  /* ladder */
+  #ladder{padding:28px 0 10px;}
+  .step{margin:0 auto;}
+  /* answered rung */
+  .rung{display:flex;align-items:center;gap:12px;padding:13px 16px;margin-bottom:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;cursor:pointer;transition:border-color .2s,background .2s;animation:rise .35s ease both;}
+  .rung:hover{border-color:rgba(255,255,255,.26);}
+  .rung .rq{font-size:12.5px;color:#8f8f8c;flex:1;min-width:0;word-break:keep-all;}
+  .rung .ra{font-size:14px;font-weight:800;letter-spacing:-.01em;white-space:nowrap;}
+  .rung .rc{width:20px;height:20px;border-radius:50%;background:var(--ink);color:#0a0a0a;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .rung .rc svg{width:12px;height:12px;}
+  .rung .redo{font-size:11px;color:#6d6d6a;white-space:nowrap;}
+  /* connector */
+  .link{width:2px;height:16px;background:linear-gradient(#2a2a2c,rgba(42,42,44,0));margin:0 auto 10px;}
+  /* active question */
+  .ask{background:linear-gradient(180deg,#111319,#0b0c11);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:26px 22px;animation:rise .4s ease both;box-shadow:0 30px 80px rgba(0,0,0,.45);}
+  .ask .qn{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:#8f8f8c;}
+  .ask h2{font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.4;margin:9px 0 2px;word-break:keep-all;}
+  .ask .hint{font-size:13.5px;color:#9a9a96;margin:6px 0 0;line-height:1.6;word-break:keep-all;}
+  .opts{display:flex;flex-direction:column;gap:9px;margin-top:18px;}
+  .opt{text-align:left;width:100%;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:15px 16px;color:var(--ink);font-size:15.5px;font-weight:700;letter-spacing:-.01em;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:space-between;gap:10px;transition:border-color .18s,background .18s,transform .1s;}
+  .opt:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.07);}
+  .opt:active{transform:scale(.99);}
+  .opt .od{font-size:12.5px;font-weight:500;color:#8f8f8c;}
+  .opt .ar{color:#6d6d6a;font-size:17px;}
+  .opt:hover .ar{color:var(--ink);}
+  /* result */
+  .result{animation:rise .45s ease both;}
+  .result .rh{text-align:center;margin:6px 0 20px;}
+  .result .rh .rt{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:#8f8f8c;}
+  .result .rh h2{font-size:24px;font-weight:900;letter-spacing:-.025em;margin:10px 0 0;word-break:keep-all;}
+  .rec{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px;margin-bottom:11px;}
+  .rec.key{background:var(--ink);color:#0a0a0a;border-color:transparent;}
+  .rec .num{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;flex:0 0 auto;margin-top:2px;color:#8f8f8c;}
+  .rec.key .num{color:#555;}
+  .rec h3{font-size:17px;font-weight:800;letter-spacing:-.01em;margin:0;}
+  .rec p{font-size:13.5px;line-height:1.65;margin:5px 0 0;color:#a9a9a5;word-break:keep-all;}
+  .rec.key p{color:#333;}
+  .rec.note{background:none;border:1px dashed rgba(255,255,255,.18);}
+  .rec.note h3{color:#cfcfcb;}
+  .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:24px 0 12px;}
+  .cta a{text-decoration:none;font-size:14.5px;font-weight:700;border-radius:12px;padding:13px 22px;transition:opacity .2s,border-color .2s,background .2s;}
+  .cta .p{background:var(--ink);color:#0a0a0a;}
+  .cta .p:hover{opacity:.9;}
+  .cta .s{border:1px solid var(--line);color:#ededea;}
+  .cta .s:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.04);}
+  .restart{display:block;margin:4px auto 0;background:none;border:0;color:#6d6d6a;font-size:13px;cursor:pointer;font-family:inherit;padding:8px;}
+  .restart:hover{color:#9a9a96;}
+  .mini{font-size:12px;color:#7a7a77;margin:18px 0 80px;text-align:center;line-height:1.7;word-break:keep-all;}
+  footer{border-top:1px solid var(--line);}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:28px 22px;color:var(--muted);font-size:13px;max-width:860px;}
+  @keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+  @media(prefers-reduced-motion:reduce){.rung,.ask,.result{animation:none;}}
+</style>
+<script src="analytics.js" defer></script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="index.html">김가경 국어 <b>· MEXX</b></a>
+  <a class="back" href="index.html">← 홈으로</a>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="eyebrow"><span class="dot"></span> 예비 고2 겨울 안내</span>
+    <h1><span class="nb">우리 아이에게 필요한</span> <span class="nb">겨울 강의 찾기</span></h1>
+    <p class="sub">간단한 질문을 하나씩 따라 내려오시면, 겨울에 무엇을 준비하면 좋을지 나옵니다.</p>
+  </section>
+
+  <div id="ladder"></div>
+
+  <p class="mini">큰 방향을 잡기 위한 안내입니다. 아이의 학교와 성적, 학습 이력에 따라 결과가 달라질 수 있으니 마지막은 상담으로 확인해 주세요.</p>
+</main>
+
+<footer><div class="wrap">
+  <span>김가경 국어 · MEXX</span>
+  <a href="https://pf.kakao.com/_xlgSXX/chat" target="_blank" rel="noopener" style="text-decoration:none;color:#cfcfcb;">카카오톡 문의 →</a>
+</div></footer>
+
+<script>
+(function(){
+  var KAKAO='https://pf.kakao.com/_xlgSXX/chat';
+  function track(n,p){ if(window.gtag){ window.gtag('event',n,p||{}); } }
+
+  // 질문 정의
+  var Q={
+    suneung:{ n:'질문 1', q:'아이가 수능과 모의고사까지 준비해야 하나요?', short:'수능 준비',
+      opts:[
+        {label:'네, 수능까지 준비해요', val:'yes', a:'수능까지', next:'subj'},
+        {label:'내신 위주예요', d:'(지금은 수능 비중이 낮아요)', val:'no', a:'내신 위주', next:'subj'}
+      ]},
+    subj:{ n:'질문 2', q:'2학년 1학기 내신 국어 과목이 무엇인가요?', short:'1학기 과목',
+      opts:[
+        {label:'문학', val:'munhak', a:'문학', next:'gaenyeom'},
+        {label:'독서와 작문', val:'dokjak', a:'독서와 작문', next:'grammar'},
+        {label:'화법과 언어', val:'hwaeon', a:'화법과 언어', next:'grammar'},
+        {label:'아직 모르겠어요', val:'unknown', a:'아직 모름', next:'grammar'}
+      ]},
+    gaenyeom:{ n:'질문 3', q:'문학개념어를 끝까지 들어, 개념이 정리돼 있나요?', hint:'예비 고1~고1 과정에서 한 바퀴 돌렸는지로 보시면 됩니다.', short:'문학개념어',
+      opts:[
+        {label:'네, 정리돼 있어요', val:'yes', a:'정리됨', next:'grammar'},
+        {label:'아니요, 아직이에요', val:'no', a:'아직', next:'grammar'}
+      ]},
+    grammar:{ n:'마지막 질문', q:'고1 1년 동안 현대문법이 ‘큰 틀에서’ 정리돼 있나요?', hint:'시험 때마다 급히 외운 게 아니라, 전체 체계가 잡혀 있는지를 보시면 됩니다.', short:'현대문법',
+      opts:[
+        {label:'네, 큰 틀이 잡혀 있어요', val:'yes', a:'잡혀 있음', next:'RESULT'},
+        {label:'시험 때만 했어요', d:'(큰 틀은 아직이에요)', val:'no', a:'큰 틀은 아직', next:'RESULT'}
+      ]}
+  };
+
+  var ladder=document.getElementById('ladder');
+  var answers={};
+  var path=[]; // 거쳐 온 질문 id 순서
+
+  function el(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e;}
+  var CHK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+
+  function clearFrom(idx){
+    // idx 이후(포함)의 rung/link/ask/result 모두 제거하고 answers 정리
+    while(ladder.children.length>idx){ ladder.removeChild(ladder.lastChild); }
+    var removed=path.splice(idx/2); // 각 질문은 rung 1 + (link 1) 로 구성 → 뒤에서 재계산
+  }
+
+  function render(){
+    ladder.innerHTML='';
+    // 답한 질문들: rung
+    path.forEach(function(id,i){
+      if(i>0) ladder.appendChild(el('div','link'));
+      var qq=Q[id]; var ans=answers[id];
+      var opt=qq.opts.filter(function(o){return o.val===ans;})[0];
+      var r=el('div','step');
+      var rung=el('div','rung');
+      rung.innerHTML='<span class="rc">'+CHK+'</span><span class="rq">'+qq.short+'</span><span class="ra">'+(opt?opt.a:'')+'</span><span class="redo">수정</span>';
+      rung.addEventListener('click',function(){
+        // 이 질문부터 다시
+        path=path.slice(0,i);
+        var keep={}; path.forEach(function(pid){ keep[pid]=answers[pid]; });
+        answers=keep;
+        current=id;
+        render();
+      });
+      r.appendChild(rung);
+      ladder.appendChild(r);
+    });
+    // 현재 질문 또는 결과
+    if(current==='RESULT'){ renderResult(); }
+    else{
+      if(path.length) ladder.appendChild(el('div','link'));
+      renderAsk(current);
+    }
+    // 스크롤
+    var last=ladder.lastChild;
+    if(last && last.scrollIntoView){ try{ last.scrollIntoView({behavior:'smooth',block:'center'}); }catch(e){} }
+  }
+
+  function renderAsk(id){
+    var qq=Q[id];
+    var box=el('div','ask');
+    box.innerHTML='<div class="qn">'+qq.n+'</div><h2>'+qq.q+'</h2>'+(qq.hint?'<p class="hint">'+qq.hint+'</p>':'');
+    var opts=el('div','opts');
+    qq.opts.forEach(function(o){
+      var b=el('button','opt');
+      b.innerHTML='<span>'+o.label+(o.d?' <span class="od">'+o.d+'</span>':'')+'</span><span class="ar">→</span>';
+      b.addEventListener('click',function(){
+        answers[id]=o.val;
+        if(path.indexOf(id)<0) path.push(id);
+        current=o.next;
+        render();
+      });
+      opts.appendChild(b);
+    });
+    box.appendChild(opts);
+    ladder.appendChild(box);
+  }
+
+  function renderResult(){
+    track('finder_result',{suneung:answers.suneung||'',subj:answers.subj||'',gaenyeom:answers.gaenyeom||'',grammar:answers.grammar||''});
+    var recs=[];
+    var sun=(answers.suneung==='yes');
+    var subj=answers.subj;
+    var gaenyeomNeed=(subj==='munhak' && answers.gaenyeom==='no');
+    var grammarNeed=(answers.grammar==='no');
+    var hwaeonRetouch=(subj==='hwaeon' && !grammarNeed); // 화언: 문법 정리됐어도 범위 넓어 한 번 더
+    var anyTodo=(gaenyeomNeed || grammarNeed || hwaeonRetouch);
+    var single=(sun && !anyTodo); // 수능 중요 + 급한 과제 없음 → 수능 집중 단일 결과
+
+    // 1) 수능 국어 (핵심)
+    if(sun){
+      var sp;
+      if(single){
+        if(subj==='munhak') sp='문학개념어도 문법도 정리돼 있으니, 겨울은 수능 공부에 집중할 시기입니다. 1학기가 문학이니, 문학을 중심으로 수능 공부를 이어 가셔도 좋습니다.';
+        else if(subj==='dokjak') sp='문법이 정리돼 있고 지금 급한 과제가 없으니, 겨울은 수능 공부에 집중할 시기입니다. 1학기가 독서와 작문이니, 독서를 중심으로 수능 공부를 이어 가셔도 좋습니다.';
+        else sp='지금 급한 과제가 없으니, 겨울은 수능 공부에 집중할 시기입니다. 1학기 과목이 정해지면 그에 맞춰 세부 방향을 잡아 드립니다.';
+      }else{
+        sp='모의고사와 수능을 함께 준비합니다. 겨울 공부의 기본 축이고, 지금 수강생은 1등급부터 4등급까지 모두 무리 없이 따라오고 있습니다.';
+      }
+      recs.push({key:true,t:'우리들의 첫 수능 국어',p:sp});
+    }
+    // 2) 문학개념어
+    if(gaenyeomNeed){
+      recs.push({t:'문학개념어',p:'1학기 문학을 준비하려면 개념어부터 잡아야 합니다. 겨울에 완성해 두면 1학기 내내 든든합니다.'});
+    }else if(!single){
+      if(subj==='munhak') recs.push({note:true,t:'문학개념어는 다시 들을 필요가 없습니다',p:'개념어가 이미 정리돼 있습니다.'});
+      else recs.push({note:true,t:'문학개념어는 아직 급하지 않습니다',p:'1학기에 문학을 배울 때 준비하면 됩니다.'});
+    }
+    // 3) 현대문법
+    if(grammarNeed){
+      recs.push({t:'현대문법 가뿐하게, 경쾌하게!',p:'그때그때 시험만 치렀다면 큰 틀이 비어 있기 쉽습니다. 겨울에 품사부터 음운까지 한 번에 체계로 정리해 두면 2학기 ‘화법과 언어’ 문법까지 함께 가져갈 수 있습니다.'});
+    }else if(hwaeonRetouch){
+      recs.push({t:'현대문법 가뿐하게, 경쾌하게!',p:'문법의 큰 틀은 잡혀 있지만, 2학기 ‘화법과 언어’는 문법 범위가 매우 넓습니다. 겨울에 한 번 더 정리해 두면 2학기가 한결 수월합니다.'});
+    }else if(!single){
+      recs.push({note:true,t:'문법 수업은 필요하지 않습니다',p:'이미 큰 틀이 잡혀 있습니다.'});
+    }
+
+    var hasKey=recs.some(function(r){return !r.note;});
+    var box=el('div','result');
+    box.appendChild(el('div','rh','<div class="rt">이렇게 준비하면 좋습니다</div><h2>'+(hasKey?'우리 아이 겨울, 이 강의를 추천합니다':'지금 꼭 필요한 겨울 강의는 뚜렷하지 않습니다')+'</h2>'));
+    var i=1;
+    recs.forEach(function(r){
+      var c=el('div','rec'+(r.key?' key':'')+(r.note?' note':''));
+      var num=r.note?'·':('0'+(i++));
+      c.innerHTML='<span class="num">'+num+'</span><div><h3>'+r.t+'</h3><p>'+r.p+'</p></div>';
+      box.appendChild(c);
+    });
+    var cta=el('div','cta');
+    cta.innerHTML='<a class="p" id="rk" href="'+KAKAO+'" target="_blank" rel="noopener">상담으로 확인하기</a><a class="s" href="index.html#winter">겨울 강좌 보기</a>';
+    box.appendChild(cta);
+    var rs=el('button','restart','처음부터 다시 하기');
+    rs.addEventListener('click',function(){ answers={}; path=[]; current='suneung'; render(); });
+    box.appendChild(rs);
+    ladder.appendChild(box);
+    var rk=document.getElementById('rk'); if(rk) rk.addEventListener('click',function(){track('finder_kakao_click');});
+  }
+
+  var current='suneung';
+  document.addEventListener('DOMContentLoaded',function(){ track('finder_open'); render(); });
+  if(document.readyState!=='loading'){ track('finder_open'); render(); }
+})();
+</script>
+</body>
+</html>
