@@ -71,6 +71,8 @@
   .rec.key p{color:#333;}
   .rec.note{background:none;border:1px dashed rgba(255,255,255,.18);}
   .rec.note h3{color:#cfcfcb;}
+  .rec.soft{background:linear-gradient(180deg,rgba(255,255,255,.045),var(--card));border:1px solid rgba(255,255,255,.2);}
+  .rec.soft .num{color:#cfcfcb;font-weight:700;}
   .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:24px 0 12px;}
   .cta a{text-decoration:none;font-size:14.5px;font-weight:700;border-radius:12px;padding:13px 22px;transition:opacity .2s,border-color .2s,background .2s;}
   .cta .p{background:var(--ink);color:#0a0a0a;}
@@ -208,7 +210,7 @@
 
   function renderResult(){
     track('finder_result',{suneung:answers.suneung||'',subj:answers.subj||'',gaenyeom:answers.gaenyeom||'',grammar:answers.grammar||''});
-    var recs=[];
+    var recs=[], notes=[];
     var sun=(answers.suneung==='yes');
     var subj=answers.subj;
     var gaenyeomNeed=(subj==='munhak' && answers.gaenyeom==='no');
@@ -233,8 +235,8 @@
     if(gaenyeomNeed){
       recs.push({t:'문학개념어',p:'1학기 문학을 준비하려면 개념어부터 잡아야 합니다. 겨울에 완성해 두면 1학기 내내 든든합니다.'});
     }else if(!single){
-      if(subj==='munhak') recs.push({note:true,t:'문학개념어는 다시 들을 필요가 없습니다',p:'개념어가 이미 정리돼 있습니다.'});
-      else recs.push({note:true,t:'문학개념어는 아직 급하지 않습니다',p:'1학기에 문학을 배울 때 준비하면 됩니다.'});
+      if(subj==='munhak') notes.push({note:true,t:'문학개념어는 다시 들을 필요가 없습니다',p:'개념어가 이미 정리돼 있습니다.'});
+      else notes.push({note:true,t:'문학개념어는 아직 급하지 않습니다',p:'1학기에 문학을 배울 때 준비하면 됩니다.'});
     }
     // 3) 현대문법
     if(grammarNeed){
@@ -242,16 +244,25 @@
     }else if(hwaeonRetouch){
       recs.push({t:'현대문법 가뿐하게, 경쾌하게!',p:'문법의 큰 틀은 잡혀 있지만, 2학기 ‘화법과 언어’는 문법 범위가 매우 넓습니다. 겨울에 한 번 더 정리해 두면 2학기가 한결 수월합니다.'});
     }else if(!single){
-      recs.push({note:true,t:'문법 수업은 필요하지 않습니다',p:'이미 큰 틀이 잡혀 있습니다.'});
+      notes.push({note:true,t:'문법 수업은 필요하지 않습니다',p:'이미 큰 틀이 잡혀 있습니다.'});
+    }
+    // 4) 내신 위주 + 기초가 잡혀 있으면: 독해력을 위한 독서 중심 수능 공부 권유(선택)
+    var suggestDokseo=(!sun && !grammarNeed && !gaenyeomNeed);
+    if(suggestDokseo){
+      recs.push({soft:true,t:'우리들의 첫 수능 국어',p:'지금 당장 급한 국어 과제는 없습니다. 다만 독해력은 내신 공부만으로는 좀처럼 자라지 않습니다. 겨울에 독서 중심의 수능 공부로 읽는 힘을 미리 다져 두면, 2학년 내내 국어 전체를 떠받치는 바탕이 됩니다. 여유가 되신다면 함께 고려해 보셔도 좋습니다.'});
     }
 
-    var hasKey=recs.some(function(r){return !r.note;});
+    var all=recs.concat(notes);
+    var hasStrong=recs.some(function(r){return !r.soft;});
+    var heading = hasStrong ? '우리 아이 겨울, 이 강의를 추천합니다'
+                : suggestDokseo ? '지금 꼭 필요한 강의는 없지만, 이런 선택도 있습니다'
+                : '지금 꼭 필요한 겨울 강의는 뚜렷하지 않습니다';
     var box=el('div','result');
-    box.appendChild(el('div','rh','<div class="rt">이렇게 준비하면 좋습니다</div><h2>'+(hasKey?'우리 아이 겨울, 이 강의를 추천합니다':'지금 꼭 필요한 겨울 강의는 뚜렷하지 않습니다')+'</h2>'));
+    box.appendChild(el('div','rh','<div class="rt">이렇게 준비하면 좋습니다</div><h2>'+heading+'</h2>'));
     var i=1;
-    recs.forEach(function(r){
-      var c=el('div','rec'+(r.key?' key':'')+(r.note?' note':''));
-      var num=r.note?'·':('0'+(i++));
+    all.forEach(function(r){
+      var c=el('div','rec'+(r.key?' key':'')+(r.note?' note':'')+(r.soft?' soft':''));
+      var num=r.note?'·':(r.soft?'＋':('0'+(i++)));
       c.innerHTML='<span class="num">'+num+'</span><div><h3>'+r.t+'</h3><p>'+r.p+'</p></div>';
       box.appendChild(c);
     });
