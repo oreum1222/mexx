@@ -499,7 +499,12 @@
   .wsoon .sd{font-size:13px;font-weight:800;color:#c3ccdb;margin-top:9px;}
   .wsoon-lead{font-size:14px;font-weight:700;color:#aebacd;margin:46px 0 0;display:inline-flex;align-items:center;gap:9px;}
   .wsoon-lead::before{content:"";width:22px;height:1px;background:#49566a;}
+  .wcta{margin-top:36px;text-align:center;}
+  .wcta .wapply{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-size:16px;font-weight:800;letter-spacing:-.01em;color:#0a0c12;background:linear-gradient(180deg,#eef2f8,#d6ddea);border:1px solid rgba(188,206,234,.4);border-radius:14px;padding:16px 32px;transition:transform .2s,box-shadow .2s;box-shadow:0 14px 40px rgba(120,150,200,.14);}
+  .wcta .wapply:hover{transform:translateY(-2px);box-shadow:0 20px 52px rgba(120,150,200,.24);}
+  .wcta .wnote{display:block;margin-top:12px;font-size:12.5px;color:#7f8a9c;}
   @media(max-width:760px){
+    .wcta .wapply{width:100%;justify-content:center;}
     .wgrid{grid-template-columns:1fr;}
     .wgrid>.wcard+.wcard{border-left:none;}
     .wsoon{grid-template-columns:1fr;}
@@ -551,6 +556,10 @@
         <div class="sm">고전소설·기술·복합 지문까지, 평가원 기출의 출제 원리로 읽는 문학과 독서.</div>
         <div class="sd">일 14:00–17:00 · 11월 1일(일) 개강 · 4회차</div>
       </div>
+    </div>
+    <div class="wcta rv">
+      <a class="wapply" id="winterApply" href="https://mexx.megastudy.net/russel/campus_common/russel_danka/russel_danka_new.asp?idx=2576" target="_blank" rel="noopener" onclick="window.gtag&amp;&amp;gtag('event','winter_apply_click')">겨울방학 수강신청 →</a>
+      <span class="wnote">메가스터디 러셀 MEXX 신청 페이지로 연결됩니다.</span>
     </div>
   </div>
 </section>
@@ -937,13 +946,13 @@
   @media(max-width:480px){.smpop{padding:34px 22px 24px;border-radius:18px;} .smpop h2{font-size:25px;} .smpop .big{font-size:19px;}}
   @media(prefers-reduced-motion:reduce){.smpop-ov,.smpop{transition:none;}}
 </style>
-<div class="smpop-ov" id="smpop" role="dialog" aria-modal="true" aria-label="우리 아이에게 필요한 겨울 강의 찾기" hidden>
+<div class="smpop-ov" id="smpop" role="dialog" aria-modal="true" aria-label="학생에게 필요한 겨울 강의 찾기" hidden>
   <div class="smpop">
     <button class="smpop-x" id="smpopX" aria-label="닫기">✕</button>
     <span class="smpop-eb"><span class="d"></span> 예비 고2 겨울 안내</span>
-    <h2>우리 아이에게<br/>필요한 겨울 강의</h2>
+    <h2>학생에게<br/>필요한 겨울 강의</h2>
     <div class="big">1분이면 찾을 수 있습니다</div>
-    <p class="sub">수능까지 준비해야 할지, 문학개념어와 문법은 겨울에 무엇부터 잡아야 할지 — <span class="nb">간단한 질문 몇 개를 따라오시면</span> 우리 아이에게 필요한 강의가 나옵니다.</p>
+    <p class="sub">수능까지 준비해야 할지, 문학개념어와 문법은 겨울에 무엇부터 잡아야 할지 — <span class="nb">간단한 질문 몇 개를 따라오시면</span> 학생에게 필요한 강의가 나옵니다.</p>
     <div class="smpop-cta">
       <a class="p" href="finder.html" id="smpopFinder">강의 찾기 시작 →</a>
       <a class="s" href="#winter" id="smpopWinter">겨울 강좌 보기</a>
